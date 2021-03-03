@@ -20,6 +20,21 @@
 		74FD9AEC266748250A6431FF /* libPods-Cappella-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E70534646B929079FC66D34A /* libPods-Cappella-tvOS.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		DCA87E2CE515CBFE572491DC /* libPods-Cappella-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F889DAD8380A90A0B820F83A /* libPods-Cappella-tvOSTests.a */; };
+		0DD87ECD2618446EAC9863EE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1294D2D3DD14A439478D15F /* OpenSans-Bold.ttf */; };
+		13A689AD009E4CA1BF60B153 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51113CD16E94407BB0A1559A /* OpenSans-ExtraBold.ttf */; };
+		65849E0C1861461CA4CC9A10 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19BE3867CA1246D9A2ED2C6B /* OpenSans-Light.ttf */; };
+		3DCD8F5B8FB244D6967D544D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FF316F4D0904860B9043D56 /* OpenSans-Regular.ttf */; };
+		ECFEF13BD46D45D899CEADFE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */; };
+		7C140B827EA941B78C3A1330 /* Liturgica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */; };
+		101588E346F54C4F9EA15F77 /* Liturgica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA62A9456DE8480F80FBCED0 /* Liturgica-Light.ttf */; };
+		252EA01157AC4E42AC9EAD3D /* Liturgica-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */; };
+		F00AF8FA1263491BABE84722 /* Liturgica-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */; };
+		52358D28E3FC4737A9ED65E8 /* Liturgica-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98EF39D649274B45B3FB9A78 /* Liturgica-Thin.ttf */; };
+		E29D661D32BC4AA5A7BE2601 /* Liturgica-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */; };
+		255AB943A346440789621EDC /* Liturgica-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2D6983025D74FAEB6B864FB /* Liturgica-Light.otf */; };
+		2741FA4007904E3BA90404F9 /* Liturgica-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03C456E0E76E4956A8F71D8A /* Liturgica-Medium.otf */; };
+		0460E74A6DA2469C9AE2A329 /* Liturgica-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */; };
+		61B43CC5BD60411980FC5CE8 /* Liturgica-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC61CD1BF85A492895166094 /* Liturgica-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +82,21 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F889DAD8380A90A0B820F83A /* libPods-Cappella-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF23F26006EF3004BA38080D /* Pods-Cappella-CappellaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cappella-CappellaTests.debug.xcconfig"; path = "Target Support Files/Pods-Cappella-CappellaTests/Pods-Cappella-CappellaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1294D2D3DD14A439478D15F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51113CD16E94407BB0A1559A /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBold.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19BE3867CA1246D9A2ED2C6B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2FF316F4D0904860B9043D56 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */ = {isa = PBXFileReference; name = "Liturgica-Bold.ttf"; path = "../src/assets/fonts/Liturgica-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA62A9456DE8480F80FBCED0 /* Liturgica-Light.ttf */ = {isa = PBXFileReference; name = "Liturgica-Light.ttf"; path = "../src/assets/fonts/Liturgica-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */ = {isa = PBXFileReference; name = "Liturgica-Medium.ttf"; path = "../src/assets/fonts/Liturgica-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */ = {isa = PBXFileReference; name = "Liturgica-Semibold.ttf"; path = "../src/assets/fonts/Liturgica-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		98EF39D649274B45B3FB9A78 /* Liturgica-Thin.ttf */ = {isa = PBXFileReference; name = "Liturgica-Thin.ttf"; path = "../src/assets/fonts/Liturgica-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */ = {isa = PBXFileReference; name = "Liturgica-Bold.otf"; path = "../src/assets/fonts/Liturgica-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D2D6983025D74FAEB6B864FB /* Liturgica-Light.otf */ = {isa = PBXFileReference; name = "Liturgica-Light.otf"; path = "../src/assets/fonts/Liturgica-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03C456E0E76E4956A8F71D8A /* Liturgica-Medium.otf */ = {isa = PBXFileReference; name = "Liturgica-Medium.otf"; path = "../src/assets/fonts/Liturgica-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */ = {isa = PBXFileReference; name = "Liturgica-Semibold.otf"; path = "../src/assets/fonts/Liturgica-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC61CD1BF85A492895166094 /* Liturgica-Thin.otf */ = {isa = PBXFileReference; name = "Liturgica-Thin.otf"; path = "../src/assets/fonts/Liturgica-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +211,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				6BF566CF2822368F43DED5FB /* Pods */,
+				08B8FE11ECF949C8A218EBB3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +228,29 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		08B8FE11ECF949C8A218EBB3 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D1294D2D3DD14A439478D15F /* OpenSans-Bold.ttf */,
+				51113CD16E94407BB0A1559A /* OpenSans-ExtraBold.ttf */,
+				19BE3867CA1246D9A2ED2C6B /* OpenSans-Light.ttf */,
+				2FF316F4D0904860B9043D56 /* OpenSans-Regular.ttf */,
+				3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */,
+				29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */,
+				BA62A9456DE8480F80FBCED0 /* Liturgica-Light.ttf */,
+				35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */,
+				4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */,
+				98EF39D649274B45B3FB9A78 /* Liturgica-Thin.ttf */,
+				5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */,
+				D2D6983025D74FAEB6B864FB /* Liturgica-Light.otf */,
+				03C456E0E76E4956A8F71D8A /* Liturgica-Medium.otf */,
+				B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */,
+				BC61CD1BF85A492895166094 /* Liturgica-Thin.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +396,21 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0DD87ECD2618446EAC9863EE /* OpenSans-Bold.ttf in Resources */,
+				13A689AD009E4CA1BF60B153 /* OpenSans-ExtraBold.ttf in Resources */,
+				65849E0C1861461CA4CC9A10 /* OpenSans-Light.ttf in Resources */,
+				3DCD8F5B8FB244D6967D544D /* OpenSans-Regular.ttf in Resources */,
+				ECFEF13BD46D45D899CEADFE /* OpenSans-SemiBold.ttf in Resources */,
+				7C140B827EA941B78C3A1330 /* Liturgica-Bold.ttf in Resources */,
+				101588E346F54C4F9EA15F77 /* Liturgica-Light.ttf in Resources */,
+				252EA01157AC4E42AC9EAD3D /* Liturgica-Medium.ttf in Resources */,
+				F00AF8FA1263491BABE84722 /* Liturgica-Semibold.ttf in Resources */,
+				52358D28E3FC4737A9ED65E8 /* Liturgica-Thin.ttf in Resources */,
+				E29D661D32BC4AA5A7BE2601 /* Liturgica-Bold.otf in Resources */,
+				255AB943A346440789621EDC /* Liturgica-Light.otf in Resources */,
+				2741FA4007904E3BA90404F9 /* Liturgica-Medium.otf in Resources */,
+				0460E74A6DA2469C9AE2A329 /* Liturgica-Semibold.otf in Resources */,
+				61B43CC5BD60411980FC5CE8 /* Liturgica-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
