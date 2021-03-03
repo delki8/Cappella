@@ -6,14 +6,14 @@ import {
   SIZE_SMALL,
   WHITE,
 } from '../../../../styles/styles';
-import {SvgXml} from 'react-native-svg';
+import {PastoralIcon} from '../../icons/PastoralIcon';
 
-export const Item = ({imagem, titulo}) => {
+export const Pastoral = ({imagem, titulo}) => {
   //   const navigation = useNavigation();
 
   return (
     <TouchableOpacity style={styles.containerItem} onPress={() => {}}>
-      <SvgXml xml={imagem} width={66} height={65} />
+      <PastoralIcon />
       <Text style={styles.texto}>{titulo}</Text>
     </TouchableOpacity>
   );
@@ -21,7 +21,8 @@ export const Item = ({imagem, titulo}) => {
 
 const styles = StyleSheet.create({
   containerItem: {
-    height: 168,
+    width: 284,
+    height: 347,
     backgroundColor: WHITE,
     borderRadius: 10,
     flex: 1,

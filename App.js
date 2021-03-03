@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {COR_DE_FUNDO} from './src/styles/styles';
-import Landpage from './src/views/Landpage';
+import Landpage from './src/views/LandingPage';
 
 const Stack = createStackNavigator();
 
