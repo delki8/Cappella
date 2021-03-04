@@ -1,5 +1,5 @@
 import React from 'react';
-// import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {
   FONT_FAMILY_SEMI_BOLD,
@@ -8,11 +8,20 @@ import {
 } from '../../../../styles/styles';
 import {SvgXml} from 'react-native-svg';
 
-export const Item = ({imagem, titulo}) => {
-  //   const navigation = useNavigation();
+export const Item = ({imagem, titulo, itemDesc, id}) => {
+  const navigation = useNavigation();
 
   return (
-    <TouchableOpacity style={styles.containerItem} onPress={() => {}}>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={() =>
+        navigation.push('DetalhesItem', {
+          itemDesc,
+          imagem,
+          titulo,
+          id,
+        })
+      }>
       <SvgXml xml={imagem} width={66} height={65} />
       <Text style={styles.texto}>{titulo}</Text>
     </TouchableOpacity>

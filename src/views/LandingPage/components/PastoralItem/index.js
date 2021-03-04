@@ -1,5 +1,5 @@
 import React from 'react';
-// import {useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {
   FONT_FAMILY_SEMI_BOLD,
@@ -8,11 +8,18 @@ import {
 } from '../../../../styles/styles';
 import {PastoralIcon} from '../../icons/PastoralIcon';
 
-export const Pastoral = ({imagem, titulo}) => {
-  //   const navigation = useNavigation();
+export const PastoralItem = () => {
+  const navigation = useNavigation();
+  const titulo = 'Uma Palavra Pastoral';
 
   return (
-    <TouchableOpacity style={styles.containerItem} onPress={() => {}}>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={() =>
+        navigation.push('Pastoral', {
+          titulo,
+        })
+      }>
       <PastoralIcon />
       <Text style={styles.texto}>{titulo}</Text>
     </TouchableOpacity>

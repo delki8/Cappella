@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import {COR_DE_FUNDO} from './src/styles/styles';
 import Landpage from './src/views/LandingPage';
+import {DetalhesItem} from './src/views/DetalhesItem';
+import {Pastoral} from './src/views/Pastoral';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +17,16 @@ const App = () => {
           <Stack.Screen
             name="Landpage"
             component={Landpage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DetalhesItem"
+            component={DetalhesItem}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Pastoral"
+            component={Pastoral}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
