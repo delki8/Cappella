@@ -7,6 +7,7 @@ export const SHADOW_BEIGE = '#00000029';
 export const RED = 'red';
 export const ACTIVE_GREEN = '#77A02D';
 export const INACTIVE_GRAY = '#B1AEAE';
+export const GRAY = '#D9D9D9';
 export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#ACAAAB';
 export const LIGHTBLUE = '#00adef';

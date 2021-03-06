@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {PastoralIcon} from '../../../../assets/images/PastoralIcon';
 import {GenericItem} from '../../../../components/GenericItem.js';
+import {Image, StyleSheet} from 'react-native';
 
 export const PastoralItem = () => {
   const navigation = useNavigation();
@@ -10,7 +10,13 @@ export const PastoralItem = () => {
   return (
     <GenericItem
       titulo={titulo}
-      icon={<PastoralIcon />}
+      icon={
+        <Image
+          source={require('../../../../assets/images/pastoral.png')}
+          style={styles.imagem}
+          resizeMode="contain"
+        />
+      }
       width={284}
       height={347}
       onNavigate={() =>
@@ -21,3 +27,10 @@ export const PastoralItem = () => {
     />
   );
 };
+
+const styles = StyleSheet.create({
+  imagem: {
+    width: 363,
+    height: 204,
+  },
+});

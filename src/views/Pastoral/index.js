@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {ContainerPage} from '../../components/ContainerPage';
-import {PASTORAL} from '../../dados/Pastoral';
+import {PASTORAL} from './data/Pastoral';
 import {
   TITLE,
   SIZE_LARGE,
