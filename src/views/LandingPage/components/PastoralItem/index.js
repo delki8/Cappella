@@ -6,7 +6,7 @@ import {
   SIZE_SMALL,
   WHITE,
 } from '../../../../styles/styles';
-import {PastoralIcon} from '../../icons/PastoralIcon';
+import {PastoralIcon} from '../../../../assets/images/PastoralIcon';
 
 export const PastoralItem = () => {
   const navigation = useNavigation();

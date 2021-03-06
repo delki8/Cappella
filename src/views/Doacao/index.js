@@ -1,11 +1,12 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
+import {IconDoacao} from '../../assets/images/Icons';
 
 export const Doacao = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ContainerPage>
+      <ContainerPage imagem={IconDoacao}>
         <Text style={styles.containerTitulo}>Doação</Text>
       </ContainerPage>
     </SafeAreaView>
