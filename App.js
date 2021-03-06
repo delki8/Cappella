@@ -18,7 +18,7 @@ import {Contato} from './src/views/Contato';
 import {Agenda} from './src/views/Agenda';
 
 import {COR_DE_FUNDO, ACTIVE_GREEN, INACTIVE_GRAY} from './src/styles/styles';
-import { Doacao } from './src/views/Doacao';
+import {Doacao} from './src/views/Doacao';
 
 const HomeStack = createStackNavigator();
 

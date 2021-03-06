@@ -2,6 +2,8 @@
 export const COR_DE_FUNDO = '#F4F0F4';
 export const BLACK = '#000000';
 export const WHITE = '#fff';
+export const BEIGE = '#FAEEE7';
+export const SHADOW_BEIGE = '#00000029';
 export const RED = 'red';
 export const ACTIVE_GREEN = '#77A02D';
 export const INACTIVE_GRAY = '#B1AEAE';
