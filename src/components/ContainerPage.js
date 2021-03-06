@@ -22,7 +22,7 @@ export const ContainerPage = ({imagem, children}) => {
           </View>
         )}
       </View>
-      <View>{children}</View>
+      {children}
     </View>
   );
 };

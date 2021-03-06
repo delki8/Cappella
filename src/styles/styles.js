@@ -10,6 +10,7 @@ export const INACTIVE_GRAY = '#B1AEAE';
 export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#ACAAAB';
 export const LIGHTBLUE = '#00adef';
+export const TITLE = '#1E98A8';
 export const COR_BOTAO_ACAO = LIGHTBLUE;
 
 // TIPOGRAFIA

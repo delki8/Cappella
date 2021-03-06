@@ -1,44 +1,50 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {SIZE_XXX_LARGE, SIZE_X_LARGE} from '../../styles/styles';
+import {StyleSheet, Text} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
+import {ContainerPage} from '../../components/ContainerPage';
+import {PASTORAL} from '../../dados/Pastoral';
+import {
+  TITLE,
+  SIZE_LARGE,
+  SIZE_X_LARGE,
+  SIZE_XX_LARGE,
+  FONT_FAMILY_BOLD,
+  FONT_FAMILY_REGULAR,
+  FONT_FAMILY_LIGHT,
+} from '../../styles/styles';
 
-export const Pastoral = ({route}) => {
-  const {itemDesc} = route.params;
-  const navigation = useNavigation();
-
+export const Pastoral = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.headerContainer}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image
-            source={require('../../assets/images/flecha-esquerda.png')}
-            style={styles.imagemSeta}
-          />
-        </TouchableOpacity>
-      </View>
-      <Text style={styles.textPastoral}>Pastoral</Text>
-      <Text>{itemDesc}</Text>
-    </View>
+    <ContainerPage>
+      <ScrollView style={styles.container}>
+        <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
+        <Text style={styles.autor}>{PASTORAL.autor}</Text>
+        <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+      </ScrollView>
+    </ContainerPage>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  imagemSeta: {
-    width: SIZE_X_LARGE,
-    height: SIZE_X_LARGE,
-    marginTop: SIZE_XXX_LARGE,
+    marginTop: SIZE_XX_LARGE,
     marginLeft: SIZE_X_LARGE,
+    marginRight: SIZE_LARGE,
   },
-  textPastoral: {
-    textAlign: 'center',
-    marginTop: 300,
+  titulo: {
+    color: TITLE,
+    fontSize: 21,
+    fontFamily: FONT_FAMILY_BOLD,
+    marginBottom: SIZE_LARGE,
+  },
+  autor: {
+    fontSize: 11,
+    fontFamily: FONT_FAMILY_LIGHT,
+  },
+  descricao: {
+    fontSize: 14,
+    fontFamily: FONT_FAMILY_REGULAR,
+    marginTop: 0,
+    width: '100%',
   },
 });
