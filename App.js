@@ -7,6 +7,13 @@ import LandingPage from './src/views/LandingPage';
 import {DetalhesItem} from './src/views/DetalhesItem';
 import {Pastoral} from './src/views/Pastoral';
 import {COR_DE_FUNDO, ACTIVE_GREEN, INACTIVE_GRAY} from './src/styles/styles';
+import {
+  faHandHoldingHeart,
+  faHome,
+  faCalendar,
+  faIdCard,
+} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 function SettingsStackScreen() {
   return (
@@ -48,12 +55,28 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            switch (route.name) {
+              case 'Home':
+                return <FontAwesomeIcon icon={faHome} />;
+              case 'Doacao':
+                return <FontAwesomeIcon icon={faHandHoldingHeart} />;
+              case 'Agenda':
+                return <FontAwesomeIcon icon={faCalendar} />;
+              case 'Contato':
+                return <FontAwesomeIcon icon={faIdCard} />;
+              default:
+                break;
+            }
+          },
+        })}
         tabBarOptions={{
           activeTintColor: ACTIVE_GREEN,
           inactiveTintColor: INACTIVE_GRAY,
         }}>
         <Tab.Screen name="Home" component={HomeStackScreen} />
-        <Tab.Screen name="Doação" component={SettingsStackScreen} />
+        <Tab.Screen name="Doacao" component={SettingsStackScreen} />
         <Tab.Screen name="Agenda" component={SettingsStackScreen} />
         <Tab.Screen name="Contato" component={SettingsStackScreen} />
       </Tab.Navigator>
