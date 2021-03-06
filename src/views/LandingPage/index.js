@@ -6,7 +6,7 @@ import {SIZE_X_LARGE} from '../../styles/styles';
 
 const DATA = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    id: 'aoVivo',
     titulo: 'Ao vivo',
     imagem: `
     <svg xmlns="http://www.w3.org/2000/svg" width="68" height="66" viewBox="0 0 68 66">
@@ -14,42 +14,34 @@ const DATA = [
         <text id="G" transform="translate(32.54 51.918)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.182" y="0">G</tspan></text>
       </g>
     </svg>`,
-    itemDesc:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text',
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    id: 'doacao',
     titulo: 'Doação',
     imagem: `
     <svg xmlns="http://www.w3.org/2000/svg" width="68" height="65" viewBox="0 0 68 65">
       <text id="H" transform="translate(34 52)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.182" y="0">H</tspan></text>
     </svg>`,
-    itemDesc:
-      'Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, lorem ipsum',
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    id: 'comunidade',
     titulo: 'Comunidade',
     imagem: `
     <svg xmlns="http://www.w3.org/2000/svg" width="68" height="66" viewBox="0 0 68 66">
       <text id="u" transform="translate(34 52)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.052" y="0">u</tspan></text>
     </svg>`,
-    itemDesc:
-      'There are many variations of passages of Lorem Ipsum available, but the majority',
   },
   {
-    id: 'bd7acbea-c1b1-462c2-aed5-3ad53abb28ba',
+    id: 'missao',
     titulo: 'Igreja em Missão',
     imagem: `
     <svg xmlns="http://www.w3.org/2000/svg" width="68" height="65" viewBox="0 0 68 65">
       <text id="L" transform="translate(34 52)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.377" y="0">L</tspan></text>
     </svg>`,
-    itemDesc:
-      'Cicero, written in 45 BC. This book is a treatise on the theory of ethics,',
   },
 ];
 
-const LandingPage = () => {
+export const LandingPage = () => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -73,5 +65,3 @@ const styles = StyleSheet.create({
     marginHorizontal: SIZE_X_LARGE,
   },
 });
-
-export default LandingPage;

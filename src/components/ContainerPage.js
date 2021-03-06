@@ -1,10 +1,10 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {SIZE_XXX_LARGE, SIZE_X_LARGE} from '../../styles/styles';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {SvgXml} from 'react-native-svg';
+import {SIZE_MEDIUM, SIZE_XXX_LARGE, SIZE_X_LARGE} from '../styles/styles';
 
-export const Pastoral = ({route}) => {
-  const {itemDesc} = route.params;
+export const ContainerPage = ({imagem, children}) => {
   const navigation = useNavigation();
 
   return (
@@ -12,13 +12,17 @@ export const Pastoral = ({route}) => {
       <View style={styles.headerContainer}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
-            source={require('../../assets/images/flecha-esquerda.png')}
+            source={require('../assets/images/flecha-esquerda.png')}
             style={styles.imagemSeta}
           />
         </TouchableOpacity>
+        {imagem && (
+          <View style={styles.containerImagem}>
+            <SvgXml xml={imagem} width={38} height={38} />
+          </View>
+        )}
       </View>
-      <Text style={styles.textPastoral}>Pastoral</Text>
-      <Text>{itemDesc}</Text>
+      <View>{children}</View>
     </View>
   );
 };
@@ -37,8 +41,7 @@ const styles = StyleSheet.create({
     marginTop: SIZE_XXX_LARGE,
     marginLeft: SIZE_X_LARGE,
   },
-  textPastoral: {
-    textAlign: 'center',
-    marginTop: 300,
+  containerImagem: {
+    padding: SIZE_MEDIUM,
   },
 });

@@ -1,24 +1,23 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {DescricaoItem} from './componentes/DescricaoItem';
+
+import {AoVivo} from '../AoVivo';
+import {Doacao} from '../Doacao';
+import {Comunidade} from '../Comunidade';
+import {Missao} from '../Missao';
 
 export const DetalhesItem = ({route}) => {
-  const {imagem, titulo, itemDesc, id} = route.params;
+  const {imagem, titulo, id} = route.params;
 
-  return (
-    <View style={styles.container}>
-      <DescricaoItem
-        imagem={imagem}
-        titulo={titulo}
-        itemDesc={itemDesc}
-        id={id}
-      />
-    </View>
-  );
+  switch (id) {
+    case 'aoVivo':
+      return <AoVivo imagem={imagem} titulo={titulo} />;
+    case 'doacao':
+      return <Doacao imagem={imagem} titulo={titulo} />;
+    case 'comunidade':
+      return <Comunidade imagem={imagem} titulo={titulo} />;
+    case 'missao':
+      return <Missao imagem={imagem} titulo={titulo} />;
+    default:
+      break;
+  }
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
