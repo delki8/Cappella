@@ -6,6 +6,7 @@ export const BEIGE = '#FAEEE7';
 export const SHADOW_BEIGE = '#00000029';
 export const RED = 'red';
 export const ORANGE = '#D25C15';
+export const DARKORANGE = '#D66C2C';
 export const ACTIVE_GREEN = '#77A02D';
 export const INACTIVE_GRAY = '#B1AEAE';
 export const IRON = '#707070';

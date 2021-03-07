@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     borderColor: IRON,
     borderWidth: 0.5,
     justifyContent: 'center',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
   },
   containerItem: {
     width: 283,
