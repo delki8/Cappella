@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
-  FONT_FAMILY_BOLD,
   TITLE,
   SIZE_XXX_LARGE,
   FONT_FAMILY_LIGHT,
@@ -19,33 +18,26 @@ export const Doacao = () => {
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = DOACAO;
 
   return (
-    <ContainerPage imagem={IconDoacao}>
-      <View style={styles.container}>
-        <Text style={styles.titulo}>Dados da nossa conta</Text>
-        <View style={styles.containerConta}>
-          <View style={styles.banco}>
-            <Text style={styles.conta}>{nomeBanco}</Text>
-          </View>
-          <View style={styles.containerItem}>
-            <Text style={styles.conta}>{banco}</Text>
-            <Text style={styles.conta}>{agencia}</Text>
-            <Text style={styles.conta}>{cc}</Text>
-            <Text style={styles.conta}>{operacao}</Text>
-          </View>
+    <ContainerPage imagem={IconDoacao} titulo={'Doação'}>
+      <Text style={styles.titulo}>Dados da nossa conta</Text>
+      <View style={styles.containerConta}>
+        <View style={styles.banco}>
+          <Text style={styles.conta}>{nomeBanco}</Text>
         </View>
-        <Text style={styles.detalhesIgreja}>{igreja}</Text>
-        <Text style={styles.detalhesIgreja}>{cnpj}</Text>
+        <View style={styles.containerItem}>
+          <Text style={styles.conta}>{banco}</Text>
+          <Text style={styles.conta}>{agencia}</Text>
+          <Text style={styles.conta}>{cc}</Text>
+          <Text style={styles.conta}>{operacao}</Text>
+        </View>
       </View>
+      <Text style={styles.detalhesIgreja}>{igreja}</Text>
+      <Text style={styles.detalhesIgreja}>{cnpj}</Text>
     </ContainerPage>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   conta: {
     color: ORANGE,
     fontSize: 14,
@@ -55,7 +47,8 @@ const styles = StyleSheet.create({
   titulo: {
     color: TITLE,
     fontSize: 16,
-    fontFamily: FONT_FAMILY_BOLD,
+    fontFamily: FONT_FAMILY_REGULAR,
+    marginTop: 200,
   },
   detalhesIgreja: {
     color: TITLE,
@@ -87,8 +80,5 @@ const styles = StyleSheet.create({
       height: 0.2,
     },
     shadowOpacity: 0.2,
-  },
-  imagem: {
-    height: 84,
   },
 });

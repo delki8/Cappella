@@ -1,10 +1,16 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {SIZE_MEDIUM, SIZE_XXX_LARGE, SIZE_X_LARGE} from '../styles/styles';
+import {
+  FONT_FAMILY_BOLD,
+  SIZE_MEDIUM,
+  SIZE_XXX_LARGE,
+  SIZE_X_LARGE,
+  TITLE,
+} from '../styles/styles';
 
-export const ContainerPage = ({imagem, children}) => {
+export const ContainerPage = ({imagem, titulo, children}) => {
   const navigation = useNavigation();
 
   return (
@@ -22,7 +28,10 @@ export const ContainerPage = ({imagem, children}) => {
           </View>
         )}
       </View>
-      {children}
+      <View style={styles.containerPagina}>
+        <Text style={styles.titulo}>{titulo}</Text>
+        {children}
+      </View>
     </View>
   );
 };
@@ -30,6 +39,11 @@ export const ContainerPage = ({imagem, children}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  titulo: {
+    color: TITLE,
+    fontSize: 16,
+    fontFamily: FONT_FAMILY_BOLD,
   },
   headerContainer: {
     flexDirection: 'row',
@@ -43,5 +57,8 @@ const styles = StyleSheet.create({
   },
   containerImagem: {
     padding: SIZE_MEDIUM,
+  },
+  containerPagina: {
+    alignItems: 'center',
   },
 });

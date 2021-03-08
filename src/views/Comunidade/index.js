@@ -24,40 +24,27 @@ export const Comunidade = ({imagem}) => {
   };
 
   return (
-    <ContainerPage imagem={imagem}>
-      <View style={styles.container}>
-        <Text style={styles.titulo}>Nossa Comunidade</Text>
-        <TouchableOpacity
-          style={styles.containerComunidade}
-          onPress={() => handlePress(facebook)}>
-          <Text style={styles.redes}>Seguir no Facebook</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.containerComunidade}
-          onPress={() => handlePress(whatsapp)}>
-          <Text style={styles.redes}>Entrar no grupo do Whatsapp</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.containerComunidade}
-          onPress={() => handlePress(instagram)}>
-          <Text style={styles.redes}>Seguir no Instagram</Text>
-        </TouchableOpacity>
-      </View>
+    <ContainerPage imagem={imagem} titulo={'Nossa comunidade'}>
+      <TouchableOpacity
+        style={styles.containerComunidade}
+        onPress={() => handlePress(facebook)}>
+        <Text style={styles.redes}>Seguir no Facebook</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.containerComunidade}
+        onPress={() => handlePress(whatsapp)}>
+        <Text style={styles.redes}>Entrar no grupo do Whatsapp</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.containerComunidade}
+        onPress={() => handlePress(instagram)}>
+        <Text style={styles.redes}>Seguir no Instagram</Text>
+      </TouchableOpacity>
     </ContainerPage>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  titulo: {
-    color: TITLE,
-    fontSize: 30,
-    fontFamily: FONT_FAMILY_BOLD,
-  },
   containerComunidade: {
     width: 177,
     height: 76,

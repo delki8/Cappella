@@ -4,20 +4,17 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {ContainerPage} from '../../components/ContainerPage';
 import {PASTORAL} from './data/Pastoral';
 import {
-  TITLE,
   SIZE_LARGE,
   SIZE_X_LARGE,
   SIZE_XX_LARGE,
-  FONT_FAMILY_BOLD,
   FONT_FAMILY_REGULAR,
   FONT_FAMILY_LIGHT,
 } from '../../styles/styles';
 
 export const Pastoral = () => {
   return (
-    <ContainerPage>
+    <ContainerPage titulo={PASTORAL.titulo}>
       <ScrollView style={styles.container}>
-        <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
         <Text style={styles.autor}>{PASTORAL.autor}</Text>
         <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
       </ScrollView>
@@ -30,12 +27,6 @@ const styles = StyleSheet.create({
     marginTop: SIZE_XX_LARGE,
     marginLeft: SIZE_X_LARGE,
     marginRight: SIZE_LARGE,
-  },
-  titulo: {
-    color: TITLE,
-    fontSize: 21,
-    fontFamily: FONT_FAMILY_BOLD,
-    marginBottom: SIZE_LARGE,
   },
   autor: {
     fontSize: 11,

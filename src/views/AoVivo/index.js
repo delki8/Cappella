@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -18,7 +17,7 @@ import {
 } from '../../styles/styles';
 import {AOVIVO} from './data/AoVivo';
 
-export const AoVivo = ({imagem}) => {
+export const AoVivo = ({imagem, titulo}) => {
   const url = AOVIVO.url;
 
   const handlePress = useCallback(async () => {
@@ -32,34 +31,28 @@ export const AoVivo = ({imagem}) => {
   }, [url]);
 
   return (
-    <ContainerPage imagem={imagem}>
-      <View style={styles.container}>
-        <Text style={styles.titulo}>Assine nosso canal</Text>
-        <TouchableOpacity style={styles.containerItem} onPress={handlePress}>
-          <Image
-            source={require('../../assets/images/video-icon.png')}
-            style={styles.imagem}
-            resizeMode="contain"
-          />
-        </TouchableOpacity>
-        <Text style={styles.notificacoes}>
-          Ative as notificações para ser sempre avisado quando estamos Ao Vivo!
-        </Text>
-      </View>
+    <ContainerPage imagem={imagem} titulo={titulo}>
+      <Text style={styles.titulo}>Assine nosso canal</Text>
+      <TouchableOpacity style={styles.containerItem} onPress={handlePress}>
+        <Image
+          source={require('../../assets/images/video-icon.png')}
+          style={styles.imagem}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+      <Text style={styles.notificacoes}>
+        Ative as notificações para ser sempre avisado quando estamos Ao Vivo!
+      </Text>
     </ContainerPage>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   titulo: {
     color: TITLE,
     fontSize: 16,
     fontFamily: FONT_FAMILY_REGULAR,
+    marginTop: 200,
   },
   notificacoes: {
     color: TITLE,
