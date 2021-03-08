@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
@@ -21,19 +21,21 @@ export const Agenda = () => {
       <ContainerPage imagem={IconAgenda}>
         <View style={styles.container}>
           <Text style={styles.titulo}>Agenda de Encontros</Text>
-          <View style={styles.flatListContainer}>
-            {AGENDA.map((agenda) => (
-              <>
-                <Text style={styles.dia}>{agenda.dia}</Text>
-                <FlatList
-                  numColumns={1}
-                  data={agenda.atividades}
-                  renderItem={({item}) => <AgendaItem {...item} />}
-                  keyExtractor={(item) => item.nome}
-                />
-              </>
-            ))}
-          </View>
+          <ScrollView style={styles.scrollViewContainer}>
+            <View style={styles.flatListContainer}>
+              {AGENDA.map((agenda) => (
+                <>
+                  <Text style={styles.dia}>{agenda.dia}</Text>
+                  <FlatList
+                    numColumns={1}
+                    data={agenda.atividades}
+                    renderItem={({item}) => <AgendaItem {...item} />}
+                    keyExtractor={(item) => item.nome}
+                  />
+                </>
+              ))}
+            </View>
+          </ScrollView>
         </View>
       </ContainerPage>
     </SafeAreaView>
@@ -45,15 +47,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    flex: 1,
-    marginTop: SIZE_XX_LARGE,
-    marginLeft: SIZE_X_LARGE,
-    marginRight: SIZE_LARGE,
-    justifyContent: 'center',
     alignItems: 'center',
   },
+  scrollViewContainer: {
+    marginLeft: SIZE_X_LARGE,
+    marginRight: SIZE_LARGE,
+  },
   flatListContainer: {
-    flex: 1,
     marginTop: SIZE_XX_LARGE,
   },
   titulo: {
@@ -66,8 +66,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: FONT_FAMILY_SEMI_BOLD,
     marginBottom: SIZE_SMALL,
-  },
-  imagem: {
-    height: 84,
   },
 });
