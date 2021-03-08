@@ -19,3 +19,8 @@ export const IconMissao = `
 <svg xmlns="http://www.w3.org/2000/svg" width="68" height="65" viewBox="0 0 68 65">
   <text id="L" transform="translate(34 52)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.377" y="0">L</tspan></text>
 </svg>`;
+
+export const IconAgenda = `
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 40 38">
+  <text id="X" transform="translate(20 30)" fill="#df8c5b" font-size="38" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-19.057" y="0">X</tspan></text>
+</svg>`;

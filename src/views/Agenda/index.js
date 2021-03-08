@@ -13,11 +13,12 @@ import {
   SIZE_XX_LARGE,
   SIZE_SMALL,
 } from '../../styles/styles';
+import {IconAgenda} from '../../assets/images/Icons';
 
 export const Agenda = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ContainerPage>
+      <ContainerPage imagem={IconAgenda}>
         <View style={styles.container}>
           <Text style={styles.titulo}>Agenda de Encontros</Text>
           <View style={styles.flatListContainer}>

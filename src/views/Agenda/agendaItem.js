@@ -4,6 +4,7 @@ import {
   FONT_FAMILY_BOLD,
   FONT_FAMILY_REGULAR,
   SIZE_X_LARGE,
+  SIZE_LARGE,
 } from '../../styles/styles';
 
 export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
@@ -27,9 +28,9 @@ const getStyles = (backgroundColor, color) => {
     containerHorario: {
       alignItems: 'center',
       justifyContent: 'center',
-      marginLeft: SIZE_X_LARGE,
+      marginLeft: SIZE_LARGE,
       width: 44,
-      height: 67,
+      height: 45,
     },
     horario: {
       color,
@@ -44,6 +45,9 @@ const getStyles = (backgroundColor, color) => {
     atividade: {
       color,
       fontSize: 14,
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      textAlign: 'left',
       fontFamily: FONT_FAMILY_BOLD,
       marginRight: SIZE_X_LARGE,
     },
