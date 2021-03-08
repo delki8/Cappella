@@ -44,7 +44,5 @@ const styles = StyleSheet.create({
   descricao: {
     fontSize: 14,
     fontFamily: FONT_FAMILY_REGULAR,
-    marginTop: 0,
-    width: '100%',
   },
 });

@@ -12,6 +12,7 @@ export const RED = 'red';
 export const ORANGE = '#D25C15';
 export const DARKORANGE = '#D66C2C';
 export const ACTIVE_GREEN = '#77A02D';
+export const DARKGREEN = '#ADC681';
 export const INACTIVE_GRAY = '#B1AEAE';
 export const IRON = '#707070';
 export const GRAY = '#D9D9D9';
@@ -19,6 +20,7 @@ export const OTHERGRAY = '#C4C3C3';
 export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#F2F2F2';
 export const TITLE = '#1E98A8';
+export const LIGHTTITLE = '#78C1CA';
 
 // TIPOGRAFIA
 export const FONT_FAMILY_LIGHT = 'OpenSans-Light';
