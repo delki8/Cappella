@@ -3,6 +3,10 @@ export const COR_DE_FUNDO = '#F4F0F4';
 export const BLACK = '#000000';
 export const WHITE = '#fff';
 export const BEIGE = '#FAEEE7';
+export const DARKBEIGE = '#F6DED0';
+export const BLUE = '#4BACB9';
+export const LIGHTBLUE = '#BBE0E4';
+export const GREEN = '#C8D9AB';
 export const SHADOW_BEIGE = '#00000029';
 export const RED = 'red';
 export const ORANGE = '#D25C15';
@@ -11,11 +15,10 @@ export const ACTIVE_GREEN = '#77A02D';
 export const INACTIVE_GRAY = '#B1AEAE';
 export const IRON = '#707070';
 export const GRAY = '#D9D9D9';
+export const OTHERGRAY = '#C4C3C3';
 export const LIGHTGRAY = '#CACACA';
-export const LIGHTERGRAY = '#ACAAAB';
-export const LIGHTBLUE = '#00adef';
+export const LIGHTERGRAY = '#F2F2F2';
 export const TITLE = '#1E98A8';
-export const COR_BOTAO_ACAO = LIGHTBLUE;
 
 // TIPOGRAFIA
 export const FONT_FAMILY_LIGHT = 'OpenSans-Light';

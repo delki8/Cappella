@@ -1,18 +1,31 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, View, FlatList} from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
+import {MISSAO} from './data/Missao';
+import {MissaoItem} from './missaoItem';
 
-export const Missao = ({imagem, titulo}) => {
+export const Missao = ({imagem}) => {
   return (
     <ContainerPage imagem={imagem}>
-      <Text style={styles.containerTitulo}>{titulo}</Text>
+      <View style={styles.container}>
+        <FlatList
+          numColumns={1}
+          data={MISSAO}
+          renderItem={({item}) => <MissaoItem {...item} />}
+          keyExtractor={(item) => item.nome}
+        />
+      </View>
     </ContainerPage>
   );
 };
 
 const styles = StyleSheet.create({
-  containerTitulo: {
-    textAlign: 'center',
-    marginTop: 300,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imagem: {
+    height: 84,
   },
 });
