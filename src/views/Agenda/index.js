@@ -5,7 +5,6 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
 import {
-  FONT_FAMILY_BOLD,
   TITLE,
   FONT_FAMILY_SEMI_BOLD,
   SIZE_LARGE,
