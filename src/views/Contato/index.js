@@ -29,7 +29,6 @@ export const Contato = () => {
                 <Text style={styles.telefone}>{telefone}</Text>
               </View>
             </View>
-            <View style={styles.containerMapa} />
           </View>
         </>
       </ContainerPage>
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
   },
   containerEndereco: {
     flexDirection: 'row',
-    width: 140,
+    width: 240,
     height: 85,
   },
   containerEnderecoMapa: {
@@ -61,11 +60,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     alignSelf: 'auto',
-  },
-  containerMapa: {
-    width: 134,
-    height: 235,
-    borderWidth: 1,
   },
   endereco: {
     color: ACTIVE_GREEN,

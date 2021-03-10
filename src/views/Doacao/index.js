@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
   TITLE,
@@ -18,26 +18,31 @@ export const Doacao = () => {
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = DOACAO;
 
   return (
-    <ContainerPage imagem={IconDoacao} titulo={'Doação'}>
-      <Text style={styles.titulo}>Dados da nossa conta</Text>
-      <View style={styles.containerConta}>
-        <View style={styles.banco}>
-          <Text style={styles.conta}>{nomeBanco}</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <ContainerPage imagem={IconDoacao} titulo={'Doação'}>
+        <Text style={styles.titulo}>Dados da nossa conta</Text>
+        <View style={styles.containerConta}>
+          <View style={styles.banco}>
+            <Text style={styles.conta}>{nomeBanco}</Text>
+          </View>
+          <View style={styles.containerItem}>
+            <Text style={styles.conta}>{banco}</Text>
+            <Text style={styles.conta}>{agencia}</Text>
+            <Text style={styles.conta}>{cc}</Text>
+            <Text style={styles.conta}>{operacao}</Text>
+          </View>
         </View>
-        <View style={styles.containerItem}>
-          <Text style={styles.conta}>{banco}</Text>
-          <Text style={styles.conta}>{agencia}</Text>
-          <Text style={styles.conta}>{cc}</Text>
-          <Text style={styles.conta}>{operacao}</Text>
-        </View>
-      </View>
-      <Text style={styles.detalhesIgreja}>{igreja}</Text>
-      <Text style={styles.detalhesIgreja}>{cnpj}</Text>
-    </ContainerPage>
+        <Text style={styles.detalhesIgreja}>{igreja}</Text>
+        <Text style={styles.detalhesIgreja}>{cnpj}</Text>
+      </ContainerPage>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   conta: {
     color: ORANGE,
     fontSize: 14,

@@ -1,6 +1,6 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {FlatList, ScrollView} from 'react-native-gesture-handler';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
@@ -15,24 +15,31 @@ import {
 import {IconAgenda} from '../../assets/images/Icons';
 
 export const Agenda = () => {
+  const renderItem = ({item}, index) => {
+    return <AgendaItem key={index} {...item} />;
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ContainerPage imagem={IconAgenda} titulo={'Agenda de Encontros'}>
-        <ScrollView style={styles.scrollViewContainer}>
-          <View style={styles.flatListContainer}>
-            {AGENDA.map((agenda) => (
-              <>
-                <Text style={styles.dia}>{agenda.dia}</Text>
-                <FlatList
-                  numColumns={1}
-                  data={agenda.atividades}
-                  renderItem={({item}) => <AgendaItem {...item} />}
-                  keyExtractor={(item) => item.nome}
-                />
-              </>
-            ))}
-          </View>
-        </ScrollView>
+        <FlatList
+          numColumns={1}
+          data={AGENDA}
+          style={styles.flatListContainer}
+          renderItem={({item}) => {
+            return (
+              <FlatList
+                style={styles.scrollViewContainer}
+                numColumns={1}
+                data={item.atividades}
+                renderItem={renderItem}
+                ListHeaderComponent={<Text style={styles.dia}>{item.dia}</Text>}
+                keyExtractor={(dia) => dia.atividade}
+              />
+            );
+          }}
+          keyExtractor={(item) => item.dia}
+        />
       </ContainerPage>
     </SafeAreaView>
   );
