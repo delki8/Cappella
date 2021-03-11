@@ -5,7 +5,7 @@ import {PastoralItem} from './components/PastoralItem';
 import {SIZE_X_LARGE} from '../../styles/styles';
 import {
   IconAoVivo,
-  IconDoacao,
+  IconContribua,
   IconComunidade,
   IconMissao,
 } from '../../assets/images/Icons';
@@ -17,9 +17,9 @@ const DATA = [
     imagem: IconAoVivo,
   },
   {
-    id: 'doacao',
-    titulo: 'Doação',
-    imagem: IconDoacao,
+    id: 'contribua',
+    titulo: 'Contribua',
+    imagem: IconContribua,
   },
   {
     id: 'comunidade',

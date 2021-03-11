@@ -1,4 +1,4 @@
-export const DOACAO = {
+export const CONTRIBUA = {
   nomeBanco: 'CAIXA ECONOMICA FEDERAL',
   banco: 'Banco 104',
   agencia: 'Agencia 0996',

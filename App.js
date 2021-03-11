@@ -19,7 +19,7 @@ import {Contato} from './src/views/Contato';
 import {Agenda} from './src/views/Agenda';
 
 import {COR_DE_FUNDO, ACTIVE_GREEN, INACTIVE_GRAY} from './src/styles/styles';
-import {Doacao} from './src/views/Doacao';
+import {Contribua} from './src/views/Contribua';
 
 const HomeStack = createStackNavigator();
 
@@ -66,7 +66,7 @@ export default function App() {
                   return (
                     <FontAwesomeIcon icon={faHome} size={size} color={color} />
                   );
-                case 'Doacao':
+                case 'Contribua':
                   return (
                     <FontAwesomeIcon
                       icon={faHandHoldingHeart}
@@ -101,7 +101,7 @@ export default function App() {
             showLabel: false,
           }}>
           <Tab.Screen name="Home" component={HomeStackScreen} />
-          <Tab.Screen name="Doacao" component={Doacao} />
+          <Tab.Screen name="Contribua" component={Contribua} />
           <Tab.Screen name="Agenda" component={Agenda} />
           <Tab.Screen name="Contato" component={Contato} />
         </Tab.Navigator>

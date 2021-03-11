@@ -11,15 +11,15 @@ import {
   WHITE,
   IRON,
 } from '../../styles/styles';
-import {IconDoacao} from '../../assets/images/Icons';
-import {DOACAO} from './data/Doacao';
+import {IconContribua} from '../../assets/images/Icons';
+import {CONTRIBUA} from './data/Contribua';
 
-export const Doacao = () => {
-  const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = DOACAO;
+export const Contribua = () => {
+  const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ContainerPage imagem={IconDoacao} titulo={'Doação'}>
+      <ContainerPage imagem={IconContribua} titulo={'Contribua'}>
         <Text style={styles.titulo}>Dados da nossa conta</Text>
         <View style={styles.containerConta}>
           <View style={styles.banco}>

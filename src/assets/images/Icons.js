@@ -5,7 +5,7 @@ export const IconAoVivo = `
       </g>
     </svg>`;
 
-export const IconDoacao = `
+export const IconContribua = `
 <svg xmlns="http://www.w3.org/2000/svg" width="68" height="65" viewBox="0 0 68 65">
   <text id="H" transform="translate(34 52)" fill="#df8c5b" font-size="65" font-family="Liturgica-Medium, Liturgica" font-weight="500"><tspan x="-33.182" y="0">H</tspan></text>
 </svg>`;
