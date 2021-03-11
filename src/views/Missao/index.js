@@ -22,5 +22,6 @@ export const Missao = ({imagem, titulo}) => {
 const styles = StyleSheet.create({
   flatList: {
     marginTop: SIZE_LARGE,
+    height: 650,
   },
 });

@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     marginTop: SIZE_XX_LARGE,
     marginLeft: SIZE_X_LARGE,
     marginRight: SIZE_LARGE,
+    height: 650,
   },
   autor: {
     fontSize: 11,

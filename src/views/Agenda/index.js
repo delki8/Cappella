@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   },
   flatListContainer: {
     marginTop: SIZE_XX_LARGE,
+    height: 650,
   },
   dia: {
     color: TITLE,
