@@ -18,7 +18,12 @@ import {Pastoral} from './src/views/Pastoral';
 import {Contato} from './src/views/Contato';
 import {Agenda} from './src/views/Agenda';
 
-import {COR_DE_FUNDO, ACTIVE_GREEN, INACTIVE_GRAY} from './src/styles/styles';
+import {
+  COR_DE_FUNDO,
+  ACTIVE_GREEN,
+  INACTIVE_GRAY,
+  TITLE,
+} from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
 
 const HomeStack = createStackNavigator();
@@ -56,7 +61,9 @@ export default function App() {
 
   return (
     <>
-      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
+      {Platform.OS === 'ios' && (
+        <StatusBar backgroundColor={TITLE} barStyle="light-content" />
+      )}
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({route}) => ({
