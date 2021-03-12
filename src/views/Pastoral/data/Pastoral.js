@@ -1,5 +1,5 @@
 export const PASTORAL = {
-  titulo: 'A MELHOR OPÇÃO DE INVESTIMENTO’',
+  titulo: 'A MELHOR OPÇÃO DE INVESTIMENTO',
   autor: 'Marcos E. Fink',
   descricao: `
   Às vezes, as pessoas me perguntam qual é a melhor opção de investimento. 

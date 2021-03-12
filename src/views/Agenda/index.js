@@ -1,6 +1,7 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
@@ -22,24 +23,28 @@ export const Agenda = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ContainerPage imagem={IconAgenda} titulo={'Agenda de Encontros'}>
-        <FlatList
-          numColumns={1}
-          data={AGENDA}
-          style={styles.flatListContainer}
-          renderItem={({item}) => {
-            return (
-              <FlatList
-                style={styles.scrollViewContainer}
-                numColumns={1}
-                data={item.atividades}
-                renderItem={renderItem}
-                ListHeaderComponent={<Text style={styles.dia}>{item.dia}</Text>}
-                keyExtractor={(dia) => dia.atividade}
-              />
-            );
-          }}
-          keyExtractor={(item) => item.dia}
-        />
+        <View style={styles.container}>
+          <FlatList
+            numColumns={1}
+            data={AGENDA}
+            style={styles.flatListContainer}
+            renderItem={({item}) => {
+              return (
+                <FlatList
+                  style={styles.scrollViewContainer}
+                  numColumns={1}
+                  data={item.atividades}
+                  renderItem={renderItem}
+                  ListHeaderComponent={
+                    <Text style={styles.dia}>{item.dia}</Text>
+                  }
+                  keyExtractor={(dia) => dia.atividade}
+                />
+              );
+            }}
+            keyExtractor={(item) => item.dia}
+          />
+        </View>
       </ContainerPage>
     </SafeAreaView>
   );
@@ -48,6 +53,9 @@ export const Agenda = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+  },
+  container: {
+    height: hp('75%'),
   },
   scrollViewContainer: {
     marginLeft: SIZE_X_LARGE,

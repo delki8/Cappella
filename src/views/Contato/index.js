@@ -10,6 +10,10 @@ import {
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {
   IconArroba,
   IconLocation,
   IconTelefone,
@@ -74,9 +78,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    marginLeft: SIZE_X_LARGE,
-    marginRight: SIZE_XX_LARGE,
     marginTop: -70,
+    width: wp('80%'),
   },
   imagem: {
     width: 335,

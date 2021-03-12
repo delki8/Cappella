@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import {ContainerPage} from '../../components/ContainerPage';
 import {PASTORAL} from './data/Pastoral';
 import {
-  SIZE_LARGE,
-  SIZE_X_LARGE,
   SIZE_XX_LARGE,
   FONT_FAMILY_REGULAR,
   FONT_FAMILY_LIGHT,
@@ -25,9 +27,8 @@ export const Pastoral = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: SIZE_XX_LARGE,
-    marginLeft: SIZE_X_LARGE,
-    marginRight: SIZE_LARGE,
-    height: 650,
+    height: hp('73%'),
+    width: wp('80%'),
   },
   autor: {
     fontSize: 11,

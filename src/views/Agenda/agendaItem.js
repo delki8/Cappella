@@ -1,6 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {
   FONT_FAMILY_BOLD,
   FONT_FAMILY_REGULAR,
   SIZE_X_LARGE,
@@ -25,32 +29,6 @@ export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
 
 const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
-    containerHorario: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginLeft: SIZE_LARGE,
-      width: 44,
-      height: 45,
-    },
-    horario: {
-      color,
-      fontSize: 40,
-      fontFamily: FONT_FAMILY_BOLD,
-    },
-    horas: {
-      color,
-      fontSize: 16,
-      fontFamily: FONT_FAMILY_REGULAR,
-    },
-    atividade: {
-      color,
-      fontSize: 14,
-      alignItems: 'flex-start',
-      justifyContent: 'flex-start',
-      textAlign: 'left',
-      fontFamily: FONT_FAMILY_BOLD,
-      marginRight: SIZE_X_LARGE,
-    },
     containerAgenda: {
       width: 284,
       height: 102,
@@ -67,6 +45,32 @@ const getStyles = (backgroundColor, color) => {
         height: 0.2,
       },
       shadowOpacity: 0.2,
+    },
+    containerHorario: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginLeft: SIZE_LARGE,
+      width: 44,
+      height: 45,
+    },
+    horario: {
+      color,
+      fontSize: 38,
+      fontFamily: FONT_FAMILY_BOLD,
+    },
+    horas: {
+      color,
+      fontSize: 16,
+      fontFamily: FONT_FAMILY_REGULAR,
+    },
+    atividade: {
+      color,
+      fontSize: 14,
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      textAlign: 'left',
+      fontFamily: FONT_FAMILY_BOLD,
+      marginRight: SIZE_X_LARGE,
     },
   });
 };
