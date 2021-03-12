@@ -1,12 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {
-  FONT_FAMILY_BOLD,
-  SIZE_SMALL,
-  BEIGE,
-  SHADOW_BEIGE,
-  TITLE,
-} from '../styles/styles';
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {FONT_FAMILY_BOLD, BEIGE, SHADOW_BEIGE, TITLE} from '../styles/styles';
 
 export const GenericItem = ({titulo, icon, width, height, onNavigate}) => {
   const styles = getStyles(width, height);
@@ -43,7 +41,7 @@ const getStyles = (width, height) => {
     texto: {
       marginTop: 8,
       fontFamily: FONT_FAMILY_BOLD,
-      fontSize: SIZE_SMALL,
+      fontSize: wp('3.5%'),
       color: TITLE,
     },
   });

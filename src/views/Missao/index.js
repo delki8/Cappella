@@ -1,11 +1,15 @@
 import React from 'react';
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList, useWindowDimensions} from 'react-native';
 import {ContainerPage} from '../../components/ContainerPage';
 import {SIZE_LARGE} from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 import {MISSAO} from './data/Missao';
 import {MissaoItem} from './missaoItem';
 
 export const Missao = ({imagem, titulo}) => {
+  const {width} = useWindowDimensions();
+  const styles = getStyles(getSize(width));
+
   return (
     <ContainerPage imagem={imagem} titulo={titulo}>
       <FlatList
@@ -19,9 +23,11 @@ export const Missao = ({imagem, titulo}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  flatList: {
-    marginTop: SIZE_LARGE,
-    height: 650,
-  },
-});
+const getStyles = (size) => {
+  return StyleSheet.create({
+    flatList: {
+      marginTop: SIZE_LARGE,
+      height: size === 'small' ? 350 : 650,
+    },
+  });
+};

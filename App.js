@@ -125,7 +125,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COR_DE_FUNDO,
-    height: hp('100%'),
-    width: wp('100%'),
+    marginTop: hp('10%'),
   },
 });

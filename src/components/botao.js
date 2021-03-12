@@ -1,13 +1,24 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  useWindowDimensions,
+} from 'react-native';
 import {
   FONT_FAMILY_SEMI_BOLD,
   WHITE,
   ORANGE,
   SIZE_X_SMALL,
+  SIZE_XX_SMALL,
 } from '../styles/styles';
+import {getSize} from '../utils/utils';
 
 export const Botao = ({titulo, onPress}) => {
+  const {width} = useWindowDimensions();
+  const styles = getStyles(getSize(width));
+
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.botaoContainer}>
@@ -17,17 +28,19 @@ export const Botao = ({titulo, onPress}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  botaoContainer: {
-    backgroundColor: ORANGE,
-    padding: SIZE_X_SMALL,
-    borderRadius: 30,
-    opacity: 0.56,
-  },
-  botaoTexto: {
-    fontFamily: FONT_FAMILY_SEMI_BOLD,
-    fontSize: 20,
-    color: WHITE,
-    textAlign: 'center',
-  },
-});
+const getStyles = (size) => {
+  return StyleSheet.create({
+    botaoContainer: {
+      backgroundColor: ORANGE,
+      padding: size === 'small' ? SIZE_XX_SMALL : SIZE_X_SMALL,
+      borderRadius: 30,
+      opacity: 0.56,
+    },
+    botaoTexto: {
+      fontFamily: FONT_FAMILY_SEMI_BOLD,
+      fontSize: size === 'small' ? 16 : 20,
+      color: WHITE,
+      textAlign: 'center',
+    },
+  });
+};

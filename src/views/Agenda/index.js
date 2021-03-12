@@ -1,5 +1,11 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {ContainerPage} from '../../components/ContainerPage';
@@ -14,8 +20,12 @@ import {
   SIZE_SMALL,
 } from '../../styles/styles';
 import {IconAgenda} from '../../assets/images/Icons';
+import {getSize} from '../../utils/utils';
 
 export const Agenda = () => {
+  const {width} = useWindowDimensions();
+  const styles = getStyles(getSize(width));
+
   const renderItem = ({item}, index) => {
     return <AgendaItem key={index} {...item} />;
   };
@@ -50,25 +60,27 @@ export const Agenda = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-  container: {
-    height: hp('75%'),
-  },
-  scrollViewContainer: {
-    marginLeft: SIZE_X_LARGE,
-    marginRight: SIZE_LARGE,
-  },
-  flatListContainer: {
-    marginTop: SIZE_XX_LARGE,
-    height: 650,
-  },
-  dia: {
-    color: TITLE,
-    fontSize: 16,
-    fontFamily: FONT_FAMILY_SEMI_BOLD,
-    marginBottom: SIZE_SMALL,
-  },
-});
+const getStyles = (size) => {
+  return StyleSheet.create({
+    safeArea: {
+      flex: 1,
+    },
+    container: {
+      height: size === 'small' ? hp('70%') : hp('75%'),
+    },
+    scrollViewContainer: {
+      marginLeft: SIZE_X_LARGE,
+      marginRight: SIZE_LARGE,
+    },
+    flatListContainer: {
+      marginTop: SIZE_XX_LARGE,
+      height: 650,
+    },
+    dia: {
+      color: TITLE,
+      fontSize: 16,
+      fontFamily: FONT_FAMILY_SEMI_BOLD,
+      marginBottom: SIZE_SMALL,
+    },
+  });
+};

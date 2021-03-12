@@ -1,5 +1,9 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import {GenericItem} from '../../../../components/GenericItem.js';
 import {Image, StyleSheet} from 'react-native';
 
@@ -17,8 +21,8 @@ export const PastoralItem = () => {
           resizeMode="contain"
         />
       }
-      width={284}
-      height={347}
+      width={wp('100%')}
+      height={hp('40%')}
       onNavigate={() =>
         navigation.push('Pastoral', {
           titulo,
@@ -30,7 +34,7 @@ export const PastoralItem = () => {
 
 const styles = StyleSheet.create({
   imagem: {
-    width: 363,
-    height: 204,
+    width: wp('80%'),
+    height: hp('30%'),
   },
 });
