@@ -96,6 +96,7 @@ const getStyles = (size) => {
       borderWidth: 0.5,
       justifyContent: 'center',
       shadowOpacity: 0.1,
+      elevation: 1,
     },
     containerItem: {
       width: 283,
@@ -107,6 +108,7 @@ const getStyles = (size) => {
         height: 0.2,
       },
       shadowOpacity: 0.2,
+      elevation: 2,
     },
   });
 };

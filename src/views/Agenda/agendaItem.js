@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -10,9 +10,12 @@ import {
   SIZE_X_LARGE,
   SIZE_LARGE,
 } from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 
 export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
-  const styles = getStyles(backgroundColor, color);
+  const {width} = useWindowDimensions();
+  const size = getSize(width);
+  const styles = getStyles(backgroundColor, color, size);
 
   return (
     <View style={styles.containerAgenda}>
@@ -27,24 +30,27 @@ export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
   );
 };
 
-const getStyles = (backgroundColor, color) => {
+const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     containerAgenda: {
-      width: 284,
-      height: 102,
+      width: wp('90%'),
+      height: size === 'small' ? hp('18%') : hp('11%'),
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     containerItem: {
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      width: 283,
-      height: 81,
+      width: size === 'small' ? wp('90%') : wp('80%'),
+      height: size === 'small' ? hp('15%') : hp('10%'),
       backgroundColor,
       shadowOffset: {
         width: 0.2,
         height: 0.2,
       },
       shadowOpacity: 0.2,
+      elevation: 1,
     },
     containerHorario: {
       alignItems: 'center',

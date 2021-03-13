@@ -27,7 +27,7 @@ const getStyles = (size) => {
   return StyleSheet.create({
     flatList: {
       marginTop: SIZE_LARGE,
-      height: size === 'small' ? 350 : 650,
+      height: size === 'small' ? 330 : 630,
     },
   });
 };

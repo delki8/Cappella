@@ -38,6 +38,7 @@ const getStyles = (backgroundColor, color) => {
         height: 0.2,
       },
       shadowOpacity: 0.2,
+      elevation: 2,
     },
   });
 };

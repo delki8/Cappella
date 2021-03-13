@@ -33,6 +33,7 @@ const getStyles = (width, height) => {
         height: 3,
       },
       shadowOpacity: 1,
+      elevation: 5,
       shadowColor: SHADOW_BEIGE,
     },
     imagem: {

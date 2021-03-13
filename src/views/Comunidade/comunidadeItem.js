@@ -1,19 +1,11 @@
 import React from 'react';
-import {
-  Alert,
-  Linking,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import {Alert, Linking, StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {FONT_FAMILY_REGULAR} from '../../styles/styles';
-import {getSize} from '../../utils/utils';
 
 const handlePress = async (url) => {
   const supported = await Linking.canOpenURL(url);
@@ -26,9 +18,7 @@ const handlePress = async (url) => {
 };
 
 export const ComunidadeItem = ({url, text, backgroundColor, color}) => {
-  const {width} = useWindowDimensions();
-  const size = getSize(width);
-  const styles = getStyles(backgroundColor, color, size);
+  const styles = getStyles(backgroundColor, color);
 
   return (
     <View style={styles.container}>
@@ -41,16 +31,16 @@ export const ComunidadeItem = ({url, text, backgroundColor, color}) => {
   );
 };
 
-const getStyles = (backgroundColor, color, size) => {
+const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
     container: {
       width: wp('100%'),
-      height: size === 'small' ? hp('16%') : hp('12%'),
+      height: hp('12%'),
       alignItems: 'center',
     },
     containerComunidade: {
-      width: 283,
-      height: 81,
+      width: wp('90%'),
+      height: hp('10%'),
       backgroundColor,
       justifyContent: 'center',
       shadowOffset: {
@@ -58,6 +48,7 @@ const getStyles = (backgroundColor, color, size) => {
         height: 0.2,
       },
       shadowOpacity: 0.2,
+      elevation: 1,
     },
     redes: {
       color,

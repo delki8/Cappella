@@ -33,7 +33,7 @@ const getStyles = (size) => {
   return StyleSheet.create({
     container: {
       marginTop: SIZE_XX_LARGE,
-      height: size === 'small' ? hp('60%') : hp('73%'),
+      height: size === 'small' ? hp('58%') : hp('66%'),
       width: wp('80%'),
     },
     autor: {

@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   useWindowDimensions,
-  View,
 } from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -14,10 +13,9 @@ import {AGENDA} from './data/Agenda';
 import {
   TITLE,
   FONT_FAMILY_SEMI_BOLD,
-  SIZE_LARGE,
-  SIZE_X_LARGE,
   SIZE_XX_LARGE,
   SIZE_SMALL,
+  SIZE_LARGE,
 } from '../../styles/styles';
 import {IconAgenda} from '../../assets/images/Icons';
 import {getSize} from '../../utils/utils';
@@ -33,28 +31,23 @@ export const Agenda = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ContainerPage imagem={IconAgenda} titulo={'Agenda de Encontros'}>
-        <View style={styles.container}>
-          <FlatList
-            numColumns={1}
-            data={AGENDA}
-            style={styles.flatListContainer}
-            renderItem={({item}) => {
-              return (
-                <FlatList
-                  style={styles.scrollViewContainer}
-                  numColumns={1}
-                  data={item.atividades}
-                  renderItem={renderItem}
-                  ListHeaderComponent={
-                    <Text style={styles.dia}>{item.dia}</Text>
-                  }
-                  keyExtractor={(dia) => dia.atividade}
-                />
-              );
-            }}
-            keyExtractor={(item) => item.dia}
-          />
-        </View>
+        <FlatList
+          numColumns={1}
+          data={AGENDA}
+          style={styles.flatListContainer}
+          renderItem={({item}) => {
+            return (
+              <FlatList
+                numColumns={1}
+                data={item.atividades}
+                renderItem={renderItem}
+                ListHeaderComponent={<Text style={styles.dia}>{item.dia}</Text>}
+                keyExtractor={(dia) => dia.atividade}
+              />
+            );
+          }}
+          keyExtractor={(item) => item.dia}
+        />
       </ContainerPage>
     </SafeAreaView>
   );
@@ -65,22 +58,16 @@ const getStyles = (size) => {
     safeArea: {
       flex: 1,
     },
-    container: {
-      height: size === 'small' ? hp('70%') : hp('75%'),
-    },
-    scrollViewContainer: {
-      marginLeft: SIZE_X_LARGE,
-      marginRight: SIZE_LARGE,
-    },
     flatListContainer: {
-      marginTop: SIZE_XX_LARGE,
-      height: 650,
+      marginTop: size === 'small' ? SIZE_LARGE : SIZE_XX_LARGE,
+      height: size === 'small' ? hp('65%') : hp('72%'),
     },
     dia: {
       color: TITLE,
       fontSize: 16,
       fontFamily: FONT_FAMILY_SEMI_BOLD,
-      marginBottom: SIZE_SMALL,
+      margin: SIZE_SMALL,
+      alignSelf: 'center',
     },
   });
 };
