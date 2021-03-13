@@ -29,8 +29,8 @@ const getStyles = (width, height) => {
       alignItems: 'center',
       margin: 8,
       shadowOffset: {
-        width: 3,
-        height: 3,
+        width: 4,
+        height: 4,
       },
       shadowOpacity: 1,
       elevation: 5,
