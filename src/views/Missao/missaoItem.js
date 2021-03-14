@@ -23,8 +23,8 @@ const getWidth = (size) => {
   switch (size) {
     case 'small':
     case 'medium':
-      return 284;
     case 'regular':
+      return 284;
     case 'big':
       return 384;
     default:

@@ -58,7 +58,7 @@ const getStyles = (size) => {
   return StyleSheet.create({
     droidSafeArea: {
       flex: 1,
-      paddingTop: Platform.OS === 'android' ? 25 : 0,
+      paddingTop: Platform.OS === 'android' ? 10 : 0,
     },
     container: {
       width: wp('100%'),

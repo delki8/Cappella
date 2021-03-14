@@ -2,7 +2,12 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {FONT_FAMILY_BOLD, SIZE_X_LARGE, TITLE} from '../styles/styles';
+import {
+  FONT_FAMILY_BOLD,
+  SIZE_XX_SMALL,
+  SIZE_X_LARGE,
+  TITLE,
+} from '../styles/styles';
 
 export const ContainerPage = ({imagem, titulo, children}) => {
   const navigation = useNavigation();
@@ -31,23 +36,23 @@ export const ContainerPage = ({imagem, titulo, children}) => {
 };
 
 const styles = StyleSheet.create({
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   titulo: {
     color: TITLE,
     fontSize: 16,
     fontFamily: FONT_FAMILY_BOLD,
   },
-  headerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   imagemSeta: {
     width: SIZE_X_LARGE,
     height: SIZE_X_LARGE,
     marginLeft: SIZE_X_LARGE,
+    marginTop: SIZE_XX_SMALL,
   },
   containerImagem: {
     marginRight: SIZE_X_LARGE,
-    marginTop: -10,
   },
   containerPagina: {
     alignItems: 'center',
