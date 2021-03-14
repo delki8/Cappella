@@ -1,9 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {FONT_FAMILY_REGULAR} from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 
 export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
-  const styles = getStyles(backgroundColor, color);
+  const {height} = useWindowDimensions();
+  const size = getSize(height);
+  const styles = getStyles(backgroundColor, color, size);
 
   return (
     <View style={styles.containerMissao}>
@@ -16,7 +19,20 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
   );
 };
 
-const getStyles = (backgroundColor, color) => {
+const getWidth = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return 284;
+    case 'regular':
+    case 'big':
+      return 384;
+    default:
+      break;
+  }
+};
+
+const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     missao: {
       color,
@@ -25,11 +41,10 @@ const getStyles = (backgroundColor, color) => {
       textAlign: 'center',
     },
     containerMissao: {
-      width: 284,
+      width: getWidth(size),
       height: 102,
     },
     containerItem: {
-      width: 283,
       height: 81,
       backgroundColor,
       justifyContent: 'center',

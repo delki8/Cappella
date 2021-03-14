@@ -7,8 +7,8 @@ import {ComunidadeItem} from './comunidadeItem';
 import {COMUNIDADE} from './data/Comunidade';
 
 export const Comunidade = ({imagem}) => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   return (
     <ContainerPage imagem={imagem} titulo={'Nossa Comunidade'}>

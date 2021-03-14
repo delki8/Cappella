@@ -16,8 +16,8 @@ import {
 import {getSize} from '../../utils/utils';
 
 export const Pastoral = () => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   return (
     <ContainerPage titulo={PASTORAL.titulo}>
@@ -33,7 +33,7 @@ const getStyles = (size) => {
   return StyleSheet.create({
     container: {
       marginTop: SIZE_XX_LARGE,
-      height: size === 'small' ? hp('58%') : hp('66%'),
+      height: size === 'small' ? hp('65%') : hp('77%'),
       width: wp('80%'),
     },
     autor: {
