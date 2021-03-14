@@ -1,8 +1,11 @@
-export const getSize = (width) => {
+export const getSize = (height) => {
   let size = 'small';
-  if (width > 359 && width < 811) {
+
+  if (height > 534 && height < 668) {
     size = 'medium';
-  } else if (width > 811) {
+  } else if (height > 667 && height < 897) {
+    size = 'regular';
+  } else if (height > 896) {
     size = 'big';
   }
 

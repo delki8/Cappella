@@ -1,19 +1,9 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Platform,
-  StatusBar,
-  useWindowDimensions,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 import {
   faHandHoldingHeart,
   faHome,
@@ -35,16 +25,12 @@ import {
   TITLE,
 } from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
-import {getSize} from './src/utils/utils';
 
 const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
-
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.droidSafeArea}>
       <HomeStack.Navigator initialRouteName="Landpage">
         <HomeStack.Screen
           name="Landpage"
@@ -131,12 +117,10 @@ export default function App() {
   );
 }
 
-const getStyles = (size) => {
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: COR_DE_FUNDO,
-      marginTop: size === 'small' ? hp('5%') : hp('10%'),
-    },
-  });
-};
+const styles = StyleSheet.create({
+  droidSafeArea: {
+    flex: 1,
+    backgroundColor: COR_DE_FUNDO,
+    paddingTop: Platform.OS === 'android' ? 25 : 0,
+  },
+});

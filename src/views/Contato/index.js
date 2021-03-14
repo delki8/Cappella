@@ -3,6 +3,7 @@ import {
   Alert,
   Image,
   Linking,
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -33,8 +34,8 @@ import {CONTATO} from './data/Contato';
 import {getSize} from '../../utils/utils';
 
 export const Contato = () => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
   const {logo, endereco, telefone, email, localizacao} = CONTATO;
 
   const handlePress = async (url) => {
@@ -48,7 +49,7 @@ export const Contato = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage imagem={IconContato}>
         <View style={styles.container}>
           <Image source={logo} style={styles.imagem} resizeMode="contain" />
@@ -80,8 +81,9 @@ export const Contato = () => {
 
 const getStyles = (size) => {
   return StyleSheet.create({
-    safeArea: {
+    droidSafeArea: {
       flex: 1,
+      paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     container: {
       width: size === 'small' ? wp('100%') : wp('80%'),

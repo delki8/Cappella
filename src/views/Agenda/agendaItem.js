@@ -13,8 +13,8 @@ import {
 import {getSize} from '../../utils/utils';
 
 export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
-  const {width} = useWindowDimensions();
-  const size = getSize(width);
+  const {height} = useWindowDimensions();
+  const size = getSize(height);
   const styles = getStyles(backgroundColor, color, size);
 
   return (

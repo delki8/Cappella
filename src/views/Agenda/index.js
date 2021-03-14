@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -21,15 +22,15 @@ import {IconAgenda} from '../../assets/images/Icons';
 import {getSize} from '../../utils/utils';
 
 export const Agenda = () => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   const renderItem = ({item}, index) => {
     return <AgendaItem key={index} {...item} />;
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage imagem={IconAgenda} titulo={'Agenda de Encontros'}>
         <FlatList
           numColumns={1}
@@ -55,12 +56,13 @@ export const Agenda = () => {
 
 const getStyles = (size) => {
   return StyleSheet.create({
-    safeArea: {
+    droidSafeArea: {
       flex: 1,
+      paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     flatListContainer: {
       marginTop: size === 'small' ? SIZE_LARGE : SIZE_XX_LARGE,
-      height: size === 'small' ? hp('65%') : hp('72%'),
+      height: size === 'small' ? hp('68%') : hp('100%'),
     },
     dia: {
       color: TITLE,

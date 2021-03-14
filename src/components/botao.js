@@ -16,8 +16,8 @@ import {
 import {getSize} from '../utils/utils';
 
 export const Botao = ({titulo, onPress}) => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   return (
     <TouchableOpacity onPress={onPress}>

@@ -1,15 +1,13 @@
 import React from 'react';
 import {
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
   useWindowDimensions,
   View,
 } from 'react-native';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -28,12 +26,12 @@ import {CONTRIBUA} from './data/Contribua';
 import {getSize} from '../../utils/utils';
 
 export const Contribua = () => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage imagem={IconContribua} titulo={'Contribua'}>
         <View style={styles.container}>
           <Text style={styles.titulo}>Dados da nossa conta</Text>
@@ -58,8 +56,9 @@ export const Contribua = () => {
 
 const getStyles = (size) => {
   return StyleSheet.create({
-    safeArea: {
+    droidSafeArea: {
       flex: 1,
+      paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     container: {
       width: wp('100%'),
@@ -75,7 +74,7 @@ const getStyles = (size) => {
       color: TITLE,
       fontSize: size === 'small' ? 16 : 18,
       fontFamily: FONT_FAMILY_REGULAR,
-      marginTop: size === 'small' ? 50 : 150,
+      marginTop: size === 'small' ? 50 : 100,
     },
     detalhesIgreja: {
       color: TITLE,

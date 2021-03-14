@@ -27,8 +27,8 @@ import {getSize} from '../../utils/utils';
 import {AOVIVO} from './data/AoVivo';
 
 export const AoVivo = ({imagem, titulo}) => {
-  const {width} = useWindowDimensions();
-  const styles = getStyles(getSize(width));
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   const url = AOVIVO.url;
 
@@ -71,7 +71,7 @@ const getStyles = (size) => {
       color: TITLE,
       fontSize: size === 'small' ? 16 : 18,
       fontFamily: FONT_FAMILY_REGULAR,
-      marginTop: size === 'small' ? 50 : 150,
+      marginTop: size === 'small' ? 50 : 100,
     },
     notificacoes: {
       color: TITLE,
