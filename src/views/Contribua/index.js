@@ -32,7 +32,7 @@ export const Contribua = () => {
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
-      <ContainerPage imagem={IconContribua} titulo={'Contribua'}>
+      <ContainerPage imagem={IconContribua} titulo={'CONTRIBUA'}>
         <View style={styles.container}>
           <Text style={styles.titulo}>Dados da nossa conta</Text>
           <View style={styles.containerConta}>

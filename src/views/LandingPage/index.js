@@ -13,22 +13,26 @@ import {
 const DATA = [
   {
     id: 'aoVivo',
-    titulo: 'Ao vivo',
+    textoCard: 'Ao vivo',
+    titulo: 'AO VIVO',
     imagem: IconAoVivo,
   },
   {
     id: 'contribua',
-    titulo: 'Contribua',
+    textoCard: 'Contribua',
+    titulo: 'CONTRIBUA',
     imagem: IconContribua,
   },
   {
     id: 'comunidade',
-    titulo: 'Comunidade',
+    textoCard: 'Comunidade',
+    titulo: 'COMUNIDADE',
     imagem: IconComunidade,
   },
   {
     id: 'missao',
-    titulo: 'Igreja em Missão',
+    textoCard: 'Igreja em Missão',
+    titulo: 'MISSÃO',
     imagem: IconMissao,
   },
 ];

@@ -9,11 +9,11 @@ import {Image, StyleSheet} from 'react-native';
 
 export const PastoralItem = () => {
   const navigation = useNavigation();
-  const titulo = 'Uma Palavra Pastoral';
+  const textoCard = 'Uma Palavra Pastoral';
 
   return (
     <GenericItem
-      titulo={titulo}
+      textoCard={textoCard}
       icon={
         <Image
           source={require('../../../../assets/images/pastoral.png')}
@@ -25,7 +25,7 @@ export const PastoralItem = () => {
       height={hp('40%')}
       onNavigate={() =>
         navigation.push('Pastoral', {
-          titulo,
+          textoCard,
         })
       }
     />
