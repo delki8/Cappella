@@ -2,12 +2,7 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {
-  FONT_FAMILY_BOLD,
-  SIZE_MEDIUM,
-  SIZE_X_LARGE,
-  TITLE,
-} from '../styles/styles';
+import {FONT_FAMILY_BOLD, SIZE_X_LARGE, TITLE} from '../styles/styles';
 
 export const ContainerPage = ({imagem, titulo, children}) => {
   const navigation = useNavigation();

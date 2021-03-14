@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {FONT_FAMILY_REGULAR} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 

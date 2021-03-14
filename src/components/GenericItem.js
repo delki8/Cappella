@@ -1,18 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {FONT_FAMILY_BOLD, BEIGE, SHADOW_BEIGE, TITLE} from '../styles/styles';
 
-export const GenericItem = ({titulo, icon, width, height, onNavigate}) => {
+export const GenericItem = ({textoCard, icon, width, height, onNavigate}) => {
   const styles = getStyles(width, height);
 
   return (
     <TouchableOpacity style={styles.containerItem} onPress={onNavigate}>
       {icon}
-      <Text style={styles.texto}>{titulo}</Text>
+      <Text style={styles.texto}>{textoCard}</Text>
     </TouchableOpacity>
   );
 };

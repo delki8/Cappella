@@ -14,7 +14,6 @@ import {AGENDA} from './data/Agenda';
 import {
   TITLE,
   FONT_FAMILY_SEMI_BOLD,
-  SIZE_XX_LARGE,
   SIZE_SMALL,
   SIZE_LARGE,
 } from '../../styles/styles';
@@ -31,7 +30,7 @@ export const Agenda = () => {
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
-      <ContainerPage imagem={IconAgenda} titulo={'Agenda de Encontros'}>
+      <ContainerPage imagem={IconAgenda} titulo={'AGENDA'}>
         <FlatList
           numColumns={1}
           data={AGENDA}
@@ -54,6 +53,20 @@ export const Agenda = () => {
   );
 };
 
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+      return hp('68%');
+    case 'medium':
+    case 'regular':
+      return hp('77%');
+    case 'big':
+      return hp('100%');
+    default:
+      break;
+  }
+};
+
 const getStyles = (size) => {
   return StyleSheet.create({
     droidSafeArea: {
@@ -61,8 +74,8 @@ const getStyles = (size) => {
       paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     flatListContainer: {
-      marginTop: size === 'small' ? SIZE_LARGE : SIZE_XX_LARGE,
-      height: size === 'small' ? hp('68%') : hp('100%'),
+      marginTop: SIZE_LARGE,
+      height: getHeight(size),
     },
     dia: {
       color: TITLE,

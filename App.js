@@ -62,7 +62,7 @@ export default function App() {
   return (
     <>
       {Platform.OS === 'ios' && (
-        <StatusBar backgroundColor={TITLE} barStyle="light-content" />
+        <StatusBar backgroundColor={TITLE} barStyle="dark-content" />
       )}
       <NavigationContainer>
         <Tab.Navigator

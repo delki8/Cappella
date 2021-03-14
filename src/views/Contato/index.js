@@ -11,10 +11,7 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {
   IconArroba,
   IconLocation,

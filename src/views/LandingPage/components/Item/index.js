@@ -7,12 +7,12 @@ import {useNavigation} from '@react-navigation/native';
 import {GenericItem} from '../../../../components/GenericItem.js';
 import {SvgXml} from 'react-native-svg';
 
-export const Item = ({imagem, titulo, itemDesc, id}) => {
+export const Item = ({imagem, titulo, textoCard, itemDesc, id}) => {
   const navigation = useNavigation();
 
   return (
     <GenericItem
-      titulo={titulo}
+      textoCard={textoCard}
       icon={<SvgXml xml={imagem} height={hp('7%')} />}
       width={wp('100%')}
       height={hp('15%')}
