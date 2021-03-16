@@ -57,7 +57,6 @@ const getStyles = (backgroundColor, color, size) => {
       justifyContent: 'center',
       marginLeft: SIZE_LARGE,
       width: 44,
-      height: 40,
     },
     horario: {
       color,

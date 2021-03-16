@@ -58,6 +58,7 @@ const getHeight = (size) => {
     case 'small':
       return hp('68%');
     case 'medium':
+      return hp('74%');
     case 'regular':
       return hp('77%');
     case 'big':

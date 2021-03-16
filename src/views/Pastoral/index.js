@@ -29,11 +29,26 @@ export const Pastoral = () => {
   );
 };
 
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+      return hp('65%');
+    case 'medium':
+      return hp('74%');
+    case 'regular':
+      return hp('77%');
+    case 'big':
+      return hp('100%');
+    default:
+      break;
+  }
+};
+
 const getStyles = (size) => {
   return StyleSheet.create({
     container: {
       marginTop: SIZE_XX_LARGE,
-      height: size === 'small' ? hp('65%') : hp('77%'),
+      height: getHeight(size),
       width: wp('80%'),
     },
     autor: {
