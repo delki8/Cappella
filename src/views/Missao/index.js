@@ -28,7 +28,7 @@ const getHeight = (size) => {
     case 'small':
       return 380;
     case 'medium':
-      return 540;
+      return 515;
     case 'regular':
       return 650;
     case 'big':

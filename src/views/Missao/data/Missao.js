@@ -43,7 +43,7 @@ export const MISSAO = [
     nome: 'Pastor Luciano Pires',
     missao: 'PORTUGAL',
     contato: '+ 351 (911) 850 940',
-    backgroundColor: OTHERGRAY,
+    backgroundColor: LIGHTERGRAY,
     color: TITLE,
   },
   {
@@ -57,7 +57,8 @@ export const MISSAO = [
     nome: 'Mateus Gonçalves',
     missao: 'Índios Waiãpi',
     contato: '(96) 8125 0053',
-    backgroundColor: LIGHTERGRAY,
+
+    backgroundColor: OTHERGRAY,
     color: TITLE,
   },
 ];
