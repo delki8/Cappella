@@ -18,32 +18,41 @@ export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
   const styles = getStyles(backgroundColor, color, size);
 
   return (
-    <View style={styles.containerAgenda}>
-      <View style={styles.containerItem}>
-        <View style={styles.containerHorario}>
-          <Text style={styles.horario}>{horario}</Text>
-          <Text style={styles.horas}>horas</Text>
-        </View>
-        <Text style={styles.atividade}>{atividade}</Text>
+    <View style={styles.containerItem}>
+      <View style={styles.containerHorario}>
+        <Text style={styles.horario}>{horario}</Text>
+        <Text style={styles.horas}>horas</Text>
       </View>
+      <Text style={styles.atividade}>{atividade}</Text>
     </View>
   );
 };
 
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return hp('11%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+      return hp('10%');
+    case 'xxxlarge':
+      return hp('10%');
+    default:
+      break;
+  }
+};
+
 const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
-    containerAgenda: {
-      width: wp('90%'),
-      height: size === 'small' ? hp('18%') : hp('11%'),
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
     containerItem: {
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'space-between',
       width: size === 'small' ? wp('90%') : wp('80%'),
-      height: size === 'small' ? hp('15%') : hp('10%'),
+      height: getHeight(size),
+      marginBottom: 10,
       backgroundColor,
       shadowOffset: {
         width: 0.2,
@@ -60,7 +69,7 @@ const getStyles = (backgroundColor, color, size) => {
     },
     horario: {
       color,
-      fontSize: 38,
+      fontSize: 30,
       fontFamily: FONT_FAMILY_BOLD,
     },
     horas: {

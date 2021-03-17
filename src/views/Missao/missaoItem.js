@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
-import {FONT_FAMILY_REGULAR} from '../../styles/styles';
+import {FONT_FAMILY_REGULAR, SIZE_XX_SMALL} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
 export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
@@ -23,9 +23,12 @@ const getWidth = (size) => {
   switch (size) {
     case 'small':
     case 'medium':
-    case 'regular':
+    case 'large':
+    case 'xlarge':
       return 284;
-    case 'big':
+    case 'xxlarge':
+      return 320;
+    case 'xxxlarge':
       return 384;
     default:
       break;
@@ -42,7 +45,7 @@ const getStyles = (backgroundColor, color, size) => {
     },
     containerMissao: {
       width: getWidth(size),
-      height: 102,
+      marginBottom: SIZE_XX_SMALL,
     },
     containerItem: {
       height: 81,

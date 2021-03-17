@@ -26,12 +26,16 @@ export const Missao = ({imagem, titulo}) => {
 const getHeight = (size) => {
   switch (size) {
     case 'small':
-      return 380;
+      return 350;
     case 'medium':
-      return 515;
-    case 'regular':
-      return 650;
-    case 'big':
+      return 420;
+    case 'large':
+      return 500;
+    case 'xlarge':
+      return 550;
+    case 'xxlarge':
+      return 645;
+    case 'xxxlarge':
       return 800;
     default:
       break;

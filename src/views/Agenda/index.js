@@ -56,12 +56,14 @@ export const Agenda = () => {
 const getHeight = (size) => {
   switch (size) {
     case 'small':
-      return hp('68%');
+      return hp('65%');
     case 'medium':
-      return hp('74%');
-    case 'regular':
-      return hp('77%');
-    case 'big':
+      return hp('68%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+      return hp('75%');
+    case 'xxxlarge':
       return hp('100%');
     default:
       break;

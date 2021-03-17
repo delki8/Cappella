@@ -1,13 +1,25 @@
-export const getSize = (height) => {
-  let size = 'small';
+import { Alert } from "react-native";
 
-  if (height > 534 && height < 670) {
+export const getSize = (height) => {
+  let size = 'xsmall';
+
+  // Alert.alert(height.toString());
+
+  if (height < 534) {
+    size = 'small';
+  } else if (height > 534 && height < 597) {
     size = 'medium';
-  } else if (height > 670 && height < 897) {
-    size = 'regular';
-  } else if (height > 896) {
-    size = 'big';
+  } else if (height > 597 && height < 697) {
+    size = 'large';
+  } else if (height > 697 && height < 797) {
+    size = 'xlarge';
+  } else if (height > 797 && height < 897) {
+    size = 'xxlarge';
+  } else if (height > 897) {
+    size = 'xxxlarge';
   }
+
+  // Alert.alert(size);
 
   return size;
 };
