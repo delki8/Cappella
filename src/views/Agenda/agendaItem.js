@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -69,12 +75,12 @@ const getStyles = (backgroundColor, color, size) => {
     },
     horario: {
       color,
-      fontSize: 30,
+      fontSize: Platform.OS === 'android' ? 20 : 30,
       fontFamily: FONT_FAMILY_BOLD,
     },
     horas: {
       color,
-      fontSize: 16,
+      fontSize: Platform.OS === 'android' ? 15 : 16,
       fontFamily: FONT_FAMILY_REGULAR,
     },
     atividade: {
