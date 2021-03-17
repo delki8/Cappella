@@ -32,13 +32,15 @@ export const Pastoral = () => {
 const getHeight = (size) => {
   switch (size) {
     case 'small':
-      return hp('65%');
+      return hp('63%');
     case 'medium':
-      return hp('74%');
-    case 'regular':
-      return hp('77%');
-    case 'big':
-      return hp('100%');
+      return hp('67%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+      return hp('73%');
+    case 'xxxlarge':
+      return hp('75%');
     default:
       break;
   }
