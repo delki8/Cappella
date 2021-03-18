@@ -36,8 +36,10 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
       <TouchableOpacity
         style={styles.containerComunidade}
         onPress={() => handlePress(url)}>
-        <FontAwesomeIcon icon={icon} color={color} size={hp('8%')} />
-        <Text style={styles.redes}>{text}</Text>
+        <FontAwesomeIcon icon={icon} color={color} size={wp('15%')} />
+        <View style={styles.redesContainer}>
+          <Text style={styles.redes}>{text}</Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -71,7 +73,7 @@ const getStyles = (backgroundColor, color, size) => {
       width: wp('90%'),
       height: getHeight(size),
       backgroundColor,
-      justifyContent: 'space-evenly',
+      justifyContent: 'space-around',
       alignItems: 'center',
       shadowOffset: {
         width: 0.2,
@@ -79,7 +81,10 @@ const getStyles = (backgroundColor, color, size) => {
       },
       shadowOpacity: 0.2,
       elevation: 1,
-      borderRadius: 15,
+      borderRadius: 50,
+    },
+    redesContainer: {
+      width: wp('50%'),
     },
     redes: {
       color,
