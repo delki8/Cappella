@@ -11,10 +11,8 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+
 import {
   IconArroba,
   IconLocation,
@@ -86,11 +84,11 @@ const getStyles = (size) => {
       paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     container: {
-      width: size === 'small' ? wp('100%') : wp('80%'),
+      width: wp('80%'),
       marginTop: size === 'small' ? -70 : 0,
     },
     containerTexto: {
-      margin: size === 'small' ? wp('5%') : 0,
+      margin: wp('1%'),
     },
     imagem: {
       width: 335,
@@ -114,7 +112,7 @@ const getStyles = (size) => {
       marginLeft: SIZE_LARGE,
       textAlign: 'left',
       fontFamily: FONT_AVENIR_ROMAN,
-      fontSize: size === 'small' ? SIZE_SMALL : SIZE_LARGE,
+      fontSize: wp('5%'),
     },
     botao: {
       marginTop: size === 'small' ? SIZE_SMALL : SIZE_XX_LARGE,

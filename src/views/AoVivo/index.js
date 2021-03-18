@@ -79,7 +79,7 @@ const getStyles = (size) => {
     },
     containerItem: {
       width: wp('70%'),
-      height: size === 'small' ? hp('25%') : hp('20%'),
+      height: hp('25%'),
       backgroundColor: GRAY,
       justifyContent: 'center',
       alignItems: 'center',
