@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {FONT_FAMILY_BOLD, BEIGE, SHADOW_BEIGE, TITLE} from '../styles/styles';
+import {BEIGE, SHADOW_BEIGE, TITLE, FONT_AVENIR_BLACK} from '../styles/styles';
 
 export const GenericItem = ({textoCard, icon, width, height, onNavigate}) => {
   const styles = getStyles(width, height);
@@ -38,7 +38,7 @@ const getStyles = (width, height) => {
     },
     texto: {
       marginTop: 8,
-      fontFamily: FONT_FAMILY_BOLD,
+      fontFamily: FONT_AVENIR_BLACK,
       fontSize: wp('3.5%'),
       color: TITLE,
     },

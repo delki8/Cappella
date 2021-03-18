@@ -16,10 +16,10 @@ import {
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
-  FONT_FAMILY_REGULAR,
   TITLE,
   GRAY,
-  FONT_FAMILY_LIGHT,
+  FONT_AVENIR_BOOK,
+  FONT_AVENIR_ROMAN,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {AOVIVO} from './data/AoVivo';
@@ -67,14 +67,14 @@ const getStyles = (size) => {
     },
     titulo: {
       color: TITLE,
-      fontSize: size === 'small' ? 16 : 18,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontSize: wp('5%'),
+      fontFamily: FONT_AVENIR_ROMAN,
       paddingVertical: hp('10%'),
     },
     notificacoes: {
       color: TITLE,
-      fontSize: 16,
-      fontFamily: FONT_FAMILY_LIGHT,
+      fontSize: wp('5%'),
+      fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
     },
     containerItem: {

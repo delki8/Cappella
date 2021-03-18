@@ -11,8 +11,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {
-  FONT_FAMILY_BOLD,
-  FONT_FAMILY_REGULAR,
+  FONT_AVENIR_BLACK,
+  FONT_AVENIR_ROMAN,
   SIZE_X_LARGE,
   SIZE_LARGE,
 } from '../../styles/styles';
@@ -76,12 +76,12 @@ const getStyles = (backgroundColor, color, size) => {
     horario: {
       color,
       fontSize: Platform.OS === 'android' ? 20 : 30,
-      fontFamily: FONT_FAMILY_BOLD,
+      fontFamily: FONT_AVENIR_BLACK,
     },
     horas: {
       color,
       fontSize: Platform.OS === 'android' ? 15 : 16,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontFamily: FONT_AVENIR_ROMAN,
     },
     atividade: {
       color,
@@ -89,7 +89,7 @@ const getStyles = (backgroundColor, color, size) => {
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       textAlign: 'left',
-      fontFamily: FONT_FAMILY_BOLD,
+      fontFamily: FONT_AVENIR_BLACK,
       marginRight: SIZE_X_LARGE,
     },
   });

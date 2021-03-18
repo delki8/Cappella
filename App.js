@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
+import {SafeAreaView, StyleSheet, Platform, StatusBar, Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -11,6 +11,7 @@ import {
   faIdCard,
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import {LandingPage} from './src/views/LandingPage';
 import {DetalhesItem} from './src/views/DetalhesItem';
@@ -67,7 +68,9 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({route}) => ({
-            tabBarIcon: ({color, size}) => {
+            tabBarIcon: ({color}) => {
+              const size = hp('4%');
+
               switch (route.name) {
                 case 'Home':
                   return (
