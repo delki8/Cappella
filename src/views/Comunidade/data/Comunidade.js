@@ -4,7 +4,6 @@ import {
   faInstagram,
   faSpotify,
   faYoutube,
-  faGoogle,
 } from '@fortawesome/free-brands-svg-icons';
 import {TITLE, OTHERWHITE} from '../../../styles/styles';
 
@@ -57,6 +56,6 @@ export const COMUNIDADE = [
     text: 'site',
     backgroundColor: TITLE,
     color: OTHERWHITE,
-    icon: faGoogle,
+    icon: require('../../../assets/images/mosaicoLogo.png'),
   },
 ];

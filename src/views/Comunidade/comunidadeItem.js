@@ -1,7 +1,8 @@
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   Alert,
+  Image,
   Linking,
   StyleSheet,
   Text,
@@ -36,7 +37,15 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
       <TouchableOpacity
         style={styles.containerComunidade}
         onPress={() => handlePress(url)}>
-        <FontAwesomeIcon icon={icon} color={color} size={wp('15%')} />
+        {typeof icon === 'number' ? (
+          <Image
+            source={require('../../assets/images/mosaicoLogo.png')}
+            style={styles.imagemSeta}
+          />
+        ) : (
+          <FontAwesomeIcon icon={icon} color={color} size={wp('15%')} />
+        )}
+
         <View style={styles.redesContainer}>
           <Text style={styles.redes}>{text}</Text>
         </View>
@@ -45,25 +54,10 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
   );
 };
 
-const getHeight = (size) => {
-  switch (size) {
-    case 'small':
-    case 'medium':
-    case 'xxlarge':
-    case 'xxxlarge':
-      return hp('10%');
-    case 'large':
-    case 'xlarge':
-      return hp('11%');
-    default:
-      break;
-  }
-};
-
 const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     container: {
-      height: hp('12%'),
+      height: hp('11%'),
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -71,7 +65,7 @@ const getStyles = (backgroundColor, color, size) => {
     containerComunidade: {
       flexDirection: 'row',
       width: wp('90%'),
-      height: getHeight(size),
+      height: hp('9%'),
       backgroundColor,
       justifyContent: 'space-around',
       alignItems: 'center',
@@ -90,6 +84,10 @@ const getStyles = (backgroundColor, color, size) => {
       color,
       fontSize: hp('3%'),
       fontFamily: FONT_AVENIR_BLACK,
+    },
+    imagemSeta: {
+      width: wp('18%'),
+      height: hp('8%'),
     },
   });
 };
