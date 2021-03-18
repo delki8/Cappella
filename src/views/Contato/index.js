@@ -25,7 +25,7 @@ import {Botao} from '../../components/botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
   ACTIVE_GREEN,
-  FONT_FAMILY_SEMI_BOLD,
+  FONT_AVENIR_ROMAN,
   SIZE_LARGE,
   SIZE_SMALL,
   SIZE_XX_LARGE,
@@ -113,7 +113,7 @@ const getStyles = (size) => {
       color: ACTIVE_GREEN,
       marginLeft: SIZE_LARGE,
       textAlign: 'left',
-      fontFamily: FONT_FAMILY_SEMI_BOLD,
+      fontFamily: FONT_AVENIR_ROMAN,
       fontSize: size === 'small' ? SIZE_SMALL : SIZE_LARGE,
     },
     botao: {

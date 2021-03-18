@@ -2,9 +2,10 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 import {
-  FONT_FAMILY_BOLD,
+  FONT_AVENIR_BLACK,
   SIZE_XX_SMALL,
   SIZE_X_LARGE,
   TITLE,
@@ -41,8 +42,8 @@ const styles = StyleSheet.create({
   },
   titulo: {
     color: TITLE,
-    fontSize: 16,
-    fontFamily: FONT_FAMILY_BOLD,
+    fontSize: wp('4%'),
+    fontFamily: FONT_AVENIR_BLACK,
     alignSelf: 'center',
   },
   imagemSeta: {

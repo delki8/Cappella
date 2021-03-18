@@ -7,7 +7,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import {
-  FONT_FAMILY_SEMI_BOLD,
+  FONT_AVENIR_ROMAN,
   WHITE,
   ORANGE,
   SIZE_X_SMALL,
@@ -37,7 +37,7 @@ const getStyles = (size) => {
       opacity: 0.56,
     },
     botaoTexto: {
-      fontFamily: FONT_FAMILY_SEMI_BOLD,
+      fontFamily: FONT_AVENIR_ROMAN,
       fontSize: size === 'small' ? 16 : 20,
       color: WHITE,
       textAlign: 'center',

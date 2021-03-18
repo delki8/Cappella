@@ -10,8 +10,8 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {PASTORAL} from './data/Pastoral';
 import {
   SIZE_XX_LARGE,
-  FONT_FAMILY_REGULAR,
-  FONT_FAMILY_LIGHT,
+  FONT_AVENIR_ROMAN,
+  FONT_AVENIR_BOOK,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
@@ -49,17 +49,17 @@ const getHeight = (size) => {
 const getStyles = (size) => {
   return StyleSheet.create({
     container: {
-      marginTop: SIZE_XX_LARGE,
+      marginTop: hp('3%'),
       height: getHeight(size),
       width: wp('80%'),
     },
     autor: {
-      fontSize: 11,
-      fontFamily: FONT_FAMILY_LIGHT,
+      fontSize: wp('3%'),
+      fontFamily: FONT_AVENIR_BOOK,
     },
     descricao: {
-      fontSize: 14,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontSize: wp('4%'),
+      fontFamily: FONT_AVENIR_ROMAN,
     },
   });
 };

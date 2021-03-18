@@ -13,7 +13,7 @@ import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
 import {
   TITLE,
-  FONT_FAMILY_SEMI_BOLD,
+  FONT_AVENIR_ROMAN,
   SIZE_SMALL,
   SIZE_LARGE,
 } from '../../styles/styles';
@@ -83,7 +83,7 @@ const getStyles = (size) => {
     dia: {
       color: TITLE,
       fontSize: 16,
-      fontFamily: FONT_FAMILY_SEMI_BOLD,
+      fontFamily: FONT_AVENIR_ROMAN,
       margin: SIZE_SMALL,
       alignSelf: 'center',
     },

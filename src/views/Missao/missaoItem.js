@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
-import {FONT_FAMILY_REGULAR, SIZE_XX_SMALL} from '../../styles/styles';
+import {FONT_AVENIR_ROMAN, SIZE_XX_SMALL} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
 export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
@@ -40,7 +40,7 @@ const getStyles = (backgroundColor, color, size) => {
     missao: {
       color,
       fontSize: 14,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },
     containerMissao: {

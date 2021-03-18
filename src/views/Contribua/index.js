@@ -14,13 +14,13 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {
   TITLE,
   SIZE_XXX_LARGE,
-  FONT_FAMILY_LIGHT,
+  FONT_AVENIR_BOOK,
   BEIGE,
   ORANGE,
-  FONT_FAMILY_REGULAR,
   WHITE,
   IRON,
   SIZE_XX_SMALL,
+  FONT_AVENIR_ROMAN,
 } from '../../styles/styles';
 import {IconContribua} from '../../assets/images/Icons';
 import {CONTRIBUA} from './data/Contribua';
@@ -69,18 +69,18 @@ const getStyles = (size) => {
     conta: {
       color: ORANGE,
       fontSize: 14,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },
     titulo: {
       color: TITLE,
       fontSize: size === 'small' ? 16 : 18,
-      fontFamily: FONT_FAMILY_REGULAR,
+      fontFamily: FONT_AVENIR_ROMAN,
     },
     detalhesIgreja: {
       color: TITLE,
       fontSize: 16,
-      fontFamily: FONT_FAMILY_LIGHT,
+      fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
     },
     containerConta: {

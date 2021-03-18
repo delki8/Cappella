@@ -13,7 +13,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {FONT_FAMILY_BOLD} from '../../styles/styles';
+import {FONT_AVENIR_BLACK} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
 const handlePress = async (url) => {
@@ -84,7 +84,7 @@ const getStyles = (backgroundColor, color, size) => {
     redes: {
       color,
       fontSize: hp('3%'),
-      fontFamily: FONT_FAMILY_BOLD,
+      fontFamily: FONT_AVENIR_BLACK,
     },
   });
 };
