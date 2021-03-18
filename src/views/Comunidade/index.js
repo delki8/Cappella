@@ -25,10 +25,30 @@ export const Comunidade = ({imagem}) => {
   );
 };
 
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+      return 370;
+    case 'medium':
+      return 460;
+    case 'large':
+      return 540;
+    case 'xlarge':
+      return 590;
+    case 'xxlarge':
+      return 685;
+    case 'xxxlarge':
+      return 840;
+    default:
+      break;
+  }
+};
+
 const getStyles = (size) => {
   return StyleSheet.create({
     flatList: {
-      paddingVertical: hp('10%'),
+      paddingVertical: hp('5%'),
+      height: getHeight(size),
     },
   });
 };

@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, FlatList, useWindowDimensions} from 'react-native';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 import {ContainerPage} from '../../components/ContainerPage';
-import {SIZE_LARGE} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {MISSAO} from './data/Missao';
 import {MissaoItem} from './missaoItem';
@@ -26,17 +27,17 @@ export const Missao = ({imagem, titulo}) => {
 const getHeight = (size) => {
   switch (size) {
     case 'small':
-      return 350;
+      return 370;
     case 'medium':
-      return 420;
+      return 440;
     case 'large':
-      return 500;
+      return 520;
     case 'xlarge':
-      return 550;
+      return 570;
     case 'xxlarge':
-      return 645;
+      return 665;
     case 'xxxlarge':
-      return 800;
+      return 820;
     default:
       break;
   }
@@ -45,7 +46,7 @@ const getHeight = (size) => {
 const getStyles = (size) => {
   return StyleSheet.create({
     flatList: {
-      marginTop: SIZE_LARGE,
+      paddingVertical: hp('2%'),
       height: getHeight(size),
     },
   });

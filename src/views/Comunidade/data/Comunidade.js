@@ -4,47 +4,41 @@ import {
   faInstagram,
   faSpotify,
   faYoutube,
+  faGoogle,
 } from '@fortawesome/free-brands-svg-icons';
-import {
-  BLUE,
-  IRON,
-  LIGHTBLUE,
-  LIGHTTITLE,
-  TITLE,
-  OTHERWHITE,
-} from '../../../styles/styles';
+import {TITLE, OTHERWHITE} from '../../../styles/styles';
 
 export const COMUNIDADE = [
   {
     media: 'facebook',
     url: 'https://www.facebook.com/igrejapresbiterianamosaico',
-    text: 'FACEBOOK',
-    backgroundColor: LIGHTBLUE,
-    color: IRON,
+    text: 'facebook',
+    backgroundColor: TITLE,
+    color: OTHERWHITE,
     icon: faFacebook,
   },
   {
     media: 'instagram',
     url: 'https://www.instagram.com/igrejapresbiterianamosaico/',
-    text: 'INSTAGRAM',
-    backgroundColor: '#A5D5DC',
-    color: IRON,
+    text: 'instagram',
+    backgroundColor: TITLE,
+    color: OTHERWHITE,
     icon: faInstagram,
   },
   {
     media: 'whatsapp',
     url: 'https://chat.whatsapp.com/0Yrrxb86FMk1bmN5YttA1N',
-    text: 'WHATSAPP',
-    backgroundColor: LIGHTTITLE,
-    color: IRON,
+    text: 'whatsapp',
+    backgroundColor: TITLE,
+    color: OTHERWHITE,
     icon: faWhatsapp,
   },
   {
     media: 'youtube',
     url:
       'https://www.youtube.com/channel/UCsYR03W9u4pIOcR4xpXfHqg?sub_confirmation=1',
-    text: 'YOUTUBE',
-    backgroundColor: BLUE,
+    text: 'youtube',
+    backgroundColor: TITLE,
     color: OTHERWHITE,
     icon: faYoutube,
   },
@@ -52,9 +46,17 @@ export const COMUNIDADE = [
     media: 'spotify',
     url:
       'https://open.spotify.com/show/25Ew0LHUkCnAu3nbcXawdw?si=0pxQ6kg9S0K-aYAUmff4yQ',
-    text: 'SPOTIFY',
+    text: 'spotify',
     backgroundColor: TITLE,
     color: OTHERWHITE,
     icon: faSpotify,
+  },
+  {
+    media: 'site',
+    url: 'https://igreja-presbiteriana-mosaico.negocio.site/',
+    text: 'site',
+    backgroundColor: TITLE,
+    color: OTHERWHITE,
+    icon: faGoogle,
   },
 ];
