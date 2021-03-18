@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -63,6 +64,7 @@ const getStyles = (size) => {
     container: {
       width: wp('100%'),
       alignItems: 'center',
+      paddingVertical: hp('10%'),
     },
     conta: {
       color: ORANGE,
@@ -74,7 +76,6 @@ const getStyles = (size) => {
       color: TITLE,
       fontSize: size === 'small' ? 16 : 18,
       fontFamily: FONT_FAMILY_REGULAR,
-      marginTop: size === 'small' ? 50 : 100,
     },
     detalhesIgreja: {
       color: TITLE,

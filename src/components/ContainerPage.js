@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+
 import {
   FONT_FAMILY_BOLD,
   SIZE_XX_SMALL,
@@ -27,10 +28,8 @@ export const ContainerPage = ({imagem, titulo, children}) => {
           </View>
         )}
       </View>
-      <View style={styles.containerPagina}>
-        <Text style={styles.titulo}>{titulo}</Text>
-        {children}
-      </View>
+      <Text style={styles.titulo}>{titulo}</Text>
+      <View style={styles.containerPagina}>{children}</View>
     </>
   );
 };
@@ -44,6 +43,7 @@ const styles = StyleSheet.create({
     color: TITLE,
     fontSize: 16,
     fontFamily: FONT_FAMILY_BOLD,
+    alignSelf: 'center',
   },
   imagemSeta: {
     width: SIZE_X_LARGE,
