@@ -1,11 +1,20 @@
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
-import {Alert, Linking, StyleSheet, Text, View} from 'react-native';
+import {
+  Alert,
+  Linking,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {FONT_FAMILY_REGULAR} from '../../styles/styles';
+import {FONT_FAMILY_BOLD} from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 
 const handlePress = async (url) => {
   const supported = await Linking.canOpenURL(url);
@@ -17,44 +26,65 @@ const handlePress = async (url) => {
   }
 };
 
-export const ComunidadeItem = ({url, text, backgroundColor, color}) => {
-  const styles = getStyles(backgroundColor, color);
+export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
+  const {height} = useWindowDimensions();
+  const size = getSize(height);
+  const styles = getStyles(backgroundColor, color, size);
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.containerComunidade}
         onPress={() => handlePress(url)}>
+        <FontAwesomeIcon icon={icon} color={color} size={hp('8%')} />
         <Text style={styles.redes}>{text}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-const getStyles = (backgroundColor, color) => {
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+    case 'xxlarge':
+    case 'xxxlarge':
+      return hp('10%');
+    case 'large':
+    case 'xlarge':
+      return hp('11%');
+    default:
+      break;
+  }
+};
+
+const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     container: {
-      width: wp('100%'),
       height: hp('12%'),
+      display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
     },
     containerComunidade: {
+      flexDirection: 'row',
       width: wp('90%'),
-      height: hp('10%'),
+      height: getHeight(size),
       backgroundColor,
-      justifyContent: 'center',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
       shadowOffset: {
         width: 0.2,
         height: 0.2,
       },
       shadowOpacity: 0.2,
       elevation: 1,
+      borderRadius: 15,
     },
     redes: {
       color,
-      fontSize: 14,
-      fontFamily: FONT_FAMILY_REGULAR,
-      textAlign: 'center',
+      fontSize: hp('3%'),
+      fontFamily: FONT_FAMILY_BOLD,
     },
   });
 };

@@ -11,7 +11,10 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import {
   IconArroba,
   IconLocation,
@@ -88,13 +91,13 @@ const getStyles = (size) => {
     },
     containerTexto: {
       margin: size === 'small' ? wp('5%') : 0,
-      marginTop: size === 'small' ? -50 : 0,
     },
     imagem: {
       width: 335,
       height: 335,
-      marginBottom: -70,
-      marginTop: -70,
+      alignSelf: 'center',
+      marginBottom: -100,
+      marginTop: size === 'small' ? -70 : -100,
     },
     icons: {
       width: 25,

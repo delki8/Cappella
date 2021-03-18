@@ -2,6 +2,7 @@
 export const COR_DE_FUNDO = '#F4F0F4';
 export const BLACK = '#000000';
 export const WHITE = '#fff';
+export const OTHERWHITE = '#F2F5EB';
 export const BEIGE = '#FAEEE7';
 export const DARKBEIGE = '#F6DED0';
 export const BLUE = '#4BACB9';

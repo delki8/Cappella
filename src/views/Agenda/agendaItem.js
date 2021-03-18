@@ -56,7 +56,7 @@ const getStyles = (backgroundColor, color, size) => {
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      width: size === 'small' ? wp('90%') : wp('80%'),
+      width: size === 'small' ? wp('90%') : wp('90%'),
       height: getHeight(size),
       marginBottom: 10,
       backgroundColor,

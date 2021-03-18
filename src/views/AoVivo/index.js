@@ -19,8 +19,6 @@ import {
   FONT_FAMILY_REGULAR,
   TITLE,
   GRAY,
-  SIZE_XXX_LARGE,
-  SIZE_XX_SMALL,
   FONT_FAMILY_LIGHT,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
@@ -71,7 +69,7 @@ const getStyles = (size) => {
       color: TITLE,
       fontSize: size === 'small' ? 16 : 18,
       fontFamily: FONT_FAMILY_REGULAR,
-      marginTop: size === 'small' ? 50 : 100,
+      paddingVertical: hp('10%'),
     },
     notificacoes: {
       color: TITLE,
@@ -85,9 +83,9 @@ const getStyles = (size) => {
       backgroundColor: GRAY,
       justifyContent: 'center',
       alignItems: 'center',
-      margin: size === 'small' ? SIZE_XX_SMALL : SIZE_XXX_LARGE,
       borderColor: TITLE,
       borderWidth: 3,
+      marginBottom: 50,
     },
     imagem: {
       height: 84,

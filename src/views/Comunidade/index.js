@@ -1,6 +1,8 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 import {ContainerPage} from '../../components/ContainerPage';
 import {getSize} from '../../utils/utils';
 import {ComunidadeItem} from './comunidadeItem';
@@ -11,7 +13,7 @@ export const Comunidade = ({imagem}) => {
   const styles = getStyles(getSize(height));
 
   return (
-    <ContainerPage imagem={imagem} titulo={'Nossa Comunidade'}>
+    <ContainerPage imagem={imagem} titulo={'NOSSA COMUNIDADE'}>
       <FlatList
         style={styles.flatList}
         numColumns={1}
@@ -26,7 +28,7 @@ export const Comunidade = ({imagem}) => {
 const getStyles = (size) => {
   return StyleSheet.create({
     flatList: {
-      marginTop: size === 'small' ? 20 : 100,
+      paddingVertical: hp('10%'),
     },
   });
 };
