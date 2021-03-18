@@ -7,7 +7,11 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
@@ -82,7 +86,7 @@ const getStyles = (size) => {
     },
     dia: {
       color: TITLE,
-      fontSize: 16,
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       margin: SIZE_SMALL,
       alignSelf: 'center',

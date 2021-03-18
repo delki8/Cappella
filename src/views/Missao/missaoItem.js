@@ -1,5 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+
 import {FONT_AVENIR_ROMAN, SIZE_XX_SMALL} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
@@ -39,7 +41,7 @@ const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     missao: {
       color,
-      fontSize: 14,
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },

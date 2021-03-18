@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -56,7 +50,7 @@ const getStyles = (backgroundColor, color, size) => {
       alignItems: 'center',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      width: size === 'small' ? wp('90%') : wp('90%'),
+      width: wp('90%'),
       height: getHeight(size),
       marginBottom: 10,
       backgroundColor,
@@ -75,17 +69,17 @@ const getStyles = (backgroundColor, color, size) => {
     },
     horario: {
       color,
-      fontSize: Platform.OS === 'android' ? 20 : 30,
+      fontSize: wp('7%'),
       fontFamily: FONT_AVENIR_BLACK,
     },
     horas: {
       color,
-      fontSize: Platform.OS === 'android' ? 15 : 16,
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
     },
     atividade: {
       color,
-      fontSize: 14,
+      fontSize: wp('5%'),
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
       textAlign: 'left',

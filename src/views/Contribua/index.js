@@ -7,8 +7,10 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -68,25 +70,25 @@ const getStyles = (size) => {
     },
     conta: {
       color: ORANGE,
-      fontSize: 14,
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },
     titulo: {
       color: TITLE,
-      fontSize: size === 'small' ? 16 : 18,
+      fontSize: wp('5%'),
       fontFamily: FONT_AVENIR_ROMAN,
     },
     detalhesIgreja: {
       color: TITLE,
-      fontSize: 16,
+      fontSize: wp('5%'),
       fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
     },
     containerConta: {
       width: 284,
       height: 132,
-      margin: size === 'small' ? SIZE_XX_SMALL : SIZE_XXX_LARGE,
+      margin: wp('9%'),
     },
     banco: {
       width: 284,
