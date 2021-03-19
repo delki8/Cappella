@@ -21,7 +21,6 @@ import {
   TITLE,
   FONT_AVENIR_BOOK,
   BEIGE,
-  ORANGE,
   EXTRAORANGE,
   WHITE,
   IRON,
@@ -50,31 +49,40 @@ export const Contribua = () => {
     <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage titulo={'CONTRIBUA'}>
         <View style={styles.container}>
-          <Text style={styles.titulo}>DADOS DA NOSSA CONTA</Text>
+          <Text style={styles.titulo}>DEPÓSITO EM CONTA</Text>
           <View style={styles.containerConta}>
             <View style={styles.banco}>
               <Text style={styles.conta}>{nomeBanco}</Text>
             </View>
-            <View style={styles.containerItem}>
+            <View style={styles.containerBanco}>
               <Text style={styles.conta}>{banco}</Text>
               <Text style={styles.conta}>{agencia}</Text>
               <Text style={styles.conta}>{cc}</Text>
               <Text style={styles.conta}>{operacao}</Text>
             </View>
           </View>
-          <Text style={styles.detalhesIgreja}>{igreja}</Text>
 
+          <Text style={styles.titulo}>TRANSFERÊNCIA POR PIX</Text>
+          <View style={styles.containerConta}>
+            <View style={styles.containerPix}>
+              <Text style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
+            </View>
+          </View>
           <TouchableOpacity
-            style={styles.containerImagem}
+            style={styles.containerPixInfo}
             onPress={() =>
               handlePress('https://www.bcb.gov.br/estabilidadefinanceira/pix')
             }>
+            <Text style={styles.pix}>clique aqui e saiba mais sobre o pix</Text>
             <Image
               source={require('../../assets/images/logoPix.png')}
-              style={styles.pix}
+              style={styles.pixImg}
             />
-            <Text style={styles.cnpj}>{cnpj}</Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.containerIgreja}>
+          <Text style={styles.detalhesIgreja}>{igreja}</Text>
+          <Text style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
         </View>
       </ContainerPage>
     </SafeAreaView>
@@ -93,7 +101,7 @@ const getStyles = (size) => {
       paddingVertical: hp('7%'),
     },
     conta: {
-      color: ORANGE,
+      color: EXTRAORANGE,
       fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
@@ -110,23 +118,21 @@ const getStyles = (size) => {
       textAlign: 'center',
     },
     containerConta: {
-      width: 284,
-      height: 132,
       margin: wp('9%'),
     },
     banco: {
-      width: 284,
-      height: 38,
+      width: wp('73%'),
+      height: wp('9%'),
       backgroundColor: WHITE,
-      borderColor: IRON,
+      borderColor: EXTRAORANGE,
       borderWidth: 0.5,
       justifyContent: 'center',
       shadowOpacity: 0.1,
       elevation: 1,
     },
-    containerItem: {
-      width: 283,
-      height: 81,
+    containerBanco: {
+      width: wp('73%'),
+      height: wp('20%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       shadowOffset: {
@@ -136,19 +142,42 @@ const getStyles = (size) => {
       shadowOpacity: 0.2,
       elevation: 2,
     },
-    containerImagem: {
+    containerPix: {
+      width: wp('73%'),
+      height: wp('13%'),
+      backgroundColor: BEIGE,
+      justifyContent: 'center',
+      shadowOffset: {
+        width: 0.2,
+        height: 0.2,
+      },
+      shadowOpacity: 0.2,
+      elevation: 2,
+    },
+    containerPixInfo: {
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'space-between',
+      width: wp('73%'),
     },
-    pix: {
-      width: wp('10%'),
-      height: wp('10%'),
+    pixImg: {
+      width: wp('8%'),
+      height: hp('4%'),
     },
     cnpj: {
       color: TITLE,
       fontSize: wp('4.5%'),
       fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
+    },
+    pix: {
+      color: TITLE,
+      fontSize: wp('3.9%'),
+      fontFamily: FONT_AVENIR_ROMAN,
+      textAlign: 'center',
+    },
+    containerIgreja: {
+      paddingVertical: hp('10%'),
     },
   });
 };

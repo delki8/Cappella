@@ -1,7 +1,7 @@
 export const CONTRIBUA = {
   nomeBanco: 'CAIXA ECONOMICA FEDERAL',
   banco: 'Banco 104',
-  agencia: 'Agencia 0996',
+  agencia: 'Agência 0996',
   cc: 'C/C 3211-6',
   operacao: 'Operação 003',
   igreja: 'igreja presbiteriana mosaico',
