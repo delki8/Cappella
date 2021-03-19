@@ -10,7 +10,9 @@
 		00E356F31AD99517003FC87E /* CappellaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CappellaTests.m */; };
 		0460E74A6DA2469C9AE2A329 /* Liturgica-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */; };
 		0DD87ECD2618446EAC9863EE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1294D2D3DD14A439478D15F /* OpenSans-Bold.ttf */; };
+		1007D13387C04232B9D2C5AA /* AvenirLTStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */; };
 		101588E346F54C4F9EA15F77 /* Liturgica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA62A9456DE8480F80FBCED0 /* Liturgica-Light.ttf */; };
+		12B6282835634F4B815D9563 /* AvenirLTStd-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */; };
 		13A689AD009E4CA1BF60B153 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51113CD16E94407BB0A1559A /* OpenSans-ExtraBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -36,8 +38,6 @@
 		ECFEF13BD46D45D899CEADFE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */; };
 		F00AF8FA1263491BABE84722 /* Liturgica-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */; };
 		F0BEEC93BD3E4D6CB0EDA85D /* AvenirLTStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */; };
-		1007D13387C04232B9D2C5AA /* AvenirLTStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */; };
-		12B6282835634F4B815D9563 /* AvenirLTStd-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +71,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Cappella/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Cappella/main.m; sourceTree = "<group>"; };
 		19BE3867CA1246D9A2ED2C6B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Black.ttf"; path = "../src/assets/fonts/AvenirLTStd-Black.ttf"; sourceTree = "<group>"; };
 		29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Bold.ttf"; path = "../src/assets/fonts/Liturgica-Bold.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Cappella-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cappella-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Cappella-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cappella-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF316F4D0904860B9043D56 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Medium.ttf"; path = "../src/assets/fonts/Liturgica-Medium.ttf"; sourceTree = "<group>"; };
+		35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Book.ttf"; path = "../src/assets/fonts/AvenirLTStd-Book.ttf"; sourceTree = "<group>"; };
 		3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Semibold.ttf"; path = "../src/assets/fonts/Liturgica-Semibold.ttf"; sourceTree = "<group>"; };
 		51113CD16E94407BB0A1559A /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -98,11 +100,9 @@
 		E70534646B929079FC66D34A /* libPods-Cappella-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Roman.ttf"; path = "../src/assets/fonts/AvenirLTStd-Roman.ttf"; sourceTree = "<group>"; };
 		F889DAD8380A90A0B820F83A /* libPods-Cappella-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF23F26006EF3004BA38080D /* Pods-Cappella-CappellaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cappella-CappellaTests.debug.xcconfig"; path = "Target Support Files/Pods-Cappella-CappellaTests/Pods-Cappella-CappellaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */ = {isa = PBXFileReference; name = "AvenirLTStd-Black.ttf"; path = "../src/assets/fonts/AvenirLTStd-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */ = {isa = PBXFileReference; name = "AvenirLTStd-Book.ttf"; path = "../src/assets/fonts/AvenirLTStd-Book.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */ = {isa = PBXFileReference; name = "AvenirLTStd-Roman.ttf"; path = "../src/assets/fonts/AvenirLTStd-Roman.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -736,7 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = E64A4V9S7E;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Cappella/Info.plist;
@@ -762,7 +762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = E64A4V9S7E;
 				INFOPLIST_FILE = Cappella/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
