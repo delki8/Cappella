@@ -1,17 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
 import {FONT_AVENIR_ROMAN, SIZE_XX_SMALL} from '../../styles/styles';
-import {getSize} from '../../utils/utils';
 
 export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
-  const {height} = useWindowDimensions();
-  const size = getSize(height);
-  const styles = getStyles(backgroundColor, color, size);
+  const styles = getStyles(backgroundColor, color);
 
   return (
     <View style={styles.containerMissao}>
@@ -24,23 +21,7 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
   );
 };
 
-const getWidth = (size) => {
-  switch (size) {
-    case 'small':
-    case 'medium':
-    case 'large':
-    case 'xlarge':
-      return 284;
-    case 'xxlarge':
-      return 320;
-    case 'xxxlarge':
-      return 384;
-    default:
-      break;
-  }
-};
-
-const getStyles = (backgroundColor, color, size) => {
+const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
     missao: {
       color,
@@ -49,7 +30,7 @@ const getStyles = (backgroundColor, color, size) => {
       textAlign: 'center',
     },
     containerMissao: {
-      width: getWidth(size),
+      width: wp('80%'),
       marginBottom: SIZE_XX_SMALL,
     },
     containerItem: {

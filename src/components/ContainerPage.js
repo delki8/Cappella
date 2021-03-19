@@ -54,5 +54,6 @@ const styles = StyleSheet.create({
   },
   containerPagina: {
     alignItems: 'center',
+    height: hp('80%'),
   },
 });

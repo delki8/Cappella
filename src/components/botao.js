@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  useWindowDimensions,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {WHITE, ORANGE, FONT_AVENIR_BLACK} from '../styles/styles';
-import {getSize} from '../utils/utils';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 export const Botao = ({titulo, onPress}) => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+  const styles = getStyles();
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -23,13 +18,16 @@ export const Botao = ({titulo, onPress}) => {
   );
 };
 
-const getStyles = (size) => {
+const getStyles = () => {
   return StyleSheet.create({
     botaoContainer: {
       backgroundColor: ORANGE,
       padding: wp('4%'),
-      borderRadius: 23,
+      width: wp('73%'),
+      height: hp('7%'),
+      borderRadius: 50,
       opacity: 0.56,
+      justifyContent: 'center',
     },
     botaoTexto: {
       fontFamily: FONT_AVENIR_BLACK,

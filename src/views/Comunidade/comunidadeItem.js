@@ -1,21 +1,12 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  Alert,
-  Image,
-  Linking,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import {Alert, Image, Linking, StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {FONT_AVENIR_BLACK} from '../../styles/styles';
-import {getSize} from '../../utils/utils';
 
 const handlePress = async (url) => {
   const supported = await Linking.canOpenURL(url);
@@ -28,9 +19,7 @@ const handlePress = async (url) => {
 };
 
 export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
-  const {height} = useWindowDimensions();
-  const size = getSize(height);
-  const styles = getStyles(backgroundColor, color, size);
+  const styles = getStyles(backgroundColor, color);
 
   return (
     <View style={styles.container}>
@@ -54,7 +43,7 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
   );
 };
 
-const getStyles = (backgroundColor, color, size) => {
+const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
     container: {
       height: hp('11%'),

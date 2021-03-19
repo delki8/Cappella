@@ -25,7 +25,6 @@ import {
   FONT_AVENIR_ROMAN,
   SIZE_LARGE,
   SIZE_SMALL,
-  SIZE_XX_LARGE,
   SUBTEXT,
 } from '../../styles/styles';
 import {CONTATO} from './data/Contato';
@@ -51,26 +50,24 @@ export const Contato = () => {
       <ContainerPage imagem={IconContato}>
         <View style={styles.container}>
           <Image source={logo} style={styles.imagem} resizeMode="contain" />
-          <View style={styles.containerTexto}>
-            <View style={styles.containerEndereco}>
-              <SvgXml xml={IconArroba} width={25} height={42} />
-              <Text style={styles.text}>{email}</Text>
-            </View>
-            <View style={styles.containerEndereco}>
-              <SvgXml xml={IconTelefone} width={25} height={25.45} />
-              <Text style={styles.text}>{telefone}</Text>
-            </View>
-            <View style={styles.containerEndereco}>
-              <SvgXml xml={IconLocation} width={25} height={43.05} />
-              <Text style={styles.text}>{endereco}</Text>
-            </View>
-            <View style={styles.botao}>
-              <Botao
-                titulo={'ver no mapa'}
-                onPress={() => handlePress(localizacao)}
-              />
-            </View>
+          <View style={styles.containerEndereco}>
+            <SvgXml xml={IconArroba} width={25} height={42} />
+            <Text style={styles.text}>{email}</Text>
           </View>
+          <View style={styles.containerEndereco}>
+            <SvgXml xml={IconTelefone} width={25} height={25.45} />
+            <Text style={styles.text}>{telefone}</Text>
+          </View>
+          <View style={styles.containerEndereco}>
+            <SvgXml xml={IconLocation} width={25} height={43.05} />
+            <Text style={styles.text}>{endereco}</Text>
+          </View>
+        </View>
+        <View style={styles.botao}>
+          <Botao
+            titulo={'ver no mapa'}
+            onPress={() => handlePress(localizacao)}
+          />
         </View>
       </ContainerPage>
     </SafeAreaView>
@@ -84,7 +81,7 @@ const getStyles = (size) => {
       paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     container: {
-      width: wp('80%'),
+      width: wp('73%'),
     },
     imagem: {
       width: 335,
@@ -97,7 +94,7 @@ const getStyles = (size) => {
     },
     containerEndereco: {
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       justifyContent: 'flex-start',
       marginBottom: SIZE_SMALL,
     },
@@ -109,7 +106,8 @@ const getStyles = (size) => {
       fontSize: wp('4.8%'),
     },
     botao: {
-      marginTop: size === 'small' ? SIZE_SMALL : SIZE_XX_LARGE,
+      marginTop: 'auto',
+      marginBottom: 'auto',
     },
   });
 };

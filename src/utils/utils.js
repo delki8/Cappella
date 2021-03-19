@@ -1,9 +1,5 @@
-import { Alert } from "react-native";
-
 export const getSize = (height) => {
   let size = 'xsmall';
-
-  // Alert.alert(height.toString());
 
   if (height < 534) {
     size = 'small';
@@ -18,8 +14,6 @@ export const getSize = (height) => {
   } else if (height > 897) {
     size = 'xxxlarge';
   }
-
-  // Alert.alert(size);
 
   return size;
 };
