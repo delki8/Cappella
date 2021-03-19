@@ -8,7 +8,6 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  useWindowDimensions,
   View,
 } from 'react-native';
 import {
@@ -28,8 +27,6 @@ import {
   FONT_AVENIR_BLACK,
 } from '../../styles/styles';
 import {CONTRIBUA} from './data/Contribua';
-import {getSize} from '../../utils/utils';
-
 const handlePress = async (url) => {
   const supported = await Linking.canOpenURL(url);
 
@@ -41,8 +38,7 @@ const handlePress = async (url) => {
 };
 
 export const Contribua = () => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+  const styles = getStyles();
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
 
   return (
@@ -89,7 +85,7 @@ export const Contribua = () => {
   );
 };
 
-const getStyles = (size) => {
+const getStyles = () => {
   return StyleSheet.create({
     droidSafeArea: {
       flex: 1,
@@ -177,7 +173,8 @@ const getStyles = (size) => {
       textAlign: 'center',
     },
     containerIgreja: {
-      paddingVertical: hp('10%'),
+      marginTop: 'auto',
+      marginBottom: 'auto',
     },
   });
 };

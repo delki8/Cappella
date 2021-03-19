@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, useWindowDimensions} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -15,11 +15,9 @@ import {
   IRON,
   SUBTEXT,
 } from '../../styles/styles';
-import {getSize} from '../../utils/utils';
 
 export const Pastoral = () => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+  const styles = getStyles();
 
   return (
     <ContainerPage>
@@ -32,28 +30,10 @@ export const Pastoral = () => {
   );
 };
 
-const getHeight = (size) => {
-  switch (size) {
-    case 'small':
-      return hp('63%');
-    case 'medium':
-      return hp('67%');
-    case 'large':
-    case 'xlarge':
-    case 'xxlarge':
-      return hp('73%');
-    case 'xxxlarge':
-      return hp('75%');
-    default:
-      break;
-  }
-};
-
 const getStyles = (size) => {
   return StyleSheet.create({
     container: {
-      marginTop: hp('3%'),
-      height: getHeight(size),
+      marginTop: hp('5%'),
       width: wp('80%'),
     },
     titulo: {

@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-} from 'react-native';
+import {Platform, SafeAreaView, StyleSheet, Text} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -17,11 +11,9 @@ import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
 import {FONT_AVENIR_BLACK, BLUE} from '../../styles/styles';
 import {IconAgenda} from '../../assets/images/Icons';
-import {getSize} from '../../utils/utils';
 
 export const Agenda = () => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+  const styles = getStyles();
 
   const renderItem = ({item}, index) => {
     return <AgendaItem key={index} {...item} />;
@@ -52,31 +44,13 @@ export const Agenda = () => {
   );
 };
 
-const getHeight = (size) => {
-  switch (size) {
-    case 'small':
-      return hp('65%');
-    case 'medium':
-      return hp('68%');
-    case 'large':
-    case 'xlarge':
-    case 'xxlarge':
-      return hp('75%');
-    case 'xxxlarge':
-      return hp('100%');
-    default:
-      break;
-  }
-};
-
-const getStyles = (size) => {
+const getStyles = () => {
   return StyleSheet.create({
     droidSafeArea: {
       flex: 1,
       paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     flatListContainer: {
-      height: getHeight(size),
       paddingVertical: hp('7%'),
     },
     dia: {
