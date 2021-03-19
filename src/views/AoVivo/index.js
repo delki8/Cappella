@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  useWindowDimensions,
   View,
 } from 'react-native';
 import {
@@ -15,18 +14,11 @@ import {
 } from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
-import {
-  TITLE,
-  GRAY,
-  FONT_AVENIR_BOOK,
-  FONT_AVENIR_ROMAN,
-} from '../../styles/styles';
-import {getSize} from '../../utils/utils';
+import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
 import {AOVIVO} from './data/AoVivo';
 
-export const AoVivo = ({imagem, titulo}) => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+export const AoVivo = ({titulo}) => {
+  const styles = getStyles();
 
   const url = AOVIVO.url;
 
@@ -41,9 +33,8 @@ export const AoVivo = ({imagem, titulo}) => {
   }, [url]);
 
   return (
-    <ContainerPage imagem={imagem} titulo={titulo}>
+    <ContainerPage titulo={titulo}>
       <View style={styles.container}>
-        <Text style={styles.titulo}>Assine nosso canal</Text>
         <TouchableOpacity style={styles.containerItem} onPress={handlePress}>
           <Image
             source={require('../../assets/images/video-icon.png')}
@@ -52,35 +43,30 @@ export const AoVivo = ({imagem, titulo}) => {
           />
         </TouchableOpacity>
         <Text style={styles.notificacoes}>
-          Ative as notificações para ser sempre avisado quando estamos Ao Vivo!
+          ative as notificações para ser sempre avisado quando estamos ao vivo!
         </Text>
       </View>
     </ContainerPage>
   );
 };
 
-const getStyles = (size) => {
+const getStyles = () => {
   return StyleSheet.create({
     container: {
       width: wp('100%'),
       alignItems: 'center',
-    },
-    titulo: {
-      color: TITLE,
-      fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_ROMAN,
-      paddingVertical: hp('10%'),
+      paddingVertical: hp('7%'),
     },
     notificacoes: {
-      color: TITLE,
-      fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_BOOK,
+      color: IRON,
+      fontSize: wp('4.6%'),
+      fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },
     containerItem: {
       width: wp('70%'),
       height: hp('25%'),
-      backgroundColor: GRAY,
+      backgroundColor: WHITE,
       justifyContent: 'center',
       alignItems: 'center',
       borderColor: TITLE,

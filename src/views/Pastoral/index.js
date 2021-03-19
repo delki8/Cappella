@@ -9,9 +9,11 @@ import {
 import {ContainerPage} from '../../components/ContainerPage';
 import {PASTORAL} from './data/Pastoral';
 import {
-  SIZE_XX_LARGE,
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BOOK,
+  FONT_AVENIR_BLACK,
+  IRON,
+  SUBTEXT,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
@@ -20,8 +22,9 @@ export const Pastoral = () => {
   const styles = getStyles(getSize(height));
 
   return (
-    <ContainerPage titulo={PASTORAL.titulo}>
+    <ContainerPage>
       <ScrollView style={styles.container}>
+        <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
         <Text style={styles.autor}>{PASTORAL.autor}</Text>
         <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
       </ScrollView>
@@ -53,13 +56,22 @@ const getStyles = (size) => {
       height: getHeight(size),
       width: wp('80%'),
     },
+    titulo: {
+      fontSize: wp('6%'),
+      fontFamily: FONT_AVENIR_BLACK,
+      alignSelf: 'center',
+      color: IRON,
+    },
     autor: {
       fontSize: wp('3%'),
       fontFamily: FONT_AVENIR_BOOK,
+      alignSelf: 'flex-end',
+      color: SUBTEXT,
     },
     descricao: {
-      fontSize: wp('4%'),
+      fontSize: wp('4.4%'),
       fontFamily: FONT_AVENIR_ROMAN,
+      color: IRON,
     },
   });
 };

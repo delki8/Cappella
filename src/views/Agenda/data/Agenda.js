@@ -10,7 +10,7 @@ import {
 
 export const AGENDA = [
   {
-    dia: 'Domingo',
+    dia: 'domingo',
     atividades: [
       {
         backgroundColor: BEIGE,
@@ -27,7 +27,7 @@ export const AGENDA = [
     ],
   },
   {
-    dia: 'Segunda-feira',
+    dia: 'segunda',
     atividades: [
       {
         backgroundColor: BLUE,
@@ -38,7 +38,7 @@ export const AGENDA = [
     ],
   },
   {
-    dia: 'Terça-feira',
+    dia: 'terça',
     atividades: [
       {
         backgroundColor: GREEN,
@@ -49,7 +49,7 @@ export const AGENDA = [
     ],
   },
   {
-    dia: 'Quarta-feira',
+    dia: 'quarta',
     atividades: [
       {
         backgroundColor: DARKGREEN,

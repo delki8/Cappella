@@ -9,7 +9,7 @@ import {Image, StyleSheet} from 'react-native';
 
 export const PastoralItem = () => {
   const navigation = useNavigation();
-  const textoCard = 'Uma Palavra Pastoral';
+  const textoCard = 'uma palavra pastoral';
 
   return (
     <GenericItem

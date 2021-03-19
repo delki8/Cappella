@@ -1,14 +1,16 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {SvgXml} from 'react-native-svg';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 import {
   FONT_AVENIR_BLACK,
+  IRON,
   SIZE_XX_SMALL,
   SIZE_X_LARGE,
-  TITLE,
 } from '../styles/styles';
 
 export const ContainerPage = ({imagem, titulo, children}) => {
@@ -23,13 +25,8 @@ export const ContainerPage = ({imagem, titulo, children}) => {
             style={styles.imagemSeta}
           />
         </TouchableOpacity>
-        {imagem && (
-          <View style={styles.containerImagem}>
-            <SvgXml xml={imagem} width={38} height={38} />
-          </View>
-        )}
       </View>
-      <Text style={styles.titulo}>{titulo}</Text>
+      {titulo && <Text style={styles.titulo}>{titulo}</Text>}
       <View style={styles.containerPagina}>{children}</View>
     </>
   );
@@ -41,8 +38,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   titulo: {
-    color: TITLE,
-    fontSize: wp('4%'),
+    color: IRON,
+    fontSize: wp('5%'),
     fontFamily: FONT_AVENIR_BLACK,
     alignSelf: 'center',
   },

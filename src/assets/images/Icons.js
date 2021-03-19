@@ -26,21 +26,24 @@ export const IconAgenda = `
 </svg>`;
 
 export const IconLocation = `
-<svg xmlns="http://www.w3.org/2000/svg" width="20.91" height="28.476" viewBox="0 0 20.91 28.476">
-  <path id="Path_11" data-name="Path 11" d="M14.955,2A9.91,9.91,0,0,0,5,11.878c0,5.885,6.286,14,8.874,17.09a1.419,1.419,0,0,0,2.176,0c2.574-3.091,8.86-11.205,8.86-17.09A9.91,9.91,0,0,0,14.955,2Zm0,13.407a3.528,3.528,0,1,1,3.555-3.528A3.543,3.543,0,0,1,14.955,15.407Z" transform="translate(-4.5 -1.5)" fill="#d25c15" stroke="#d25c15" stroke-width="1"/>
-</svg>`;
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="28.601" viewBox="0 0 21 28.601">
+  <path id="Path_11" data-name="Path 11" d="M15,2A9.955,9.955,0,0,0,5,11.923c0,5.911,6.314,14.063,8.914,17.167a1.425,1.425,0,0,0,2.186,0c2.586-3.1,8.9-11.256,8.9-17.167A9.955,9.955,0,0,0,15,2Zm0,13.467a3.544,3.544,0,1,1,3.571-3.544A3.559,3.559,0,0,1,15,15.467Z" transform="translate(-4.5 -1.5)" fill="#df9d74" stroke="#df9d74" stroke-width="1"/>
+</svg>
+`;
 
 export const IconTelefone = `
-<svg xmlns="http://www.w3.org/2000/svg" width="25.745" height="26.447" viewBox="0 0 25.745 26.447">
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="24.163" viewBox="0 0 21 24.163">
   <g id="call-24px_1_" data-name="call-24px (1)" transform="translate(40.152 -2.5)">
-    <path id="Path_3" data-name="Path 3" d="M7.867,5.827a17.854,17.854,0,0,0,.619,3.661l-1.65,1.7A21.48,21.48,0,0,1,5.791,5.827H7.867M21.421,22.82A17.093,17.093,0,0,0,25,23.456v2.106a20.694,20.694,0,0,1-5.224-1.06l1.65-1.682M9.186,3H4.375A1.4,1.4,0,0,0,3,4.414C3,17.688,13.462,28.447,26.37,28.447a1.4,1.4,0,0,0,1.375-1.414V22.1a1.4,1.4,0,0,0-1.375-1.414,15.287,15.287,0,0,1-4.908-.806,1.125,1.125,0,0,0-.426-.071,1.388,1.388,0,0,0-.976.41l-3.024,3.11a21.13,21.13,0,0,1-9.059-9.316L11,10.9a1.447,1.447,0,0,0,.344-1.442,16.476,16.476,0,0,1-.784-5.047A1.4,1.4,0,0,0,9.186,3Z" transform="translate(-42.652 0)" fill="#d66c2c" stroke="#c8723c" stroke-width="1"/>
+    <path id="Path_3" data-name="Path 3" d="M6.933,5.574a18.132,18.132,0,0,0,.5,3.333L6.1,10.451a21.747,21.747,0,0,1-.844-4.877H6.933M17.889,21.042a12.427,12.427,0,0,0,2.889.579v1.917a15.1,15.1,0,0,1-4.222-.965l1.333-1.531M8,3H4.111A1.212,1.212,0,0,0,3,4.287C3,16.37,11.456,26.163,21.889,26.163A1.212,1.212,0,0,0,23,24.877V20.385A1.212,1.212,0,0,0,21.889,19.1a11.106,11.106,0,0,1-3.967-.734.818.818,0,0,0-.344-.064,1.063,1.063,0,0,0-.789.373l-2.444,2.831a18.39,18.39,0,0,1-7.322-8.48l2.444-2.831a1.439,1.439,0,0,0,.278-1.313,16.743,16.743,0,0,1-.633-4.594A1.212,1.212,0,0,0,8,3Z" transform="translate(-42.652 0)" fill="#df9d74" stroke="#df9d74" stroke-width="1"/>
   </g>
-</svg>`;
+</svg>
+`;
 
 export const IconArroba = `
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="44" viewBox="0 0 30 44">
-  <text id="_" data-name="@" transform="translate(1 34)" fill="#d66c2c" stroke="#d37339" stroke-width="1" font-size="34"><tspan x="0" y="0">@</tspan></text>
-</svg>`;
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="33" viewBox="0 0 27 33">
+  <text id="_" data-name="@" transform="translate(1 24)" fill="#d66c2c" stroke="#d37339" stroke-width="1" font-size="31" opacity="0.558"><tspan x="0" y="0">@</tspan></text>
+</svg>
+`;
 
 export const IconContato = `
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 40 36">
