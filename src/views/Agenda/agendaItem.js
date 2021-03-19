@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -7,37 +7,40 @@ import {
 import {
   FONT_AVENIR_BLACK,
   FONT_AVENIR_ROMAN,
-  SIZE_X_LARGE,
-  SIZE_LARGE,
+  DARKBEIGE,
+  BLUE,
+  BEIGE,
 } from '../../styles/styles';
-import {getSize} from '../../utils/utils';
 
-export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
-  const {height} = useWindowDimensions();
-  const size = getSize(height);
-  const styles = getStyles(backgroundColor, color, size);
+export const AgendaItem = ({atividade, horario}) => {
+  const styles = getStyles();
 
   return (
-    <View style={styles.containerItem}>
+    <View style={styles.container}>
       <View style={styles.containerHorario}>
         <Text style={styles.horario}>{horario}</Text>
-        <Text style={styles.horas}>horas</Text>
       </View>
-      <Text style={styles.atividade}>{atividade}</Text>
+      <View style={styles.containerAtividade}>
+        <Text style={styles.atividade}>{atividade}</Text>
+      </View>
     </View>
   );
 };
 
-const getStyles = (backgroundColor, color, size) => {
+const getStyles = () => {
   return StyleSheet.create({
-    containerItem: {
-      alignItems: 'center',
+    container: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
-      width: wp('90%'),
+      justifyContent: 'space-evenly',
+      width: wp('80%'),
+    },
+    containerAtividade: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: wp('53%'),
       height: hp('8.5%'),
-      marginBottom: 10,
-      backgroundColor,
+      marginBottom: hp('1.2%'),
+      backgroundColor: DARKBEIGE,
       shadowOffset: {
         width: 0.2,
         height: 0.2,
@@ -48,27 +51,26 @@ const getStyles = (backgroundColor, color, size) => {
     containerHorario: {
       alignItems: 'center',
       justifyContent: 'center',
-      marginLeft: SIZE_LARGE,
-      width: 44,
+      width: wp('19%'),
+      marginBottom: hp('1.2%'),
+      backgroundColor: BEIGE,
+      shadowOffset: {
+        width: 0.2,
+        height: 0.2,
+      },
+      shadowOpacity: 0.2,
+      elevation: 1,
     },
     horario: {
-      color,
-      fontSize: wp('7%'),
+      color: BLUE,
+      fontSize: wp('6.3%'),
       fontFamily: FONT_AVENIR_BLACK,
-    },
-    horas: {
-      color,
-      fontSize: wp('4%'),
-      fontFamily: FONT_AVENIR_ROMAN,
     },
     atividade: {
-      color,
-      fontSize: wp('5%'),
-      alignItems: 'flex-start',
-      justifyContent: 'flex-start',
-      textAlign: 'left',
-      fontFamily: FONT_AVENIR_BLACK,
-      marginRight: SIZE_X_LARGE,
+      color: BLUE,
+      fontSize: wp('4.7%'),
+      textAlign: 'center',
+      fontFamily: FONT_AVENIR_ROMAN,
     },
   });
 };
