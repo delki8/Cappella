@@ -6,7 +6,7 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from 'react-native';
-import {FONT_AVENIR_ROMAN, WHITE, ORANGE} from '../styles/styles';
+import {WHITE, ORANGE, FONT_AVENIR_BLACK} from '../styles/styles';
 import {getSize} from '../utils/utils';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
@@ -28,11 +28,11 @@ const getStyles = (size) => {
     botaoContainer: {
       backgroundColor: ORANGE,
       padding: wp('4%'),
-      borderRadius: 30,
+      borderRadius: 23,
       opacity: 0.56,
     },
     botaoTexto: {
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: FONT_AVENIR_BLACK,
       fontSize: wp('5%'),
       color: WHITE,
       textAlign: 'center',

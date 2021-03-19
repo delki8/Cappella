@@ -25,7 +25,7 @@ export const Comunidade = ({imagem}) => {
 const getStyles = () => {
   return StyleSheet.create({
     flatList: {
-      paddingVertical: hp('3%'),
+      paddingVertical: hp('7%'),
     },
   });
 };

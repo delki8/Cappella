@@ -15,12 +15,7 @@ import {
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendaItem} from './agendaItem';
 import {AGENDA} from './data/Agenda';
-import {
-  TITLE,
-  FONT_AVENIR_ROMAN,
-  SIZE_SMALL,
-  SIZE_LARGE,
-} from '../../styles/styles';
+import {FONT_AVENIR_BLACK, BLUE} from '../../styles/styles';
 import {IconAgenda} from '../../assets/images/Icons';
 import {getSize} from '../../utils/utils';
 
@@ -81,15 +76,15 @@ const getStyles = (size) => {
       paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     flatListContainer: {
-      marginTop: SIZE_LARGE,
       height: getHeight(size),
+      paddingVertical: hp('7%'),
     },
     dia: {
-      color: TITLE,
-      fontSize: wp('4%'),
-      fontFamily: FONT_AVENIR_ROMAN,
-      margin: SIZE_SMALL,
-      alignSelf: 'center',
+      color: BLUE,
+      fontSize: wp('4.8%'),
+      fontFamily: FONT_AVENIR_BLACK,
+      margin: hp('1%'),
+      alignSelf: 'flex-end',
     },
   });
 };

@@ -28,22 +28,6 @@ export const AgendaItem = ({atividade, horario, backgroundColor, color}) => {
   );
 };
 
-const getHeight = (size) => {
-  switch (size) {
-    case 'small':
-    case 'medium':
-      return hp('11%');
-    case 'large':
-    case 'xlarge':
-    case 'xxlarge':
-      return hp('10%');
-    case 'xxxlarge':
-      return hp('10%');
-    default:
-      break;
-  }
-};
-
 const getStyles = (backgroundColor, color, size) => {
   return StyleSheet.create({
     containerItem: {
@@ -51,7 +35,7 @@ const getStyles = (backgroundColor, color, size) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       width: wp('90%'),
-      height: getHeight(size),
+      height: hp('8.5%'),
       marginBottom: 10,
       backgroundColor,
       shadowOffset: {

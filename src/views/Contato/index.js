@@ -22,11 +22,11 @@ import {
 import {Botao} from '../../components/botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
-  ACTIVE_GREEN,
   FONT_AVENIR_ROMAN,
   SIZE_LARGE,
   SIZE_SMALL,
   SIZE_XX_LARGE,
+  SUBTEXT,
 } from '../../styles/styles';
 import {CONTATO} from './data/Contato';
 import {getSize} from '../../utils/utils';
@@ -66,7 +66,7 @@ export const Contato = () => {
             </View>
             <View style={styles.botao}>
               <Botao
-                titulo={'Ver no mapa'}
+                titulo={'ver no mapa'}
                 onPress={() => handlePress(localizacao)}
               />
             </View>
@@ -85,17 +85,11 @@ const getStyles = (size) => {
     },
     container: {
       width: wp('80%'),
-      marginTop: size === 'small' ? -70 : 0,
-    },
-    containerTexto: {
-      margin: wp('1%'),
     },
     imagem: {
       width: 335,
       height: 335,
       alignSelf: 'center',
-      marginBottom: -100,
-      marginTop: size === 'small' ? -70 : -100,
     },
     icons: {
       width: 25,
@@ -108,11 +102,11 @@ const getStyles = (size) => {
       marginBottom: SIZE_SMALL,
     },
     text: {
-      color: ACTIVE_GREEN,
+      color: SUBTEXT,
       marginLeft: SIZE_LARGE,
       textAlign: 'left',
       fontFamily: FONT_AVENIR_ROMAN,
-      fontSize: wp('5%'),
+      fontSize: wp('4.8%'),
     },
     botao: {
       marginTop: size === 'small' ? SIZE_SMALL : SIZE_XX_LARGE,

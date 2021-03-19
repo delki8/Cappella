@@ -39,7 +39,7 @@ const getStyles = (width, height) => {
     texto: {
       marginTop: 8,
       fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('3.5%'),
+      fontSize: wp('5%'),
       color: TITLE,
     },
   });

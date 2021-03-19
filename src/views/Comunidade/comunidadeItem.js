@@ -82,7 +82,7 @@ const getStyles = (backgroundColor, color, size) => {
     },
     redes: {
       color,
-      fontSize: hp('3%'),
+      fontSize: hp('2.3%'),
       fontFamily: FONT_AVENIR_BLACK,
     },
     imagemSeta: {
