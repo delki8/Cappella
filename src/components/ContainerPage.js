@@ -13,7 +13,7 @@ import {
   SIZE_X_LARGE,
 } from '../styles/styles';
 
-export const ContainerPage = ({imagem, titulo, children}) => {
+export const ContainerPage = ({titulo, children}) => {
   const navigation = useNavigation();
 
   return (
@@ -27,7 +27,7 @@ export const ContainerPage = ({imagem, titulo, children}) => {
         </TouchableOpacity>
       </View>
       {titulo && <Text style={styles.titulo}>{titulo}</Text>}
-      <View style={styles.containerPagina}>{children}</View>
+      {children}
     </>
   );
 };
@@ -48,12 +48,5 @@ const styles = StyleSheet.create({
     height: SIZE_X_LARGE,
     marginLeft: SIZE_X_LARGE,
     marginTop: SIZE_XX_SMALL,
-  },
-  containerImagem: {
-    marginRight: SIZE_X_LARGE,
-  },
-  containerPagina: {
-    alignItems: 'center',
-    height: hp('80%'),
   },
 });

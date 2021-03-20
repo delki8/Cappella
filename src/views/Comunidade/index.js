@@ -6,11 +6,11 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {ComunidadeItem} from './comunidadeItem';
 import {COMUNIDADE} from './data/Comunidade';
 
-export const Comunidade = ({imagem}) => {
+export const Comunidade = () => {
   const styles = getStyles();
 
   return (
-    <ContainerPage imagem={imagem} titulo={'NOSSA COMUNIDADE'}>
+    <ContainerPage titulo={'NOSSA COMUNIDADE'}>
       <FlatList
         style={styles.flatList}
         numColumns={1}
