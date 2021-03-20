@@ -11,7 +11,7 @@ import {
 export const AGENDA = [
   {
     dia: 'domingo',
-    atividades: [
+    data: [
       {
         backgroundColor: BEIGE,
         color: LIGHTTITLE,
@@ -28,7 +28,7 @@ export const AGENDA = [
   },
   {
     dia: 'segunda',
-    atividades: [
+    data: [
       {
         backgroundColor: BLUE,
         color: LIGHTBLUE,
@@ -39,7 +39,7 @@ export const AGENDA = [
   },
   {
     dia: 'terça',
-    atividades: [
+    data: [
       {
         backgroundColor: GREEN,
         color: BLUE,
@@ -50,7 +50,7 @@ export const AGENDA = [
   },
   {
     dia: 'quarta',
-    atividades: [
+    data: [
       {
         backgroundColor: DARKGREEN,
         color: BLUE,

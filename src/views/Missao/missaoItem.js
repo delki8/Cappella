@@ -5,7 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import {FONT_AVENIR_ROMAN, SIZE_XX_SMALL} from '../../styles/styles';
+import {FONT_AVENIR_ROMAN} from '../../styles/styles';
 
 export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
   const styles = getStyles(backgroundColor, color);
@@ -25,13 +25,13 @@ const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
     missao: {
       color,
-      fontSize: wp('4.3%'),
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
     },
     containerMissao: {
       width: wp('80%'),
-      marginBottom: SIZE_XX_SMALL,
+      marginBottom: hp('1%'),
     },
     containerItem: {
       height: hp('8%'),

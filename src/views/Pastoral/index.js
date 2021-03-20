@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -15,26 +15,49 @@ import {
   IRON,
   SUBTEXT,
 } from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 
 export const Pastoral = () => {
-  const styles = getStyles();
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
 
   return (
     <ContainerPage>
-      <ScrollView style={styles.container}>
-        <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
-        <Text style={styles.autor}>{PASTORAL.autor}</Text>
-        <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
-      </ScrollView>
+      <View style={styles.containerPagina}>
+        <ScrollView style={styles.container}>
+          <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
+          <Text style={styles.autor}>{PASTORAL.autor}</Text>
+          <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+        </ScrollView>
+      </View>
     </ContainerPage>
   );
 };
 
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return hp('69%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+    case 'xxxlarge':
+      return hp('77%');
+    default:
+      break;
+  }
+};
+
 const getStyles = (size) => {
   return StyleSheet.create({
+    containerPagina: {
+      alignItems: 'center',
+    },
     container: {
       marginTop: hp('5%'),
       width: wp('80%'),
+      height: getHeight(size),
     },
     titulo: {
       fontSize: wp('6%'),

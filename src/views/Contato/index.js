@@ -3,7 +3,6 @@ import {
   Alert,
   Image,
   Linking,
-  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -11,7 +10,10 @@ import {
   View,
 } from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 import {
   IconArroba,
@@ -22,10 +24,11 @@ import {
 import {Botao} from '../../components/botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
+  ACTIVE_GREEN,
   FONT_AVENIR_ROMAN,
   SIZE_LARGE,
   SIZE_SMALL,
-  SUBTEXT,
+  SIZE_XX_LARGE,
 } from '../../styles/styles';
 import {CONTATO} from './data/Contato';
 import {getSize} from '../../utils/utils';
@@ -50,24 +53,26 @@ export const Contato = () => {
       <ContainerPage imagem={IconContato}>
         <View style={styles.container}>
           <Image source={logo} style={styles.imagem} resizeMode="contain" />
-          <View style={styles.containerEndereco}>
-            <SvgXml xml={IconArroba} width={25} height={42} />
-            <Text style={styles.text}>{email}</Text>
+          <View style={styles.containerTexto}>
+            <View style={styles.containerEndereco}>
+              <SvgXml xml={IconArroba} width={25} height={42} />
+              <Text style={styles.text}>{email}</Text>
+            </View>
+            <View style={styles.containerEndereco}>
+              <SvgXml xml={IconTelefone} width={25} height={25.45} />
+              <Text style={styles.text}>{telefone}</Text>
+            </View>
+            <View style={styles.containerEndereco}>
+              <SvgXml xml={IconLocation} width={25} height={43.05} />
+              <Text style={styles.text}>{endereco}</Text>
+            </View>
+            <View style={styles.botao}>
+              <Botao
+                titulo={'Ver no mapa'}
+                onPress={() => handlePress(localizacao)}
+              />
+            </View>
           </View>
-          <View style={styles.containerEndereco}>
-            <SvgXml xml={IconTelefone} width={25} height={25.45} />
-            <Text style={styles.text}>{telefone}</Text>
-          </View>
-          <View style={styles.containerEndereco}>
-            <SvgXml xml={IconLocation} width={25} height={43.05} />
-            <Text style={styles.text}>{endereco}</Text>
-          </View>
-        </View>
-        <View style={styles.botao}>
-          <Botao
-            titulo={'ver no mapa'}
-            onPress={() => handlePress(localizacao)}
-          />
         </View>
       </ContainerPage>
     </SafeAreaView>
@@ -78,36 +83,38 @@ const getStyles = (size) => {
   return StyleSheet.create({
     droidSafeArea: {
       flex: 1,
-      paddingTop: Platform.OS === 'android' ? 25 : 0,
     },
     container: {
-      width: wp('73%'),
-    },
-    imagem: {
-      width: 335,
-      height: 335,
+      paddingVertical: hp('7%'),
+      width: wp('80%'),
+      height: wp('80%'),
       alignSelf: 'center',
     },
-    icons: {
-      width: 25,
-      height: 25,
+    containerTexto: {
+      margin: wp('1%'),
+    },
+    imagem: {
+      width: wp('75%'),
+      height: hp('50%'),
+      alignSelf: 'center',
+      marginBottom: -100,
+      marginTop: -100,
     },
     containerEndereco: {
       flexDirection: 'row',
-      alignItems: 'flex-start',
+      alignItems: 'center',
       justifyContent: 'flex-start',
       marginBottom: SIZE_SMALL,
     },
     text: {
-      color: SUBTEXT,
+      color: ACTIVE_GREEN,
       marginLeft: SIZE_LARGE,
       textAlign: 'left',
       fontFamily: FONT_AVENIR_ROMAN,
-      fontSize: wp('4.8%'),
+      fontSize: wp('5%'),
     },
     botao: {
-      marginTop: 'auto',
-      marginBottom: 'auto',
+      marginTop: size === 'small' ? SIZE_SMALL : SIZE_XX_LARGE,
     },
   });
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -11,9 +11,12 @@ import {
   BLUE,
   BEIGE,
 } from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 
 export const AgendaItem = ({atividade, horario}) => {
-  const styles = getStyles();
+  const {height} = useWindowDimensions();
+  const size = getSize(height);
+  const styles = getStyles(size);
 
   return (
     <View style={styles.container}>
@@ -27,18 +30,34 @@ export const AgendaItem = ({atividade, horario}) => {
   );
 };
 
-const getStyles = () => {
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return hp('7%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+    case 'xxxlarge':
+      return hp('8.5%');
+    default:
+      break;
+  }
+};
+
+const getStyles = (size) => {
   return StyleSheet.create({
     container: {
       flexDirection: 'row',
       justifyContent: 'space-evenly',
       width: wp('80%'),
+      alignSelf: 'center',
     },
     containerAtividade: {
       alignItems: 'center',
       justifyContent: 'center',
       width: wp('53%'),
-      height: hp('8.5%'),
+      height: getHeight(size),
       marginBottom: hp('1.2%'),
       backgroundColor: DARKBEIGE,
       shadowOffset: {

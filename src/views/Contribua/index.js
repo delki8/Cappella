@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import {
@@ -26,6 +27,7 @@ import {
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BLACK,
 } from '../../styles/styles';
+import {getSize} from '../../utils/utils';
 import {CONTRIBUA} from './data/Contribua';
 const handlePress = async (url) => {
   const supported = await Linking.canOpenURL(url);
@@ -38,7 +40,8 @@ const handlePress = async (url) => {
 };
 
 export const Contribua = () => {
-  const styles = getStyles();
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
 
   return (
@@ -75,47 +78,33 @@ export const Contribua = () => {
               style={styles.pixImg}
             />
           </TouchableOpacity>
-        </View>
-        <View style={styles.containerIgreja}>
-          <Text style={styles.detalhesIgreja}>{igreja}</Text>
-          <Text style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
+          <View style={styles.containerIgreja}>
+            <Text style={styles.detalhesIgreja}>{igreja}</Text>
+            <Text style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
+          </View>
         </View>
       </ContainerPage>
     </SafeAreaView>
   );
 };
 
-const getStyles = () => {
+const getHeight = (size) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return hp('69%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+    case 'xxxlarge':
+      return hp('77%');
+    default:
+      break;
+  }
+};
+
+const getStyles = (size) => {
   return StyleSheet.create({
-    droidSafeArea: {
-      flex: 1,
-      paddingTop: Platform.OS === 'android' ? 10 : 0,
-    },
-    container: {
-      width: wp('100%'),
-      alignItems: 'center',
-      paddingVertical: hp('7%'),
-    },
-    conta: {
-      color: EXTRAORANGE,
-      fontSize: wp('4%'),
-      fontFamily: FONT_AVENIR_ROMAN,
-      textAlign: 'center',
-    },
-    titulo: {
-      color: EXTRAORANGE,
-      fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_BLACK,
-    },
-    detalhesIgreja: {
-      color: IRON,
-      fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_BOOK,
-      textAlign: 'center',
-    },
-    containerConta: {
-      margin: wp('9%'),
-    },
     banco: {
       width: wp('73%'),
       height: wp('9%'),
@@ -125,6 +114,18 @@ const getStyles = () => {
       justifyContent: 'center',
       shadowOpacity: 0.1,
       elevation: 1,
+    },
+    conta: {
+      color: EXTRAORANGE,
+      fontSize: wp('4%'),
+      fontFamily: FONT_AVENIR_ROMAN,
+      textAlign: 'center',
+    },
+    container: {
+      width: wp('100%'),
+      height: getHeight(size),
+      alignItems: 'center',
+      paddingVertical: hp('7%'),
     },
     containerBanco: {
       width: wp('73%'),
@@ -138,9 +139,15 @@ const getStyles = () => {
       shadowOpacity: 0.2,
       elevation: 2,
     },
+    containerConta: {
+      margin: wp('7.5%'),
+    },
+    containerIgreja: {
+      marginTop: hp('4%'),
+    },
     containerPix: {
       width: wp('73%'),
-      height: wp('13%'),
+      height: hp('6%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       shadowOffset: {
@@ -156,25 +163,36 @@ const getStyles = () => {
       justifyContent: 'space-between',
       width: wp('73%'),
     },
-    pixImg: {
-      width: wp('8%'),
-      height: hp('4%'),
-    },
     cnpj: {
       color: TITLE,
       fontSize: wp('4.5%'),
       fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
     },
+    droidSafeArea: {
+      flex: 1,
+      paddingTop: Platform.OS === 'android' ? 5 : 0,
+    },
+    detalhesIgreja: {
+      color: IRON,
+      fontSize: wp('5%'),
+      fontFamily: FONT_AVENIR_BOOK,
+      textAlign: 'center',
+    },
+    titulo: {
+      color: EXTRAORANGE,
+      fontSize: wp('5%'),
+      fontFamily: FONT_AVENIR_BLACK,
+    },
+    pixImg: {
+      width: wp('8%'),
+      height: hp('4%'),
+    },
     pix: {
       color: TITLE,
       fontSize: wp('3.9%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
-    },
-    containerIgreja: {
-      marginTop: 'auto',
-      marginBottom: 'auto',
     },
   });
 };
