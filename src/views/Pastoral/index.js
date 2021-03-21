@@ -25,7 +25,7 @@ export const Pastoral = () => {
     <ContainerPage>
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
-          <Text style={styles.titulo}>{PASTORAL.titulo}</Text>
+          <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
           <Text style={styles.autor}>{PASTORAL.autor}</Text>
           <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
         </ScrollView>
@@ -43,7 +43,7 @@ const getHeight = (size) => {
     case 'xlarge':
     case 'xxlarge':
     case 'xxxlarge':
-      return hp('77%');
+      return hp('76%');
     default:
       break;
   }
@@ -56,13 +56,14 @@ const getStyles = (size) => {
     },
     container: {
       marginTop: hp('5%'),
-      width: wp('80%'),
+      width: wp('90%'),
       height: getHeight(size),
     },
     titulo: {
       fontSize: wp('6%'),
       fontFamily: FONT_AVENIR_BLACK,
       alignSelf: 'center',
+      textAlign: 'center',
       color: IRON,
     },
     autor: {
