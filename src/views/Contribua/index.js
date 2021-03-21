@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Alert,
   Image,
@@ -11,6 +11,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import Clipboard from '@react-native-community/clipboard';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -26,6 +27,7 @@ import {
   IRON,
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BLACK,
+  RED,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {CONTRIBUA} from './data/Contribua';
@@ -43,6 +45,12 @@ export const Contribua = () => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
+  const [cnpjCopiado, setCnpjCopiado] = useState(false);
+
+  const copyToClipboard = () => {
+    Clipboard.setString(cnpj);
+    setCnpjCopiado(true);
+  };
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
@@ -64,7 +72,12 @@ export const Contribua = () => {
           <Text style={styles.titulo}>TRANSFERÊNCIA POR PIX</Text>
           <View style={styles.containerConta}>
             <View style={styles.containerPix}>
-              <Text style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
+              <TouchableOpacity onPress={copyToClipboard}>
+                <Text style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
+              </TouchableOpacity>
+              {cnpjCopiado && (
+                <Text style={styles.copiedText}>{'CNPJ copiado'}</Text>
+              )}
             </View>
           </View>
           <TouchableOpacity
@@ -167,6 +180,10 @@ const getStyles = (size) => {
       color: TITLE,
       fontSize: wp('4.5%'),
       fontFamily: FONT_AVENIR_BOOK,
+      textAlign: 'center',
+    },
+    copiedText: {
+      color: RED,
       textAlign: 'center',
     },
     droidSafeArea: {
