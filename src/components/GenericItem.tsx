@@ -1,9 +1,28 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {BEIGE, SHADOW_BEIGE, TITLE, FONT_AVENIR_BLACK} from '../styles/styles';
 
-export const GenericItem = ({textoCard, icon, width, height, onNavigate}) => {
+interface Props {
+  textoCard: string;
+  icon: JSX.Element;
+  width: number;
+  height: number;
+  onNavigate: (event: GestureResponderEvent) => void;
+}
+
+export const GenericItem = ({
+  textoCard,
+  icon,
+  width,
+  height,
+  onNavigate,
+}: Props) => {
   const styles = getStyles(width, height);
 
   return (
@@ -14,7 +33,7 @@ export const GenericItem = ({textoCard, icon, width, height, onNavigate}) => {
   );
 };
 
-const getStyles = (width, height) => {
+const getStyles = (width: number, height: number) => {
   return StyleSheet.create({
     containerItem: {
       width,

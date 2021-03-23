@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {SafeAreaView, StyleSheet, Platform, StatusBar, Alert} from 'react-native';
+import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -26,6 +26,12 @@ import {
   TITLE,
 } from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
+
+export type RootStackParamList = {
+  Home: undefined;
+  DetalhesItem: {titulo: string; id: string};
+  Item: undefined;
+};
 
 const HomeStack = createStackNavigator();
 

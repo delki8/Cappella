@@ -49,7 +49,14 @@ export const LandingPage = () => {
       <FlatList
         numColumns={2}
         data={DATA}
-        renderItem={({item}) => <Item {...item} />}
+        renderItem={({item}) => (
+          <Item
+            id={item.id}
+            titulo={item.titulo}
+            imagem={item.imagem}
+            textoCard={item.textoCard}
+          />
+        )}
         keyExtractor={(item) => item.id}
       />
     </View>

@@ -6,7 +6,11 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {MISSAO} from './data/Missao';
 import {MissaoItem} from './missaoItem';
 
-export const Missao = ({titulo}) => {
+interface Props {
+  titulo: string;
+}
+
+export const Missao = ({titulo}: Props) => {
   const styles = getStyles();
   return (
     <ContainerPage titulo={titulo}>

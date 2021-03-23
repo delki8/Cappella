@@ -1,13 +1,5 @@
-import React, {useCallback} from 'react';
-import {
-  Alert,
-  Image,
-  Linking,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -15,27 +7,22 @@ import {
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
+import {handlePress} from '../../utils/handlePress';
 import {AOVIVO} from './data/AoVivo';
 
-export const AoVivo = ({titulo}) => {
+interface Props {
+  titulo: string;
+}
+
+export const AoVivo = ({titulo}: Props) => {
   const styles = getStyles();
-
-  const url = AOVIVO.url;
-
-  const handlePress = useCallback(async () => {
-    const supported = await Linking.canOpenURL(url);
-
-    if (supported) {
-      await Linking.openURL(url);
-    } else {
-      Alert.alert(`Don't know how to open this URL: ${url}`);
-    }
-  }, [url]);
 
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.containerItem} onPress={handlePress}>
+        <TouchableOpacity
+          style={styles.containerItem}
+          onPress={() => handlePress(AOVIVO.url)}>
           <Image
             source={require('../../assets/images/video-icon.png')}
             style={styles.imagem}

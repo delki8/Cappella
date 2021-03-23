@@ -1,32 +1,38 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {Alert, Image, Linking, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {FONT_AVENIR_BLACK} from '../../styles/styles';
+import {handlePress} from '../../utils/handlePress';
+import {IconProp} from '@fortawesome/fontawesome-svg-core';
 
-const handlePress = async (url) => {
-  const supported = await Linking.canOpenURL(url);
+interface Props {
+  url: string;
+  text: string;
+  backgroundColor: string;
+  color: string;
+  icon: IconProp;
+}
 
-  if (supported) {
-    await Linking.openURL(url);
-  } else {
-    Alert.alert(`Don't know how to open this URL: ${url}`);
-  }
-};
-
-export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
+export const ComunidadeItem = ({
+  url,
+  text,
+  backgroundColor,
+  color,
+  icon,
+}: Props) => {
   const styles = getStyles(backgroundColor, color);
 
   return (
     <View style={styles.container}>
-      <View style={styles.redesContainer}>
-        <TouchableOpacity
-          style={styles.iconeContainer}
-          onPress={() => handlePress(url)}>
+      <TouchableOpacity
+        style={styles.redesContainer}
+        onPress={() => handlePress(url)}>
+        <View style={styles.iconeContainer}>
           {typeof icon === 'number' ? (
             <Image
               source={require('../../assets/images/mosaicoLogo.png')}
@@ -35,16 +41,16 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
           ) : (
             <FontAwesomeIcon icon={icon} color={color} size={wp('11%')} />
           )}
-        </TouchableOpacity>
+        </View>
         <View style={styles.textContainer}>
           <Text style={styles.redes}>{text}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
 
-const getStyles = (backgroundColor, color) => {
+const getStyles = (backgroundColor: string, color: string) => {
   return StyleSheet.create({
     container: {
       width: wp('74%'),

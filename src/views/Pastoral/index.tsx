@@ -34,7 +34,7 @@ export const Pastoral = () => {
   );
 };
 
-const getHeight = (size) => {
+const getHeight = (size: string) => {
   switch (size) {
     case 'small':
     case 'medium':
@@ -49,7 +49,7 @@ const getHeight = (size) => {
   }
 };
 
-const getStyles = (size) => {
+const getStyles = (size: string) => {
   return StyleSheet.create({
     containerPagina: {
       alignItems: 'center',

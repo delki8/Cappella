@@ -1,12 +1,23 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  GestureResponderEvent,
+} from 'react-native';
 import {WHITE, ORANGE, FONT_AVENIR_BLACK} from '../styles/styles';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-export const Botao = ({titulo, onPress}) => {
+interface Props {
+  titulo: string;
+  onPress: (event: GestureResponderEvent) => void;
+}
+
+export const Botao = ({titulo, onPress}: Props) => {
   const styles = getStyles();
 
   return (
