@@ -23,22 +23,23 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.containerComunidade}
-        onPress={() => handlePress(url)}>
-        {typeof icon === 'number' ? (
-          <Image
-            source={require('../../assets/images/mosaicoLogo.png')}
-            style={styles.imagemSeta}
-          />
-        ) : (
-          <FontAwesomeIcon icon={icon} color={color} size={wp('15%')} />
-        )}
-
-        <View style={styles.redesContainer}>
+      <View style={styles.redesContainer}>
+        <TouchableOpacity
+          style={styles.iconeContainer}
+          onPress={() => handlePress(url)}>
+          {typeof icon === 'number' ? (
+            <Image
+              source={require('../../assets/images/mosaicoLogo.png')}
+              style={styles.iconeRede}
+            />
+          ) : (
+            <FontAwesomeIcon icon={icon} color={color} size={wp('11%')} />
+          )}
+        </TouchableOpacity>
+        <View style={styles.textContainer}>
           <Text style={styles.redes}>{text}</Text>
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -46,18 +47,12 @@ export const ComunidadeItem = ({url, text, backgroundColor, color, icon}) => {
 const getStyles = (backgroundColor, color) => {
   return StyleSheet.create({
     container: {
-      height: hp('11%'),
-      display: 'flex',
-      alignItems: 'center',
+      width: wp('74%'),
+      height: hp('7.5%'),
+      alignSelf: 'center',
       justifyContent: 'center',
-    },
-    containerComunidade: {
-      flexDirection: 'row',
-      width: wp('90%'),
-      height: hp('9%'),
+      marginBottom: hp('1.7%'),
       backgroundColor,
-      justifyContent: 'space-around',
-      alignItems: 'center',
       shadowOffset: {
         width: 0.2,
         height: 0.2,
@@ -67,16 +62,28 @@ const getStyles = (backgroundColor, color) => {
       borderRadius: 50,
     },
     redesContainer: {
-      width: wp('50%'),
+      width: wp('66%'),
+      flexDirection: 'row',
+      alignItems: 'center',
+      alignSelf: 'center',
+      justifyContent: 'space-between',
+    },
+    textContainer: {
+      width: wp('54%'),
+      alignItems: 'center',
     },
     redes: {
       color,
       fontSize: hp('2.3%'),
       fontFamily: FONT_AVENIR_BLACK,
     },
-    imagemSeta: {
-      width: wp('18%'),
-      height: hp('8%'),
+    iconeContainer: {
+      width: wp('12%'),
+      alignItems: 'center',
+    },
+    iconeRede: {
+      width: wp('12%'),
+      height: hp('5%'),
     },
   });
 };

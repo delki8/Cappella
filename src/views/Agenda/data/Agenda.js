@@ -54,7 +54,7 @@ export const AGENDA = [
       {
         backgroundColor: DARKGREEN,
         color: BLUE,
-        atividade: 'estudo bíblico e oração',
+        atividade: 'estudo bíblico reunião de oração',
         horario: '20:00',
       },
     ],

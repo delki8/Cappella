@@ -43,7 +43,7 @@ const getHeight = (size) => {
     case 'xlarge':
     case 'xxlarge':
     case 'xxxlarge':
-      return hp('76%');
+      return hp('75%');
     default:
       break;
   }
@@ -76,6 +76,7 @@ const getStyles = (size) => {
       fontSize: wp('4.4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       color: IRON,
+      lineHeight: wp('6.3%'),
     },
   });
 };

@@ -58,14 +58,16 @@ const getStyles = () => {
       paddingVertical: hp('7%'),
     },
     notificacoes: {
+      width: wp('73%'),
       color: IRON,
       fontSize: wp('4.6%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
+      lineHeight: wp('6.8%'),
     },
     containerItem: {
-      width: wp('70%'),
-      height: hp('25%'),
+      width: wp('73%'),
+      height: hp('20%'),
       backgroundColor: WHITE,
       justifyContent: 'center',
       alignItems: 'center',
