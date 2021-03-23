@@ -130,9 +130,10 @@ const getStyles = (size) => {
     },
     conta: {
       color: EXTRAORANGE,
-      fontSize: wp('4%'),
+      fontSize: wp('4.5%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
+      lineHeight: wp('6.3%'),
     },
     container: {
       width: wp('100%'),
@@ -142,7 +143,7 @@ const getStyles = (size) => {
     },
     containerBanco: {
       width: wp('73%'),
-      height: wp('20%'),
+      height: hp('14%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       shadowOffset: {
@@ -178,7 +179,6 @@ const getStyles = (size) => {
     },
     cnpj: {
       color: TITLE,
-      fontSize: wp('4.5%'),
       fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
     },
@@ -195,6 +195,7 @@ const getStyles = (size) => {
       fontSize: wp('5%'),
       fontFamily: FONT_AVENIR_BOOK,
       textAlign: 'center',
+      lineHeight: wp('7.2%'),
     },
     titulo: {
       color: EXTRAORANGE,

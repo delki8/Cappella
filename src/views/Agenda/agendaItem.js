@@ -54,7 +54,6 @@ const getStyles = (size) => {
       alignSelf: 'center',
     },
     containerAtividade: {
-      alignItems: 'center',
       justifyContent: 'center',
       width: wp('53%'),
       height: getHeight(size),
