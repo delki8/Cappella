@@ -1,10 +1,7 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 import {
   FONT_AVENIR_BLACK,
@@ -13,7 +10,12 @@ import {
   SIZE_X_LARGE,
 } from '../styles/styles';
 
-export const ContainerPage = ({titulo, children}) => {
+interface Props {
+  titulo?: string;
+  children: JSX.Element | JSX.Element[];
+}
+
+export const ContainerPage = ({titulo, children}: Props) => {
   const navigation = useNavigation();
 
   return (

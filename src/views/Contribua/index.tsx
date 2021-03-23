@@ -31,7 +31,8 @@ import {
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {CONTRIBUA} from './data/Contribua';
-const handlePress = async (url) => {
+
+const handlePress = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
 
   if (supported) {
@@ -101,7 +102,7 @@ export const Contribua = () => {
   );
 };
 
-const getHeight = (size) => {
+const getHeight = (size: string) => {
   switch (size) {
     case 'small':
     case 'medium':
@@ -116,7 +117,7 @@ const getHeight = (size) => {
   }
 };
 
-const getStyles = (size) => {
+const getStyles = (size: string) => {
   return StyleSheet.create({
     banco: {
       width: wp('73%'),

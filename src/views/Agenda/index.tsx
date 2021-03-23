@@ -18,7 +18,7 @@ export const Agenda = () => {
           <SectionList
             style={styles.containerList}
             sections={AGENDA}
-            keyExtractor={(item, index) => item + index}
+            keyExtractor={(item, index) => `${item}${index}`}
             renderItem={({item}) => <AgendaItem {...item} />}
             renderSectionHeader={({section: {dia}}) => {
               return <Text style={styles.dia}>{dia}</Text>;

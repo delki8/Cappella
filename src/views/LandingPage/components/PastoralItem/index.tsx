@@ -4,11 +4,11 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {GenericItem} from '../../../../components/GenericItem.js';
+import {GenericItem} from '../../../../components/GenericItem';
 import {Image, StyleSheet} from 'react-native';
 
 export const PastoralItem = () => {
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
   const textoCard = 'uma palavra pastoral';
 
   return (

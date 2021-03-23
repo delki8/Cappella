@@ -4,11 +4,25 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {useNavigation} from '@react-navigation/native';
-import {GenericItem} from '../../../../components/GenericItem.js';
+import {GenericItem} from '../../../../components/GenericItem';
 import {SvgXml} from 'react-native-svg';
+import {RootStackParamList} from '../../../../../App';
+import {StackNavigationProp} from '@react-navigation/stack';
 
-export const Item = ({imagem, titulo, textoCard, itemDesc, id}) => {
-  const navigation = useNavigation();
+type ProfileScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Item'
+>;
+
+interface Props {
+  imagem: string;
+  titulo: string;
+  textoCard: string;
+  id: string;
+}
+
+export const Item = ({imagem, titulo, textoCard, id}: Props) => {
+  const navigation: ProfileScreenNavigationProp = useNavigation();
 
   return (
     <GenericItem
@@ -18,8 +32,6 @@ export const Item = ({imagem, titulo, textoCard, itemDesc, id}) => {
       height={hp('15%')}
       onNavigate={() =>
         navigation.push('DetalhesItem', {
-          itemDesc,
-          imagem,
           titulo,
           id,
         })

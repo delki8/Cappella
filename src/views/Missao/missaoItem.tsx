@@ -7,7 +7,21 @@ import {
 
 import {FONT_AVENIR_ROMAN} from '../../styles/styles';
 
-export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
+interface Props {
+  nome: string;
+  missao: string;
+  contato: string;
+  backgroundColor: string;
+  color: string;
+}
+
+export const MissaoItem = ({
+  nome,
+  missao,
+  contato,
+  backgroundColor,
+  color,
+}: Props) => {
   const styles = getStyles(backgroundColor, color);
 
   return (
@@ -21,7 +35,7 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor, color}) => {
   );
 };
 
-const getStyles = (backgroundColor, color) => {
+const getStyles = (backgroundColor: string, color: string) => {
   return StyleSheet.create({
     missao: {
       color,

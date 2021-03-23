@@ -1,4 +1,4 @@
-export const getSize = (height) => {
+export const getSize = (height: number) => {
   let size = 'xsmall';
 
   if (height < 534) {

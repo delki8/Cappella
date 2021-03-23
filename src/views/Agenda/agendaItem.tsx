@@ -13,7 +13,12 @@ import {
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
-export const AgendaItem = ({atividade, horario}) => {
+interface Props {
+  atividade: string;
+  horario: string;
+}
+
+export const AgendaItem = ({atividade, horario}: Props) => {
   const {height} = useWindowDimensions();
   const size = getSize(height);
   const styles = getStyles(size);
@@ -30,7 +35,7 @@ export const AgendaItem = ({atividade, horario}) => {
   );
 };
 
-const getHeight = (size) => {
+const getHeight = (size: string) => {
   switch (size) {
     case 'small':
     case 'medium':
@@ -45,7 +50,7 @@ const getHeight = (size) => {
   }
 };
 
-const getStyles = (size) => {
+const getStyles = (size: string) => {
   return StyleSheet.create({
     container: {
       flexDirection: 'row',

@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Alert,
-  Image,
-  Linking,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -28,20 +20,11 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import {handlePress} from '../../utils/handlePress';
 
 export const Contato = () => {
   const styles = getStyles();
   const {logo, endereco, telefone, email, localizacao, missao} = CONTATO;
-
-  const handlePress = async (url) => {
-    const supported = await Linking.canOpenURL(url);
-
-    if (supported) {
-      await Linking.openURL(url);
-    } else {
-      Alert.alert(`Don't know how to open this URL: ${url}`);
-    }
-  };
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
