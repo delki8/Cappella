@@ -6,38 +6,31 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  useWindowDimensions,
   View,
 } from 'react-native';
-import {SvgXml} from 'react-native-svg';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-
-import {
-  IconArroba,
-  IconLocation,
-  IconTelefone,
-  IconContato,
-} from '../../assets/images/Icons';
 import {Botao} from '../../components/botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
   BEIGE,
   FONT_AVENIR_ROMAN,
   IRON,
-  SIZE_LARGE,
-  SIZE_SMALL,
-  SIZE_XX_LARGE,
+  ORANGEBUTTON,
   SUBTEXT,
 } from '../../styles/styles';
 import {CONTATO} from './data/Contato';
-import {getSize} from '../../utils/utils';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 export const Contato = () => {
-  const {height} = useWindowDimensions();
-  const styles = getStyles(getSize(height));
+  const styles = getStyles();
   const {logo, endereco, telefone, email, localizacao, missao} = CONTATO;
 
   const handlePress = async (url) => {
@@ -52,7 +45,7 @@ export const Contato = () => {
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
-      <ContainerPage imagem={IconContato}>
+      <ContainerPage>
         <View style={styles.container}>
           <Image source={logo} style={styles.imagem} resizeMode="contain" />
           <View style={styles.containerMissao}>
@@ -60,15 +53,27 @@ export const Contato = () => {
           </View>
           <View style={styles.containerTexto}>
             <View style={styles.containerEndereco}>
-              <SvgXml xml={IconArroba} width={25} height={42} />
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                color={ORANGEBUTTON}
+                size={25}
+              />
               <Text style={styles.text}>{email}</Text>
             </View>
             <View style={styles.containerEndereco}>
-              <SvgXml xml={IconTelefone} width={25} height={25.45} />
+              <FontAwesomeIcon
+                icon={faPhoneAlt}
+                color={ORANGEBUTTON}
+                size={25}
+              />
               <Text style={styles.text}>{telefone}</Text>
             </View>
             <View style={styles.containerEndereco}>
-              <SvgXml xml={IconLocation} width={25} height={43.05} />
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                color={ORANGEBUTTON}
+                size={25}
+              />
               <Text style={styles.text}>{endereco}</Text>
             </View>
             <View style={styles.botao}>
@@ -84,7 +89,7 @@ export const Contato = () => {
   );
 };
 
-const getStyles = (size) => {
+const getStyles = () => {
   return StyleSheet.create({
     droidSafeArea: {
       flex: 1,
@@ -101,25 +106,23 @@ const getStyles = (size) => {
       width: wp('75%'),
       height: hp('50%'),
       alignSelf: 'center',
-      marginBottom: -100,
-      marginTop: -200,
+      marginBottom: -hp('10%'),
+      marginTop: -hp('20%'),
     },
     containerEndereco: {
       flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      marginBottom: SIZE_SMALL,
+      marginBottom: hp('1.8%'),
     },
     text: {
       color: SUBTEXT,
-      marginLeft: SIZE_LARGE,
+      marginLeft: wp('5%'),
       textAlign: 'left',
       fontFamily: FONT_AVENIR_ROMAN,
       fontSize: wp('4.3%'),
       lineHeight: wp('6.3%'),
     },
     botao: {
-      marginTop: size === 'small' ? SIZE_SMALL : SIZE_XX_LARGE,
+      marginTop: hp('5%'),
     },
     containerMissao: {
       marginTop: -50,

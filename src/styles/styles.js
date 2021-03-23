@@ -13,6 +13,7 @@ export const RED = 'red';
 export const ORANGE = '#D25C15';
 export const EXTRAORANGE = '#DF8C5B';
 export const DARKORANGE = '#D66C2C';
+export const ORANGEBUTTON = '#DF9D74';
 export const ACTIVE_GREEN = '#77A02D';
 export const DARKGREEN = '#ADC681';
 export const INACTIVE_GRAY = '#B1AEAE';
