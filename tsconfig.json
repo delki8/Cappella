@@ -9,8 +9,26 @@
       "moduleResolution": "node",
       "noEmit": true,
       "strict": true,
-      "target": "esnext"
+      "target": "esnext",
+      "alwaysStrict": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictPropertyInitialization": true,
+      "noImplicitAny": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "forceConsistentCasingInFileNames": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
     },
+    "include": [
+      "./src/**/*.tsx",
+      "./src/**/*.ts",
+      "./src/*.tsx",
+      "./src/*.ts",
+      "./src/*.js",
+      "./src/**/*.js"
+    ],
     "exclude": [
       "node_modules",
       "babel.config.js",
