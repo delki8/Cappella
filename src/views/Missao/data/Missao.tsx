@@ -24,18 +24,18 @@ export const MISSAO = [
     backgroundColor: GREEN,
   },
   {
-    nome: 'M.S',
+    nome: 'M. S.',
     missao: 'Missão Amigos dos Ciganos',
     backgroundColor: DARKGREEN,
   },
   {
     nome: 'Mateus e Aline',
-    missao: 'Missão Novas Tribos - Índios Waiãpi.',
+    missao: 'Missão Novas Tribos / Índios Waiãpi',
     contato: '96 981250053 / 96 35991558617',
     backgroundColor: LIGHTTITLE,
   },
   {
-    nome: 'E.S.',
+    nome: 'E. S.',
     missao: 'Interserve Norte da África',
     backgroundColor: '#A4D5DC',
   },
