@@ -27,11 +27,6 @@ export const TITLE = '#1E98A8';
 export const LIGHTTITLE = '#78C1CA';
 
 // TIPOGRAFIA
-export const FONT_FAMILY_LIGHT = 'OpenSans-Light';
-export const FONT_FAMILY_REGULAR = 'OpenSans-Regular';
-export const FONT_FAMILY_SEMI_BOLD = 'OpenSans-SemiBold';
-export const FONT_FAMILY_BOLD = 'OpenSans-Bold';
-export const FONT_FAMILY_EXTRA_BOLD = 'OpenSans-ExtraBold';
 export const FONT_AVENIR_BLACK = 'AvenirLTStd-Black';
 export const FONT_AVENIR_BOOK = 'AvenirLTStd-Book';
 export const FONT_AVENIR_ROMAN = 'AvenirLTStd-Roman';
