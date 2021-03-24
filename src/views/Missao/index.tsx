@@ -19,7 +19,14 @@ export const Missao = ({titulo}: Props) => {
           style={styles.flatList}
           numColumns={1}
           data={MISSAO}
-          renderItem={({item}) => <MissaoItem {...item} />}
+          renderItem={({item}) => (
+            <MissaoItem
+              nome={item.nome}
+              missao={item.missao}
+              contato={item.contato}
+              backgroundColor={item.backgroundColor}
+            />
+          )}
           keyExtractor={(item) => item.nome}
         />
       </View>
