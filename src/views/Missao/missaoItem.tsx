@@ -1,11 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {
-  widthPercentageToDP as wp,
   heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-import {FONT_AVENIR_ROMAN, SUBTEXT} from '../../styles/styles';
+import {
+  FONT_AVENIR_BLACK,
+  FONT_AVENIR_ROMAN,
+  SUBTEXT,
+} from '../../styles/styles';
 
 interface Props {
   nome: string;
@@ -18,8 +22,9 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor}: Props) => {
   const styles = getStyles(backgroundColor);
 
   return (
-    <View style={styles.containerMissao}>
-      <Text style={styles.missao}>{missao ? `${nome} (${missao})` : nome}</Text>
+    <View style={styles.container}>
+      {nome && <Text style={styles.nome}>{nome}</Text>}
+      {missao && <Text style={styles.missao}>{missao}</Text>}
       {contato && <Text style={styles.missao}>{contato}</Text>}
     </View>
   );
@@ -27,16 +32,25 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor}: Props) => {
 
 const getStyles = (backgroundColor: string) => {
   return StyleSheet.create({
+    nome: {
+      color: SUBTEXT,
+      fontSize: wp('4.3%'),
+      fontFamily: FONT_AVENIR_BLACK,
+      textAlign: 'center',
+      width: wp('73%'),
+      lineHeight: hp('2.8%'),
+    },
     missao: {
       color: SUBTEXT,
-      fontSize: 18,
+      fontSize: wp('4.3%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
-      width: 250,
+      width: wp('73%'),
+      lineHeight: hp('2.8%'),
     },
-    containerMissao: {
-      width: 302,
-      height: 64,
+    container: {
+      width: wp('81%'),
+      height: hp('10.6%'),
       marginBottom: hp('1%'),
       backgroundColor,
       justifyContent: 'center',

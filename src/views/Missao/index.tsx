@@ -1,8 +1,9 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, useWindowDimensions, View} from 'react-native';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
+import {getSize} from '../../utils/utils';
 import {MISSAO} from './data/Missao';
 import {MissaoItem} from './missaoItem';
 
@@ -11,7 +12,9 @@ interface Props {
 }
 
 export const Missao = ({titulo}: Props) => {
-  const styles = getStyles();
+  const {height} = useWindowDimensions();
+  const styles = getStyles(getSize(height));
+
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.containerPagina}>
@@ -34,13 +37,29 @@ export const Missao = ({titulo}: Props) => {
   );
 };
 
-const getStyles = () => {
+const getHeight = (size: string) => {
+  switch (size) {
+    case 'small':
+    case 'medium':
+      return hp('69%');
+    case 'large':
+    case 'xlarge':
+    case 'xxlarge':
+    case 'xxxlarge':
+      return hp('75%');
+    default:
+      break;
+  }
+};
+
+const getStyles = (size: string) => {
   return StyleSheet.create({
     containerPagina: {
       alignItems: 'center',
     },
     flatList: {
-      paddingVertical: hp('7%'),
+      marginTop: hp('5%'),
+      height: getHeight(size),
     },
   });
 };
