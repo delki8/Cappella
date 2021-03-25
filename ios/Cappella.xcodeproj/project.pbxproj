@@ -65,20 +65,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cappella/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Cappella/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Cappella/main.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		19BE3867CA1246D9A2ED2C6B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
->>>>>>> fbbb46e534639bbea14494b85f52bc7f8f3ef790
 		2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Black.ttf"; path = "../src/assets/fonts/AvenirLTStd-Black.ttf"; sourceTree = "<group>"; };
 		29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Bold.ttf"; path = "../src/assets/fonts/Liturgica-Bold.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Cappella-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cappella-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Cappella-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cappella-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Medium.ttf"; path = "../src/assets/fonts/Liturgica-Medium.ttf"; sourceTree = "<group>"; };
 		35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Book.ttf"; path = "../src/assets/fonts/AvenirLTStd-Book.ttf"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		3BDE5BDF762C4532BDD98D76 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
->>>>>>> fbbb46e534639bbea14494b85f52bc7f8f3ef790
 		4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Semibold.ttf"; path = "../src/assets/fonts/Liturgica-Semibold.ttf"; sourceTree = "<group>"; };
 		545B1B1331559A80933FCEAB /* Pods-Cappella-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cappella-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Cappella-tvOSTests/Pods-Cappella-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Bold.otf"; path = "../src/assets/fonts/Liturgica-Bold.otf"; sourceTree = "<group>"; };
@@ -724,11 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 8;
-=======
-				CURRENT_PROJECT_VERSION = 7;
->>>>>>> fbbb46e534639bbea14494b85f52bc7f8f3ef790
 				DEVELOPMENT_TEAM = E64A4V9S7E;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Cappella/Info.plist;
@@ -754,11 +742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 8;
-=======
-				CURRENT_PROJECT_VERSION = 7;
->>>>>>> fbbb46e534639bbea14494b85f52bc7f8f3ef790
 				DEVELOPMENT_TEAM = E64A4V9S7E;
 				INFOPLIST_FILE = Cappella/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
