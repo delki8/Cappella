@@ -34,19 +34,19 @@ const getStyles = (backgroundColor: string) => {
   return StyleSheet.create({
     nome: {
       color: SUBTEXT,
-      fontSize: wp('4.3%'),
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_BLACK,
       textAlign: 'center',
       width: wp('73%'),
-      lineHeight: hp('2.8%'),
+      lineHeight: hp('2.5%'),
     },
     missao: {
       color: SUBTEXT,
-      fontSize: wp('4.3%'),
+      fontSize: wp('4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
       width: wp('73%'),
-      lineHeight: hp('2.8%'),
+      lineHeight: hp('2.5%'),
     },
     container: {
       width: wp('81%'),

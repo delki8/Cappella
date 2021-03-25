@@ -110,7 +110,7 @@ const getStyles = () => {
     containerMissao: {
       marginTop: -50,
       width: wp('100%'),
-      height: hp('16%'),
+      height: hp('17%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       alignItems: 'center',
