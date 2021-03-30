@@ -1,6 +1,12 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Platform,
+  StatusBar,
+  InteractionManager,
+} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -12,6 +18,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+import Meteor from '@socialize/react-native-meteor';
+import NetInfo from '@react-native-community/netinfo';
+import Storage from '@react-native-community/async-storage';
+import {unstable_batchedUpdates as batchedUpdates} from 'react-native/Libraries/Renderer/shims/ReactNative';
 
 import {LandingPage} from './src/views/LandingPage';
 import {DetalhesItem} from './src/views/DetalhesItem';
@@ -32,6 +43,14 @@ export type RootStackParamList = {
   DetalhesItem: {titulo: string; id: string};
   Item: undefined;
 };
+
+Meteor.configureOptionalDeps({
+  InteractionManager,
+  batchedUpdates,
+  NetInfo,
+  Storage,
+});
+Meteor.connect('wss://admincappella.meteorapp.com/websocket');
 
 const HomeStack = createStackNavigator();
 

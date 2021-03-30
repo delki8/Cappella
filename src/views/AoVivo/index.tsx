@@ -1,20 +1,31 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  InteractionManager,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {Mongo, useTracker} from '@socialize/react-native-meteor';
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
-import {AOVIVO} from './data/AoVivo';
-
 interface Props {
   titulo: string;
 }
 
+const LinkAovivo = new Mongo.Collection('linkAovivo');
+
 export const AoVivo = ({titulo}: Props) => {
+  const links = useTracker(() => {
+    return LinkAovivo.find().fetch();
+  });
   const styles = getStyles();
 
   return (
@@ -22,7 +33,7 @@ export const AoVivo = ({titulo}: Props) => {
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.containerItem}
-          onPress={() => handlePress(AOVIVO.url)}>
+          onPress={() => handlePress(links[0].url)}>
           <Image
             source={require('../../assets/images/video-icon.png')}
             style={styles.imagem}
