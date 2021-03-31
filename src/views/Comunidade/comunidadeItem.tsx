@@ -6,26 +6,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {FONT_AVENIR_BLACK} from '../../styles/styles';
+import {FONT_AVENIR_BLACK, OTHERWHITE, TITLE} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 
 interface Props {
   url: string;
   text: string;
-  backgroundColor: string;
-  color: string;
   icon: IconProp;
 }
 
-export const ComunidadeItem = ({
-  url,
-  text,
-  backgroundColor,
-  color,
-  icon,
-}: Props) => {
-  const styles = getStyles(backgroundColor, color);
+export const ComunidadeItem = ({url, text, icon}: Props) => {
+  const styles = getStyles();
 
   return (
     <View style={styles.container}>
@@ -39,7 +31,7 @@ export const ComunidadeItem = ({
               style={styles.iconeRede}
             />
           ) : (
-            <FontAwesomeIcon icon={icon} color={color} size={wp('11%')} />
+            <FontAwesomeIcon icon={icon} color={OTHERWHITE} size={wp('11%')} />
           )}
         </View>
         <View style={styles.textContainer}>
@@ -50,7 +42,7 @@ export const ComunidadeItem = ({
   );
 };
 
-const getStyles = (backgroundColor: string, color: string) => {
+const getStyles = () => {
   return StyleSheet.create({
     container: {
       width: wp('74%'),
@@ -58,7 +50,7 @@ const getStyles = (backgroundColor: string, color: string) => {
       alignSelf: 'center',
       justifyContent: 'center',
       marginBottom: hp('1.7%'),
-      backgroundColor,
+      backgroundColor: TITLE,
       shadowOffset: {
         width: 0.2,
         height: 0.2,
@@ -79,7 +71,7 @@ const getStyles = (backgroundColor: string, color: string) => {
       alignItems: 'center',
     },
     redes: {
-      color,
+      color: OTHERWHITE,
       fontSize: hp('2.3%'),
       fontFamily: FONT_AVENIR_BLACK,
     },

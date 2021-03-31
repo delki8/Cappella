@@ -19,10 +19,12 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-import Meteor from '@socialize/react-native-meteor';
+const Meteor = require('@socialize/react-native-meteor');
 import NetInfo from '@react-native-community/netinfo';
 import Storage from '@react-native-community/async-storage';
-import {unstable_batchedUpdates as batchedUpdates} from 'react-native/Libraries/Renderer/shims/ReactNative';
+const {
+  unstable_batchedUpdates,
+} = require('react-native/Libraries/Renderer/shims/ReactNative');
 
 import {LandingPage} from './src/views/LandingPage';
 import {DetalhesItem} from './src/views/DetalhesItem';
@@ -46,7 +48,7 @@ export type RootStackParamList = {
 
 Meteor.configureOptionalDeps({
   InteractionManager,
-  batchedUpdates,
+  unstable_batchedUpdates,
   NetInfo,
   Storage,
 });

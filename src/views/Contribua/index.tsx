@@ -16,6 +16,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -30,7 +31,7 @@ import {
   RED,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
-import {CONTRIBUA} from './data/Contribua';
+import {ContribuaCollection} from '../../../imports/api/contribua';
 
 const handlePress = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
@@ -43,10 +44,12 @@ const handlePress = async (url: string) => {
 };
 
 export const Contribua = () => {
+  const [cnpjCopiado, setCnpjCopiado] = useState(false);
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
+
+  const CONTRIBUA = useTracker(() => ContribuaCollection.find().fetch())[0];
   const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
-  const [cnpjCopiado, setCnpjCopiado] = useState(false);
 
   const copyToClipboard = () => {
     Clipboard.setString(cnpj);

@@ -1,39 +1,29 @@
 import React from 'react';
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  InteractionManager,
-} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {Mongo, useTracker} from '@socialize/react-native-meteor';
+const {useTracker} = require('@socialize/react-native-meteor');
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
+import {LinkAovivo} from '../../../imports/api/linkAovivo';
 interface Props {
   titulo: string;
 }
 
-const LinkAovivo = new Mongo.Collection('linkAovivo');
-
 export const AoVivo = ({titulo}: Props) => {
-  const links = useTracker(() => {
-    return LinkAovivo.find().fetch();
-  });
   const styles = getStyles();
+  const AOVIVO = useTracker(() => LinkAovivo.find().fetch())[0];
 
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.containerItem}
-          onPress={() => handlePress(links[0].url)}>
+          onPress={() => handlePress(AOVIVO.url)}>
           <Image
             source={require('../../assets/images/video-icon.png')}
             style={styles.imagem}

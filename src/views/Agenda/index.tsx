@@ -4,13 +4,16 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
 
 import {AgendaItem} from './agendaItem';
-import {AGENDA} from './data/Agenda';
 import {FONT_AVENIR_BLACK, BLUE} from '../../styles/styles';
 import {ContainerPage} from '../../components/ContainerPage';
+import {AgendasCollection} from '../../../imports/api/agendas';
 
 export const Agenda = () => {
+  const AGENDA = useTracker(() => AgendasCollection.find().fetch());
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ContainerPage titulo={'AGENDA'}>

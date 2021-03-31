@@ -4,6 +4,8 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
+
 import {Botao} from '../../components/botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -13,7 +15,6 @@ import {
   ORANGEBUTTON,
   SUBTEXT,
 } from '../../styles/styles';
-import {CONTATO} from './data/Contato';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faEnvelope,
@@ -21,9 +22,11 @@ import {
   faPhoneAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import {handlePress} from '../../utils/handlePress';
+import {ContatoCollection} from '../../../imports/api/contato';
 
 export const Contato = () => {
   const styles = getStyles();
+  const CONTATO = useTracker(() => ContatoCollection.find().fetch())[0];
   const {logo, endereco, telefone, email, localizacao, missao} = CONTATO;
 
   return (

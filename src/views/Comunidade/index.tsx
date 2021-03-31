@@ -1,13 +1,15 @@
 import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {ComunidadeItem} from './comunidadeItem';
-import {COMUNIDADE} from './data/Comunidade';
+import {ComunidadesCollection} from '../../../imports/api/comunidades';
 
 export const Comunidade = () => {
   const styles = getStyles();
+  const COMUNIDADE = useTracker(() => ComunidadesCollection.find().fetch());
 
   return (
     <ContainerPage titulo={'NOSSA COMUNIDADE'}>

@@ -1,11 +1,12 @@
 import React from 'react';
 import {FlatList, StyleSheet, useWindowDimensions, View} from 'react-native';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {getSize} from '../../utils/utils';
-import {MISSAO} from './data/Missao';
 import {MissaoItem} from './missaoItem';
+import {MissaoCollection} from '../../../imports/api/missao';
 
 interface Props {
   titulo: string;
@@ -14,6 +15,7 @@ interface Props {
 export const Missao = ({titulo}: Props) => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
+  const MISSAO = useTracker(() => MissaoCollection.find().fetch());
 
   return (
     <ContainerPage titulo={titulo}>

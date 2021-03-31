@@ -5,9 +5,10 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+const {useTracker} = require('@socialize/react-native-meteor');
+import {PastoralCollection} from '../../../imports/api/pastoral';
 
 import {ContainerPage} from '../../components/ContainerPage';
-import {PASTORAL} from './data/Pastoral';
 import {
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BOOK,
@@ -20,6 +21,7 @@ import {getSize} from '../../utils/utils';
 export const Pastoral = () => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
+  const PASTORAL = useTracker(() => PastoralCollection.find().fetch())[0];
 
   return (
     <ContainerPage>
