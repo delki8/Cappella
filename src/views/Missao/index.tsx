@@ -56,12 +56,12 @@ const getHeight = (size: string) => {
   switch (size) {
     case 'small':
     case 'medium':
-      return hp('69%');
+      return hp('60%');
     case 'large':
     case 'xlarge':
     case 'xxlarge':
     case 'xxxlarge':
-      return hp('75%');
+      return hp('68%');
     default:
       break;
   }
