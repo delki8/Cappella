@@ -15,11 +15,10 @@ interface Props {
   nome: string;
   missao: string | undefined;
   contato: string | undefined;
-  backgroundColor: string;
 }
 
-export const MissaoItem = ({nome, missao, contato, backgroundColor}: Props) => {
-  const styles = getStyles(backgroundColor);
+export const MissaoItem = ({nome, missao, contato}: Props) => {
+  const styles = getStyles();
 
   return (
     <View style={styles.container}>
@@ -30,29 +29,28 @@ export const MissaoItem = ({nome, missao, contato, backgroundColor}: Props) => {
   );
 };
 
-const getStyles = (backgroundColor: string) => {
+const getStyles = () => {
   return StyleSheet.create({
     nome: {
       color: SUBTEXT,
-      fontSize: wp('4%'),
+      fontSize: wp('3.4%'),
       fontFamily: FONT_AVENIR_BLACK,
       textAlign: 'center',
       width: wp('73%'),
-      lineHeight: hp('2.5%'),
+      lineHeight: hp('2%'),
     },
     missao: {
       color: SUBTEXT,
-      fontSize: wp('4%'),
+      fontSize: wp('3.4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
       width: wp('73%'),
-      lineHeight: hp('2.5%'),
+      lineHeight: hp('2%'),
     },
     container: {
-      width: wp('81%'),
-      height: hp('10.6%'),
+      width: wp('83%'),
+      height: hp('7.3%'),
       marginBottom: hp('1%'),
-      backgroundColor,
       justifyContent: 'center',
       alignItems: 'center',
       shadowOffset: {
@@ -61,6 +59,7 @@ const getStyles = (backgroundColor: string) => {
       },
       shadowOpacity: 0.2,
       elevation: 2,
+      borderWidth: 1,
     },
   });
 };

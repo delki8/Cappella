@@ -19,12 +19,21 @@ import {
   faEnvelope,
   faMapMarkerAlt,
   faPhoneAlt,
+  faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
 import {handlePress} from '../../utils/handlePress';
 
 export const Contato = () => {
   const styles = getStyles();
-  const {logo, endereco, telefone, email, localizacao, missao} = CONTATO;
+  const {
+    logo,
+    endereco,
+    telefone,
+    email,
+    localizacao,
+    missao,
+    pastor,
+  } = CONTATO;
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
@@ -35,6 +44,14 @@ export const Contato = () => {
             <Text style={styles.missao}>{missao}</Text>
           </View>
           <View style={styles.containerTexto}>
+            <View style={styles.containerEndereco}>
+              <FontAwesomeIcon
+                icon={faUserTie}
+                color={ORANGEBUTTON}
+                size={25}
+              />
+              <Text style={styles.text}>{pastor}</Text>
+            </View>
             <View style={styles.containerEndereco}>
               <FontAwesomeIcon
                 icon={faEnvelope}
@@ -105,7 +122,7 @@ const getStyles = () => {
       lineHeight: wp('6.3%'),
     },
     botao: {
-      marginTop: hp('5%'),
+      marginTop: hp('3%'),
     },
     containerMissao: {
       marginTop: -50,

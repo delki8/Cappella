@@ -10,13 +10,15 @@ export const Comunidade = () => {
   const styles = getStyles();
 
   return (
-    <ContainerPage titulo={'NOSSA COMUNIDADE'}>
+    <ContainerPage titulo={'COMUNIDADE'}>
       <FlatList
         style={styles.flatList}
-        numColumns={1}
+        numColumns={2}
         data={COMUNIDADE}
-        renderItem={({item}) => <ComunidadeItem {...item} />}
-        keyExtractor={(item) => item.media}
+        renderItem={({item}) => (
+          <ComunidadeItem url={item.url} icon={item.icon} />
+        )}
+        keyExtractor={(item) => item.url}
       />
     </ContainerPage>
   );
@@ -26,6 +28,8 @@ const getStyles = () => {
   return StyleSheet.create({
     flatList: {
       paddingVertical: hp('7%'),
+      alignContent: 'center',
+      alignSelf: 'center',
     },
   });
 };

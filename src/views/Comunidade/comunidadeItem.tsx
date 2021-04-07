@@ -1,95 +1,79 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {FONT_AVENIR_BLACK} from '../../styles/styles';
+import {
+  COLORCOMUNIDADE,
+  FONT_AVENIR_BLACK,
+  SHADOW_BEIGE,
+  TITLE,
+} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 
 interface Props {
   url: string;
-  text: string;
-  backgroundColor: string;
-  color: string;
   icon: IconProp;
 }
 
-export const ComunidadeItem = ({
-  url,
-  text,
-  backgroundColor,
-  color,
-  icon,
-}: Props) => {
-  const styles = getStyles(backgroundColor, color);
+export const ComunidadeItem = ({url, icon}: Props) => {
+  const styles = getStyles();
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.redesContainer}
-        onPress={() => handlePress(url)}>
-        <View style={styles.iconeContainer}>
-          {typeof icon === 'number' ? (
-            <Image
-              source={require('../../assets/images/mosaicoLogo.png')}
-              style={styles.iconeRede}
-            />
-          ) : (
-            <FontAwesomeIcon icon={icon} color={color} size={wp('11%')} />
-          )}
-        </View>
-        <View style={styles.textContainer}>
-          <Text style={styles.redes}>{text}</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={() => handlePress(url)}>
+      {typeof icon === 'number' ? (
+        <Image
+          source={require('../../assets/images/mosaicoLogo.png')}
+          style={styles.iconeRede}
+        />
+      ) : (
+        <FontAwesomeIcon
+          icon={icon}
+          color={COLORCOMUNIDADE}
+          size={wp('14.5%')}
+        />
+      )}
+    </TouchableOpacity>
   );
 };
 
-const getStyles = (backgroundColor: string, color: string) => {
+const getStyles = () => {
   return StyleSheet.create({
-    container: {
-      width: wp('74%'),
-      height: hp('7.5%'),
-      alignSelf: 'center',
+    containerItem: {
+      width: wp('34.5%'),
+      height: hp('18%'),
+      backgroundColor: TITLE,
+      borderRadius: 10,
+      flex: 1,
       justifyContent: 'center',
-      marginBottom: hp('1.7%'),
-      backgroundColor,
+      alignItems: 'center',
+      margin: 8,
       shadowOffset: {
-        width: 0.2,
-        height: 0.2,
+        width: 4,
+        height: 4,
       },
-      shadowOpacity: 0.2,
-      elevation: 1,
-      borderRadius: 50,
+      shadowOpacity: 1,
+      elevation: 5,
+      shadowColor: SHADOW_BEIGE,
     },
-    redesContainer: {
-      width: wp('66%'),
-      flexDirection: 'row',
-      alignItems: 'center',
-      alignSelf: 'center',
-      justifyContent: 'space-between',
+    imagem: {
+      height: 84,
     },
-    textContainer: {
-      width: wp('54%'),
-      alignItems: 'center',
-    },
-    redes: {
-      color,
-      fontSize: hp('2.3%'),
+    texto: {
+      marginTop: 8,
       fontFamily: FONT_AVENIR_BLACK,
-    },
-    iconeContainer: {
-      width: wp('12%'),
-      alignItems: 'center',
+      fontSize: wp('5%'),
+      color: TITLE,
     },
     iconeRede: {
-      width: wp('12%'),
-      height: hp('5%'),
+      width: wp('14%'),
+      height: hp('6.5%'),
     },
   });
 };

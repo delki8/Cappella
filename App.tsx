@@ -75,7 +75,7 @@ export default function App() {
         <Tab.Navigator
           screenOptions={({route}) => ({
             tabBarIcon: ({color}) => {
-              const size = hp('4%');
+              const size = hp('3%');
 
               switch (route.name) {
                 case 'Home':
