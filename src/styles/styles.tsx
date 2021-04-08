@@ -25,6 +25,7 @@ export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#F2F2F2';
 export const TITLE = '#1E98A8';
 export const LIGHTTITLE = '#78C1CA';
+export const COLORCOMUNIDADE = '#F3F5EC';
 
 // TIPOGRAFIA
 export const FONT_AVENIR_BLACK = 'AvenirLTStd-Black';
