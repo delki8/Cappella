@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from 'axios';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -9,6 +10,7 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {AOVIVO} from './data/AoVivo';
+import youtube from '../../apis/youtube';
 
 interface Props {
   titulo: string;
@@ -16,6 +18,22 @@ interface Props {
 
 export const AoVivo = ({titulo}: Props) => {
   const styles = getStyles();
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await youtube.get('/search', {
+        params: {
+          // channelId: 'UCsYR03W9u4pIOcR4xpXfHqg',
+          channelId: 'UCSJ4gkVC6NrvII8umztf0Ow',
+          type: 'video',
+          eventType: 'life',
+        },
+      });
+
+      console.log(response);
+    }
+    fetchData();
+  }, []);
 
   return (
     <ContainerPage titulo={titulo}>
