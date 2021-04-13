@@ -28,12 +28,7 @@ export const Missao = ({titulo}: Props) => {
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.containerPagina}>
-        <View style={styles.containerConselho}>
-          <Text style={styles.conselho}>
-            Para acessar mais informações, favor contatar o conselho missionário
-            da Igreja Presbiteriana Mosaico
-          </Text>
-        </View>
+        <Text style={styles.contribua}>Contribua - Ore pelos Missionários</Text>
         <FlatList
           style={styles.flatList}
           numColumns={1}
@@ -47,6 +42,12 @@ export const Missao = ({titulo}: Props) => {
           )}
           keyExtractor={(item) => item.nome}
         />
+        <View style={styles.containerConselho}>
+          <Text style={styles.conselho}>
+            Maiores informações: Ligue 62 9977-0598 Presb. Noé  Conselho
+            Missionário
+          </Text>
+        </View>
       </View>
     </ContainerPage>
   );
@@ -77,9 +78,8 @@ const getStyles = (size: string) => {
       height: getHeight(size),
     },
     containerConselho: {
-      marginTop: hp('2%'),
       width: wp('100%'),
-      height: hp('8%'),
+      height: hp('7%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       alignItems: 'center',
@@ -89,6 +89,12 @@ const getStyles = (size: string) => {
       },
       shadowOpacity: 0.2,
       elevation: 2,
+    },
+    contribua: {
+      color: IRON,
+      fontSize: wp('3.4%'),
+      fontFamily: FONT_AVENIR_ROMAN,
+      textAlign: 'center',
     },
     conselho: {
       width: wp('90%'),

@@ -28,8 +28,8 @@ export const Item = ({imagem, titulo, textoCard, id}: Props) => {
     <GenericItem
       textoCard={textoCard}
       icon={<SvgXml xml={imagem} height={hp('7%')} />}
-      width={wp('100%')}
-      height={hp('15%')}
+      width={wp('34.5%')}
+      height={hp('18%')}
       onNavigate={() =>
         navigation.push('DetalhesItem', {
           titulo,
