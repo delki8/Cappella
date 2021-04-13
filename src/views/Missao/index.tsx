@@ -44,7 +44,7 @@ export const Missao = ({titulo}: Props) => {
         />
         <View style={styles.containerConselho}>
           <Text style={styles.conselho}>
-            Maiores informações: Ligue 62 9977-0598 Presb. Noé  Conselho
+            Maiores informações: Ligue 62 9977-0598 Presb. Noé Conselho
             Missionário
           </Text>
         </View>
