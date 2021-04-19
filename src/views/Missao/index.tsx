@@ -28,7 +28,9 @@ export const Missao = ({titulo}: Props) => {
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.containerPagina}>
-        <Text style={styles.contribua}>Contribua - Ore pelos Missionários</Text>
+        <Text allowFontScaling={false} style={styles.contribua}>
+          Contribua - Ore pelos Missionários
+        </Text>
         <FlatList
           style={styles.flatList}
           numColumns={1}
@@ -43,7 +45,7 @@ export const Missao = ({titulo}: Props) => {
           keyExtractor={(item) => item.nome}
         />
         <View style={styles.containerConselho}>
-          <Text style={styles.conselho}>
+          <Text allowFontScaling={false} style={styles.conselho}>
             Maiores informações: Ligue 62 9977-0598 Presb. Noé Conselho
             Missionário
           </Text>
