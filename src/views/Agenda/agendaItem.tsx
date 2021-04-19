@@ -31,9 +31,7 @@ export const AgendaItem = ({atividade, horario}: Props) => {
         </Text>
       </View>
       <View style={styles.containerAtividade}>
-        <Text allowFontScaling={false} style={styles.atividade}>
-          {atividade}
-        </Text>
+        <Text style={styles.atividade}>{atividade}</Text>
       </View>
     </View>
   );

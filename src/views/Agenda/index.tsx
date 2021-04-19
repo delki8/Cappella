@@ -21,11 +21,7 @@ export const Agenda = () => {
             keyExtractor={(item, index) => `${item}${index}`}
             renderItem={({item}) => <AgendaItem {...item} />}
             renderSectionHeader={({section: {dia}}) => {
-              return (
-                <Text allowFontScaling={false} style={styles.dia}>
-                  {dia}
-                </Text>
-              );
+              return <Text style={styles.dia}>{dia}</Text>;
             }}
           />
         </View>

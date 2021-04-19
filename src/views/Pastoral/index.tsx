@@ -25,15 +25,9 @@ export const Pastoral = () => {
     <ContainerPage>
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
-          <Text allowFontScaling={false} style={styles.titulo}>
-            {PASTORAL.titulo.toUpperCase()}
-          </Text>
-          <Text allowFontScaling={false} style={styles.autor}>
-            {PASTORAL.autor}
-          </Text>
-          <Text allowFontScaling={false} style={styles.descricao}>
-            {PASTORAL.descricao}
-          </Text>
+          <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
+          <Text style={styles.autor}>{PASTORAL.autor}</Text>
+          <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
         </ScrollView>
       </View>
     </ContainerPage>

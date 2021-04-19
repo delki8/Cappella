@@ -45,7 +45,7 @@ export const Missao = ({titulo}: Props) => {
           keyExtractor={(item) => item.nome}
         />
         <View style={styles.containerConselho}>
-          <Text allowFontScaling={false} style={styles.conselho}>
+          <Text style={styles.conselho}>
             Maiores informações: Ligue 62 9977-0598 Presb. Noé Conselho
             Missionário
           </Text>

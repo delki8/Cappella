@@ -29,7 +29,7 @@ export const AoVivo = ({titulo}: Props) => {
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <Text allowFontScaling={false} style={styles.notificacoes}>
+        <Text style={styles.notificacoes}>
           ative as notificações para ser sempre avisado quando estamos ao vivo!
         </Text>
       </View>
