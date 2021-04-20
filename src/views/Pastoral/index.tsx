@@ -73,12 +73,14 @@ const getStyles = (size: string) => {
       fontFamily: FONT_AVENIR_BOOK,
       alignSelf: 'flex-end',
       color: SUBTEXT,
+      lineHeight: wp('6.3%'),
     },
     descricao: {
       fontSize: wp('4.4%'),
       fontFamily: FONT_AVENIR_ROMAN,
       color: IRON,
       lineHeight: wp('6.3%'),
+      textAlign: 'justify',
     },
   });
 };

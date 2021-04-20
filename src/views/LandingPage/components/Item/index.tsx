@@ -29,7 +29,7 @@ export const Item = ({imagem, titulo, textoCard, id}: Props) => {
       textoCard={textoCard}
       icon={<SvgXml xml={imagem} height={hp('7%')} />}
       width={wp('100%')}
-      height={hp('15%')}
+      height={hp('16.6%')}
       onNavigate={() =>
         navigation.push('DetalhesItem', {
           titulo,

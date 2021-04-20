@@ -60,27 +60,45 @@ export const Contribua = () => {
     <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage titulo={'CONTRIBUA'}>
         <View style={styles.container}>
-          <Text style={styles.titulo}>DEPÓSITO EM CONTA</Text>
+          <Text allowFontScaling={false} style={styles.titulo}>
+            DEPÓSITO EM CONTA
+          </Text>
           <View style={styles.containerConta}>
             <View style={styles.banco}>
-              <Text style={styles.conta}>{nomeBanco}</Text>
+              <Text allowFontScaling={false} style={styles.conta}>
+                {nomeBanco}
+              </Text>
             </View>
             <View style={styles.containerBanco}>
-              <Text style={styles.conta}>{banco}</Text>
-              <Text style={styles.conta}>{agencia}</Text>
-              <Text style={styles.conta}>{cc}</Text>
-              <Text style={styles.conta}>{operacao}</Text>
+              <Text allowFontScaling={false} style={styles.conta}>
+                {banco}
+              </Text>
+              <Text allowFontScaling={false} style={styles.conta}>
+                {agencia}
+              </Text>
+              <Text allowFontScaling={false} style={styles.conta}>
+                {cc}
+              </Text>
+              <Text allowFontScaling={false} style={styles.conta}>
+                {operacao}
+              </Text>
             </View>
           </View>
 
-          <Text style={styles.titulo}>TRANSFERÊNCIA POR PIX</Text>
+          <Text allowFontScaling={false} style={styles.titulo}>
+            TRANSFERÊNCIA POR PIX
+          </Text>
           <View style={styles.containerConta}>
             <View style={styles.containerPix}>
               <TouchableOpacity onPress={copyToClipboard}>
-                <Text style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
+                <Text
+                  allowFontScaling={false}
+                  style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
               </TouchableOpacity>
               {cnpjCopiado && (
-                <Text style={styles.copiedText}>{'CNPJ copiado'}</Text>
+                <Text allowFontScaling={false} style={styles.copiedText}>
+                  {'CNPJ copiado'}
+                </Text>
               )}
             </View>
           </View>
@@ -89,15 +107,21 @@ export const Contribua = () => {
             onPress={() =>
               handlePress('https://www.bcb.gov.br/estabilidadefinanceira/pix')
             }>
-            <Text style={styles.pix}>clique aqui e saiba mais sobre o pix</Text>
+            <Text allowFontScaling={false} style={styles.pix}>
+              clique aqui e saiba mais sobre o pix
+            </Text>
             <Image
               source={require('../../assets/images/logoPix.png')}
               style={styles.pixImg}
             />
           </TouchableOpacity>
           <View style={styles.containerIgreja}>
-            <Text style={styles.detalhesIgreja}>{igreja}</Text>
-            <Text style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
+            <Text allowFontScaling={false} style={styles.detalhesIgreja}>
+              {igreja}
+            </Text>
+            <Text
+              allowFontScaling={false}
+              style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
           </View>
         </View>
       </ContainerPage>

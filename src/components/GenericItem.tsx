@@ -28,7 +28,9 @@ export const GenericItem = ({
   return (
     <TouchableOpacity style={styles.containerItem} onPress={onNavigate}>
       {icon}
-      <Text style={styles.texto}>{textoCard}</Text>
+      <Text allowFontScaling={false} style={styles.texto}>
+        {textoCard}
+      </Text>
     </TouchableOpacity>
   );
 };

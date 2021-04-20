@@ -22,9 +22,21 @@ export const MissaoItem = ({nome, missao, contato}: Props) => {
 
   return (
     <View style={styles.container}>
-      {nome && <Text style={styles.nome}>{nome}</Text>}
-      {missao && <Text style={styles.missao}>{missao}</Text>}
-      {contato && <Text style={styles.missao}>{contato}</Text>}
+      {nome && (
+        <Text allowFontScaling={false} style={styles.nome}>
+          {nome}
+        </Text>
+      )}
+      {missao && (
+        <Text allowFontScaling={false} style={styles.missao}>
+          {missao}
+        </Text>
+      )}
+      {contato && (
+        <Text allowFontScaling={false} style={styles.missao}>
+          {contato}
+        </Text>
+      )}
     </View>
   );
 };

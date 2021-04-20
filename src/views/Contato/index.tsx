@@ -44,7 +44,9 @@ export const Contato = () => {
         <View style={styles.container}>
           <Image source={logo} style={styles.imagem} resizeMode="contain" />
           <View style={styles.containerMissao}>
-            <Text style={styles.missao}>{missao}</Text>
+            <Text allowFontScaling={false} style={styles.missao}>
+              {missao}
+            </Text>
           </View>
           <View style={styles.containerTexto}>
             <View style={styles.containerEndereco}>
@@ -53,7 +55,9 @@ export const Contato = () => {
                 color={ORANGEBUTTON}
                 size={25}
               />
-              <Text style={styles.text}>{pastor}</Text>
+              <Text allowFontScaling={false} style={styles.text}>
+                {pastor}
+              </Text>
             </View>
             <View style={styles.containerEndereco}>
               <FontAwesomeIcon
@@ -61,7 +65,9 @@ export const Contato = () => {
                 color={ORANGEBUTTON}
                 size={25}
               />
-              <Text style={styles.text}>{email}</Text>
+              <Text allowFontScaling={false} style={styles.text}>
+                {email}
+              </Text>
             </View>
             <View style={styles.containerEndereco}>
               <FontAwesomeIcon
@@ -69,7 +75,9 @@ export const Contato = () => {
                 color={ORANGEBUTTON}
                 size={25}
               />
-              <Text style={styles.text}>{telefone}</Text>
+              <Text allowFontScaling={false} style={styles.text}>
+                {telefone}
+              </Text>
             </View>
             <View style={styles.containerEndereco}>
               <FontAwesomeIcon
@@ -77,7 +85,9 @@ export const Contato = () => {
                 color={ORANGEBUTTON}
                 size={25}
               />
-              <Text style={styles.text}>{endereco}</Text>
+              <Text allowFontScaling={false} style={styles.text}>
+                {endereco}
+              </Text>
             </View>
             <View style={styles.botao}>
               <Botao

@@ -28,7 +28,11 @@ export const ContainerPage = ({titulo, children}: Props) => {
           />
         </TouchableOpacity>
       </View>
-      {titulo && <Text style={styles.titulo}>{titulo}</Text>}
+      {titulo && (
+        <Text allowFontScaling={false} style={styles.titulo}>
+          {titulo}
+        </Text>
+      )}
       {children}
     </>
   );

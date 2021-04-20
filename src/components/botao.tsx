@@ -23,7 +23,9 @@ export const Botao = ({titulo, onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.botaoContainer}>
-        <Text style={styles.botaoTexto}>{titulo}</Text>
+        <Text allowFontScaling={false} style={styles.botaoTexto}>
+          {titulo}
+        </Text>
       </View>
     </TouchableOpacity>
   );
