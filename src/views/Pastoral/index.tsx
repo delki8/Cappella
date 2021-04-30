@@ -81,6 +81,7 @@ const getStyles = (size: string) => {
       color: IRON,
       lineHeight: wp('6.3%'),
       textAlign: 'justify',
+      marginTop: hp('2%'),
     },
   });
 };

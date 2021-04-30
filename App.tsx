@@ -52,7 +52,7 @@ Meteor.configureOptionalDeps({
   NetInfo,
   Storage,
 });
-Meteor.connect('wss://admincappella.meteorapp.com/websocket');
+Meteor.connect('wss://cappella.meteorapp.com/websocket');
 
 const HomeStack = createStackNavigator();
 

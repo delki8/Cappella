@@ -28,15 +28,8 @@ import {ContatoCollection} from '../../../imports/api/contato';
 export const Contato = () => {
   const styles = getStyles();
   const CONTATO = useTracker(() => ContatoCollection.find().fetch())[0];
-  const {
-    logo,
-    endereco,
-    telefone,
-    email,
-    localizacao,
-    missao,
-    pastor,
-  } = CONTATO;
+  const {endereco, telefone, email, localizacao, missao, pastor} = CONTATO;
+  const logo = require('../../assets/images/mosaico.png');
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
