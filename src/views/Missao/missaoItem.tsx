@@ -19,20 +19,23 @@ interface Props {
 
 export const MissaoItem = ({nome, missao, contato}: Props) => {
   const styles = getStyles();
+  const hasNome = Boolean(nome && nome.trim().length);
+  const hasMissao = Boolean(missao && missao.trim().length);
+  const hasContato = Boolean(contato && contato.trim().length);
 
   return (
     <View style={styles.container}>
-      {nome && (
+      {hasNome && (
         <Text allowFontScaling={false} style={styles.nome}>
           {nome}
         </Text>
       )}
-      {missao && (
+      {hasMissao && (
         <Text allowFontScaling={false} style={styles.missao}>
           {missao}
         </Text>
       )}
-      {contato && (
+      {hasContato && (
         <Text allowFontScaling={false} style={styles.missao}>
           {contato}
         </Text>
