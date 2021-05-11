@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
+import React, {useState} from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-const {useTracker} = require('@socialize/react-native-meteor');
-import {PastoralCollection} from '../../../imports/api/pastoral';
 
-import {ContainerPage} from '../../components/ContainerPage';
 import {
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BOOK,
@@ -19,6 +15,10 @@ import {
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {FALLBACK} from './data/Pastoral';
+import {ContainerPage} from '../../components/ContainerPage';
+import {ContainerServer} from '../../components/ContainerServer';
+import {PastoralCollection} from '../../../imports/api/pastoral';
+import {handleIsConnected} from '../../utils/handleIsConnected';
 
 interface Pastoral {
   titulo: string;
@@ -26,34 +26,12 @@ interface Pastoral {
   descricao: string;
 }
 
-type ReactElement = JSX.Element | JSX.Element[];
-interface PastoralServerProps {
-  children: (PASTORAL: Pastoral) => ReactElement;
-}
-
-const PastoralServer = ({children}: PastoralServerProps) => {
-  const PASTORAL = useTracker(() => PastoralCollection.find().fetch())[0];
-
-  return <>{children(PASTORAL)}</>;
-};
-
 export const Pastoral = () => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
   const [isConnected, setIsConnected] = useState(false);
 
-  const isConnectedFunc = async () => {
-    try {
-      const value = await AsyncStorage.getItem('@storage_Key');
-      if (value !== null) {
-        return value === 'connected';
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  isConnectedFunc().then((value) => {
+  handleIsConnected().then((value) => {
     setIsConnected(Boolean(value));
   });
 
@@ -62,7 +40,7 @@ export const Pastoral = () => {
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
           {isConnected ? (
-            <PastoralServer>
+            <ContainerServer collection={PastoralCollection}>
               {(PASTORAL: Pastoral) => (
                 <>
                   <Text style={styles.titulo}>
@@ -72,7 +50,7 @@ export const Pastoral = () => {
                   <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
                 </>
               )}
-            </PastoralServer>
+            </ContainerServer>
           ) : (
             <>
               <Text style={styles.titulo}>{FALLBACK.titulo.toUpperCase()}</Text>

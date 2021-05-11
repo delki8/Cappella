@@ -54,7 +54,7 @@ Meteor.configureOptionalDeps({
   Storage,
 });
 
-Meteor.connect('wss://cappellaa.meteorapp.com/websocket');
+Meteor.connect('wss://cappella.meteorapp.com/websocket');
 
 const storeData = async (value: string) => {
   try {

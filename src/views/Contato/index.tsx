@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 const {useTracker} = require('@socialize/react-native-meteor');
 
-import {Botao} from '../../components/botao';
+import {Botao} from '../../components/Botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
   BEIGE,
