@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
@@ -17,19 +18,68 @@ import {
   SUBTEXT,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
+import {FALLBACK} from './data/Pastoral';
+
+interface Pastoral {
+  titulo: string;
+  autor: string;
+  descricao: string;
+}
+
+type ReactElement = JSX.Element | JSX.Element[];
+interface PastoralServerProps {
+  children: (PASTORAL: Pastoral) => ReactElement;
+}
+
+const PastoralServer = ({children}: PastoralServerProps) => {
+  const PASTORAL = useTracker(() => PastoralCollection.find().fetch())[0];
+
+  return <>{children(PASTORAL)}</>;
+};
 
 export const Pastoral = () => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
-  const PASTORAL = useTracker(() => PastoralCollection.find().fetch())[0];
+  const [isConnected, setIsConnected] = useState(false);
+
+  const isConnectedFunc = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@storage_Key');
+      if (value !== null) {
+        return value === 'connected';
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  isConnectedFunc().then((value) => {
+    setIsConnected(Boolean(value));
+  });
 
   return (
     <ContainerPage>
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
-          <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
-          <Text style={styles.autor}>{PASTORAL.autor}</Text>
-          <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+          {isConnected ? (
+            <PastoralServer>
+              {(PASTORAL: Pastoral) => (
+                <>
+                  <Text style={styles.titulo}>
+                    {PASTORAL.titulo.toUpperCase()}
+                  </Text>
+                  <Text style={styles.autor}>{PASTORAL.autor}</Text>
+                  <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+                </>
+              )}
+            </PastoralServer>
+          ) : (
+            <>
+              <Text style={styles.titulo}>{FALLBACK.titulo.toUpperCase()}</Text>
+              <Text style={styles.autor}>{FALLBACK.autor}</Text>
+              <Text style={styles.descricao}>{FALLBACK.descricao}</Text>
+            </>
+          )}
         </ScrollView>
       </View>
     </ContainerPage>

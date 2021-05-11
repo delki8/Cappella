@@ -39,6 +39,7 @@ import {
   TITLE,
 } from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -52,7 +53,24 @@ Meteor.configureOptionalDeps({
   NetInfo,
   Storage,
 });
-Meteor.connect('wss://cappella.meteorapp.com/websocket');
+
+Meteor.connect('wss://cappellaa.meteorapp.com/websocket');
+
+const storeData = async (value: string) => {
+  try {
+    await AsyncStorage.setItem('@storage_Key', value);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+Meteor.ddp.on('disconnected', () => {
+  storeData('disconnected');
+});
+
+Meteor.ddp.on('connected', () => {
+  storeData('connected');
+});
 
 const HomeStack = createStackNavigator();
 
