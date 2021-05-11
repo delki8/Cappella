@@ -52,11 +52,11 @@ export const Pastoral = () => {
               {(collection: Pastoral[]) => {
                 const PASTORAL = collection[0];
 
-                return <>{pastoralItems(PASTORAL)}</>;
+                return pastoralItems(PASTORAL);
               }}
             </ContainerServer>
           ) : (
-            <>{pastoralItems(FALLBACK)}</>
+            pastoralItems(FALLBACK)
           )}
         </ScrollView>
       </View>

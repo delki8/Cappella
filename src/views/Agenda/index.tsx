@@ -49,10 +49,10 @@ export const Agenda = () => {
         <View style={styles.container}>
           {isConnected ? (
             <ContainerServer collection={AgendasCollection}>
-              {(AGENDA: Agenda[]) => <>{agendaList(AGENDA)}</>}
+              {(AGENDA: Agenda[]) => agendaList(AGENDA)}
             </ContainerServer>
           ) : (
-            <>{agendaList(FALLBACK)}</>
+            agendaList(FALLBACK)
           )}
         </View>
       </ContainerPage>

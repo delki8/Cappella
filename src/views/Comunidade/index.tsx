@@ -106,11 +106,11 @@ export const Comunidade = () => {
               };
             })[0];
 
-            return <>{comunidadeList(COMUNIDADE)}</>;
+            return comunidadeList(COMUNIDADE);
           }}
         </ContainerServer>
       ) : (
-        <>{comunidadeList(FALLBACK)}</>
+        comunidadeList(FALLBACK)
       )}
     </ContainerPage>
   );

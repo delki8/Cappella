@@ -48,11 +48,11 @@ export const AoVivo = ({titulo}: Props) => {
             {(collection: AoVivo[]) => {
               const AOVIVO = collection[0];
 
-              return <>{aoVivoItem(AOVIVO)}</>;
+              return aoVivoItem(AOVIVO);
             }}
           </ContainerServer>
         ) : (
-          <>{aoVivoItem(FALLBACK)}</>
+          aoVivoItem(FALLBACK)
         )}
         <Text style={styles.notificacoes}>
           ative as notificações para ser sempre avisado quando estamos ao vivo!

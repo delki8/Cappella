@@ -104,11 +104,11 @@ export const Contato = () => {
             {(collection) => {
               const CONTATO = collection[0];
 
-              return <>{contatoItems(CONTATO)}</>;
+              return contatoItems(CONTATO);
             }}
           </ContainerServer>
         ) : (
-          <>{contatoItems(FALLBACK)}</>
+          contatoItems(FALLBACK)
         )}
       </ContainerPage>
     </SafeAreaView>

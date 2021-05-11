@@ -150,11 +150,11 @@ export const Contribua = () => {
             {(collection) => {
               const CONTRIBUA = collection[0];
 
-              return <>{contribuaItems(CONTRIBUA)}</>;
+              return contribuaItems(CONTRIBUA);
             }}
           </ContainerServer>
         ) : (
-          <>{contribuaItems(FALLBACK)}</>
+          contribuaItems(FALLBACK)
         )}
       </ContainerPage>
     </SafeAreaView>

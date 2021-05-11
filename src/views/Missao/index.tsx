@@ -1,5 +1,4 @@
-import React from 'react';
-const {useTracker} = require('@socialize/react-native-meteor');
+import React, {useState} from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -17,7 +16,15 @@ import {BEIGE, FONT_AVENIR_ROMAN, IRON} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {MissaoItem} from './missaoItem';
 import {MissaoCollection} from '../../../imports/api/missao';
+import {handleIsConnected} from '../../utils/handleIsConnected';
+import {ContainerServer} from '../../components/ContainerServer';
+import {FALLBACK} from './data/Missao';
 
+interface Missao {
+  nome: string;
+  missao: string;
+  contato: string;
+}
 interface Props {
   titulo: string;
 }
@@ -25,7 +32,29 @@ interface Props {
 export const Missao = ({titulo}: Props) => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
-  const MISSAO = useTracker(() => MissaoCollection.find().fetch());
+  const [isConnected, setIsConnected] = useState(false);
+
+  handleIsConnected().then((value) => {
+    setIsConnected(Boolean(value));
+  });
+
+  const missaoList = (MISSAO: Missao[]) => {
+    return (
+      <FlatList
+        style={styles.flatList}
+        numColumns={1}
+        data={MISSAO}
+        renderItem={({item}) => (
+          <MissaoItem
+            nome={item.nome}
+            missao={item.missao}
+            contato={item.contato}
+          />
+        )}
+        keyExtractor={(item) => item.nome}
+      />
+    );
+  };
 
   return (
     <ContainerPage titulo={titulo}>
@@ -33,19 +62,13 @@ export const Missao = ({titulo}: Props) => {
         <Text allowFontScaling={false} style={styles.contribua}>
           Contribua - Ore pelos Missionários
         </Text>
-        <FlatList
-          style={styles.flatList}
-          numColumns={1}
-          data={MISSAO}
-          renderItem={({item}) => (
-            <MissaoItem
-              nome={item.nome}
-              missao={item.missao}
-              contato={item.contato}
-            />
-          )}
-          keyExtractor={(item) => item.nome}
-        />
+        {isConnected ? (
+          <ContainerServer collection={MissaoCollection}>
+            {(MISSAO: Missao[]) => missaoList(MISSAO)}
+          </ContainerServer>
+        ) : (
+          missaoList(FALLBACK)
+        )}
         <View style={styles.containerConselho}>
           <Text style={styles.conselho}>
             Maiores informações: Ligue 62 9977-0598 Presb. Noé Conselho
