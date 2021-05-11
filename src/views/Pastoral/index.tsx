@@ -35,28 +35,28 @@ export const Pastoral = () => {
     setIsConnected(Boolean(value));
   });
 
+  const pastoralItems = (PASTORAL: Pastoral) => (
+    <>
+      <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
+      <Text style={styles.autor}>{PASTORAL.autor}</Text>
+      <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+    </>
+  );
+
   return (
     <ContainerPage>
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
           {isConnected ? (
             <ContainerServer collection={PastoralCollection}>
-              {(PASTORAL: Pastoral) => (
-                <>
-                  <Text style={styles.titulo}>
-                    {PASTORAL.titulo.toUpperCase()}
-                  </Text>
-                  <Text style={styles.autor}>{PASTORAL.autor}</Text>
-                  <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
-                </>
-              )}
+              {(collection: Pastoral[]) => {
+                const PASTORAL = collection[0];
+
+                return <>{pastoralItems(PASTORAL)}</>;
+              }}
             </ContainerServer>
           ) : (
-            <>
-              <Text style={styles.titulo}>{FALLBACK.titulo.toUpperCase()}</Text>
-              <Text style={styles.autor}>{FALLBACK.autor}</Text>
-              <Text style={styles.descricao}>{FALLBACK.descricao}</Text>
-            </>
+            <>{pastoralItems(FALLBACK)}</>
           )}
         </ScrollView>
       </View>

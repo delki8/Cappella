@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const ContainerServer = ({children, collection}: Props) => {
-  const COLLECTION = useTracker(() => collection.find().fetch())[0];
+  const COLLECTION = useTracker(() => collection.find().fetch());
 
   return <>{children(COLLECTION)}</>;
 };
