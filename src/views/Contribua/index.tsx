@@ -16,7 +16,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-const {useTracker} = require('@socialize/react-native-meteor');
 
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -32,6 +31,9 @@ import {
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {ContribuaCollection} from '../../../imports/api/contribua';
+import {FALLBACK} from './data/Contribua';
+import {ContainerServer} from '../../components/ContainerServer';
+import {handleIsConnected} from '../../utils/handleIsConnected';
 
 const handlePress = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
@@ -43,87 +45,117 @@ const handlePress = async (url: string) => {
   }
 };
 
+interface Contribua {
+  nomeBanco: string;
+  banco: string;
+  agencia: string;
+  cc: string;
+  operacao: string;
+  igreja: string;
+  cnpj: string;
+}
+
 export const Contribua = () => {
   const [cnpjCopiado, setCnpjCopiado] = useState(false);
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
+  const [isConnected, setIsConnected] = useState(false);
 
-  const CONTRIBUA = useTracker(() => ContribuaCollection.find().fetch())[0];
-  const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
+  handleIsConnected().then((value) => {
+    setIsConnected(Boolean(value));
+  });
 
-  const copyToClipboard = () => {
+  const copyToClipboard = (cnpj: string) => {
     Clipboard.setString(cnpj);
     setCnpjCopiado(true);
+  };
+
+  const contribuaItems = (CONTRIBUA: Contribua) => {
+    const {nomeBanco, banco, agencia, cc, operacao, igreja, cnpj} = CONTRIBUA;
+
+    return (
+      <View style={styles.container}>
+        <Text allowFontScaling={false} style={styles.titulo}>
+          DEPÓSITO EM CONTA
+        </Text>
+        <View style={styles.containerConta}>
+          <View style={styles.banco}>
+            <Text allowFontScaling={false} style={styles.conta}>
+              {nomeBanco}
+            </Text>
+          </View>
+          <View style={styles.containerBanco}>
+            <Text allowFontScaling={false} style={styles.conta}>
+              {banco}
+            </Text>
+            <Text allowFontScaling={false} style={styles.conta}>
+              {agencia}
+            </Text>
+            <Text allowFontScaling={false} style={styles.conta}>
+              {cc}
+            </Text>
+            <Text allowFontScaling={false} style={styles.conta}>
+              {operacao}
+            </Text>
+          </View>
+        </View>
+
+        <Text allowFontScaling={false} style={styles.titulo}>
+          TRANSFERÊNCIA POR PIX
+        </Text>
+        <View style={styles.containerConta}>
+          <View style={styles.containerPix}>
+            <TouchableOpacity onPress={() => copyToClipboard(cnpj)}>
+              <Text
+                allowFontScaling={false}
+                style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
+            </TouchableOpacity>
+            {cnpjCopiado && (
+              <Text allowFontScaling={false} style={styles.copiedText}>
+                {'CNPJ copiado'}
+              </Text>
+            )}
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.containerPixInfo}
+          onPress={() =>
+            handlePress('https://www.bcb.gov.br/estabilidadefinanceira/pix')
+          }>
+          <Text allowFontScaling={false} style={styles.pix}>
+            clique aqui e saiba mais sobre o pix
+          </Text>
+          <Image
+            source={require('../../assets/images/logoPix.png')}
+            style={styles.pixImg}
+          />
+        </TouchableOpacity>
+        <View style={styles.containerIgreja}>
+          <Text allowFontScaling={false} style={styles.detalhesIgreja}>
+            {igreja}
+          </Text>
+          <Text
+            allowFontScaling={false}
+            style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
+        </View>
+      </View>
+    );
   };
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage titulo={'CONTRIBUA'}>
-        <View style={styles.container}>
-          <Text allowFontScaling={false} style={styles.titulo}>
-            DEPÓSITO EM CONTA
-          </Text>
-          <View style={styles.containerConta}>
-            <View style={styles.banco}>
-              <Text allowFontScaling={false} style={styles.conta}>
-                {nomeBanco}
-              </Text>
-            </View>
-            <View style={styles.containerBanco}>
-              <Text allowFontScaling={false} style={styles.conta}>
-                {banco}
-              </Text>
-              <Text allowFontScaling={false} style={styles.conta}>
-                {agencia}
-              </Text>
-              <Text allowFontScaling={false} style={styles.conta}>
-                {cc}
-              </Text>
-              <Text allowFontScaling={false} style={styles.conta}>
-                {operacao}
-              </Text>
-            </View>
-          </View>
+        {isConnected ? (
+          <ContainerServer collection={ContribuaCollection}>
+            {(collection) => {
+              const CONTRIBUA = collection[0];
 
-          <Text allowFontScaling={false} style={styles.titulo}>
-            TRANSFERÊNCIA POR PIX
-          </Text>
-          <View style={styles.containerConta}>
-            <View style={styles.containerPix}>
-              <TouchableOpacity onPress={copyToClipboard}>
-                <Text
-                  allowFontScaling={false}
-                  style={styles.conta}>{`Chave:  ${cnpj}`}</Text>
-              </TouchableOpacity>
-              {cnpjCopiado && (
-                <Text allowFontScaling={false} style={styles.copiedText}>
-                  {'CNPJ copiado'}
-                </Text>
-              )}
-            </View>
-          </View>
-          <TouchableOpacity
-            style={styles.containerPixInfo}
-            onPress={() =>
-              handlePress('https://www.bcb.gov.br/estabilidadefinanceira/pix')
-            }>
-            <Text allowFontScaling={false} style={styles.pix}>
-              clique aqui e saiba mais sobre o pix
-            </Text>
-            <Image
-              source={require('../../assets/images/logoPix.png')}
-              style={styles.pixImg}
-            />
-          </TouchableOpacity>
-          <View style={styles.containerIgreja}>
-            <Text allowFontScaling={false} style={styles.detalhesIgreja}>
-              {igreja}
-            </Text>
-            <Text
-              allowFontScaling={false}
-              style={styles.detalhesIgreja}>{`cnpj ${cnpj}`}</Text>
-          </View>
-        </View>
+              return <>{contribuaItems(CONTRIBUA)}</>;
+            }}
+          </ContainerServer>
+        ) : (
+          <>{contribuaItems(FALLBACK)}</>
+        )}
       </ContainerPage>
     </SafeAreaView>
   );
