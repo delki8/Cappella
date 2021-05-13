@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
+
 import {Botao} from '../../components/Botao';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
@@ -13,7 +14,6 @@ import {
   ORANGEBUTTON,
   SUBTEXT,
 } from '../../styles/styles';
-import {CONTATO} from './data/Contato';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faEnvelope,
@@ -22,78 +22,94 @@ import {
   faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
 import {handlePress} from '../../utils/handlePress';
+import {ContatoCollection} from '../../../imports/api/contato';
+import {handleIsConnected} from '../../utils/handleIsConnected';
+import {FALLBACK} from './data/Contato';
+import {ContainerServer} from '../../components/ContainerServer';
+
+interface Contato {
+  endereco: string;
+  telefone: string;
+  email: string;
+  localizacao: string;
+  missao: string;
+  pastor: string;
+}
 
 export const Contato = () => {
   const styles = getStyles();
-  const {
-    logo,
-    endereco,
-    telefone,
-    email,
-    localizacao,
-    missao,
-    pastor,
-  } = CONTATO;
+  const logo = require('../../assets/images/mosaico.png');
+  const [isConnected, setIsConnected] = useState(false);
+
+  handleIsConnected().then((value) => {
+    setIsConnected(Boolean(value));
+  });
+
+  const contatoItems = (CONTATO: Contato) => {
+    const {endereco, telefone, email, localizacao, missao, pastor} = CONTATO;
+
+    return (
+      <View style={styles.container}>
+        <Image source={logo} style={styles.imagem} resizeMode="contain" />
+        <View style={styles.containerMissao}>
+          <Text allowFontScaling={false} style={styles.missao}>
+            {missao}
+          </Text>
+        </View>
+        <View style={styles.containerTexto}>
+          <View style={styles.containerEndereco}>
+            <FontAwesomeIcon icon={faUserTie} color={ORANGEBUTTON} size={25} />
+            <Text allowFontScaling={false} style={styles.text}>
+              {pastor}
+            </Text>
+          </View>
+          <View style={styles.containerEndereco}>
+            <FontAwesomeIcon icon={faEnvelope} color={ORANGEBUTTON} size={25} />
+            <Text allowFontScaling={false} style={styles.text}>
+              {email}
+            </Text>
+          </View>
+          <View style={styles.containerEndereco}>
+            <FontAwesomeIcon icon={faPhoneAlt} color={ORANGEBUTTON} size={25} />
+            <Text allowFontScaling={false} style={styles.text}>
+              {telefone}
+            </Text>
+          </View>
+          <View style={styles.containerEndereco}>
+            <FontAwesomeIcon
+              icon={faMapMarkerAlt}
+              color={ORANGEBUTTON}
+              size={25}
+            />
+            <Text allowFontScaling={false} style={styles.text}>
+              {endereco}
+            </Text>
+          </View>
+          <View style={styles.botao}>
+            <Botao
+              titulo={'Ver no mapa'}
+              onPress={() => handlePress(localizacao)}
+            />
+          </View>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.droidSafeArea}>
       <ContainerPage>
-        <View style={styles.container}>
-          <Image source={logo} style={styles.imagem} resizeMode="contain" />
-          <View style={styles.containerMissao}>
-            <Text allowFontScaling={false} style={styles.missao}>
-              {missao}
-            </Text>
-          </View>
-          <View style={styles.containerTexto}>
-            <View style={styles.containerEndereco}>
-              <FontAwesomeIcon
-                icon={faUserTie}
-                color={ORANGEBUTTON}
-                size={25}
-              />
-              <Text allowFontScaling={false} style={styles.text}>
-                {pastor}
-              </Text>
-            </View>
-            <View style={styles.containerEndereco}>
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                color={ORANGEBUTTON}
-                size={25}
-              />
-              <Text allowFontScaling={false} style={styles.text}>
-                {email}
-              </Text>
-            </View>
-            <View style={styles.containerEndereco}>
-              <FontAwesomeIcon
-                icon={faPhoneAlt}
-                color={ORANGEBUTTON}
-                size={25}
-              />
-              <Text allowFontScaling={false} style={styles.text}>
-                {telefone}
-              </Text>
-            </View>
-            <View style={styles.containerEndereco}>
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                color={ORANGEBUTTON}
-                size={25}
-              />
-              <Text allowFontScaling={false} style={styles.text}>
-                {endereco}
-              </Text>
-            </View>
-            <View style={styles.botao}>
-              <Botao
-                titulo={'Ver no mapa'}
-                onPress={() => handlePress(localizacao)}
-              />
-            </View>
-          </View>
-        </View>
+        {isConnected ? (
+          <ContainerServer collection={ContatoCollection}>
+            {(collection) => {
+              const CONTATO = collection[0];
+
+              return contatoItems(CONTATO);
+            }}
+          </ContainerServer>
+        ) : (
+          contatoItems(FALLBACK)
+        )}
       </ContainerPage>
     </SafeAreaView>
   );

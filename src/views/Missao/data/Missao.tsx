@@ -1,4 +1,4 @@
-export const MISSAO = [
+export const FALLBACK = [
   {
     nome: 'Pastor Roberto',
     missao: 'Missão Cidade de Deus / Carvalhos de Justiça',

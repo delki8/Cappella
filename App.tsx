@@ -1,6 +1,12 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Platform,
+  StatusBar,
+  InteractionManager,
+} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -12,6 +18,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
+const Meteor = require('@socialize/react-native-meteor');
+import NetInfo from '@react-native-community/netinfo';
+import Storage from '@react-native-community/async-storage';
+const {
+  unstable_batchedUpdates,
+} = require('react-native/Libraries/Renderer/shims/ReactNative');
 
 import {LandingPage} from './src/views/LandingPage';
 import {DetalhesItem} from './src/views/DetalhesItem';
@@ -26,12 +39,38 @@ import {
   TITLE,
 } from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export type RootStackParamList = {
   Home: undefined;
   DetalhesItem: {titulo: string; id: string};
   Item: undefined;
 };
+
+Meteor.configureOptionalDeps({
+  InteractionManager,
+  unstable_batchedUpdates,
+  NetInfo,
+  Storage,
+});
+
+Meteor.connect('wss://cappella.meteorapp.com/websocket');
+
+const storeData = async (value: string) => {
+  try {
+    await AsyncStorage.setItem('@storage_Key', value);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+Meteor.ddp.on('disconnected', () => {
+  storeData('disconnected');
+});
+
+Meteor.ddp.on('connected', () => {
+  storeData('connected');
+});
 
 const HomeStack = createStackNavigator();
 

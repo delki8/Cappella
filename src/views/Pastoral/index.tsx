@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
@@ -6,8 +6,6 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import {ContainerPage} from '../../components/ContainerPage';
-import {PASTORAL} from './data/Pastoral';
 import {
   FONT_AVENIR_ROMAN,
   FONT_AVENIR_BOOK,
@@ -16,18 +14,50 @@ import {
   SUBTEXT,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
+import {FALLBACK} from './data/Pastoral';
+import {ContainerPage} from '../../components/ContainerPage';
+import {ContainerServer} from '../../components/ContainerServer';
+import {PastoralCollection} from '../../../imports/api/pastoral';
+import {handleIsConnected} from '../../utils/handleIsConnected';
+
+interface Pastoral {
+  titulo: string;
+  autor: string;
+  descricao: string;
+}
 
 export const Pastoral = () => {
   const {height} = useWindowDimensions();
   const styles = getStyles(getSize(height));
+  const [isConnected, setIsConnected] = useState(false);
+
+  handleIsConnected().then((value) => {
+    setIsConnected(Boolean(value));
+  });
+
+  const pastoralItems = (PASTORAL: Pastoral) => (
+    <>
+      <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
+      <Text style={styles.autor}>{PASTORAL.autor}</Text>
+      <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+    </>
+  );
 
   return (
     <ContainerPage>
       <View style={styles.containerPagina}>
         <ScrollView style={styles.container}>
-          <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
-          <Text style={styles.autor}>{PASTORAL.autor}</Text>
-          <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
+          {isConnected ? (
+            <ContainerServer collection={PastoralCollection}>
+              {(collection: Pastoral[]) => {
+                const PASTORAL = collection[0];
+
+                return pastoralItems(PASTORAL);
+              }}
+            </ContainerServer>
+          ) : (
+            pastoralItems(FALLBACK)
+          )}
         </ScrollView>
       </View>
     </ContainerPage>
@@ -79,6 +109,7 @@ const getStyles = (size: string) => {
       color: IRON,
       lineHeight: wp('6.3%'),
       textAlign: 'justify',
+      marginTop: hp('2%'),
     },
   });
 };

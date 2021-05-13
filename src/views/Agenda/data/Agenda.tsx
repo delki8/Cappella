@@ -8,7 +8,7 @@ import {
   DARKGREEN,
 } from '../../../styles/styles';
 
-export const AGENDA = [
+export const FALLBACK = [
   {
     dia: 'domingo',
     data: [

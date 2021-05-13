@@ -1,4 +1,4 @@
-export const CONTRIBUA = {
+export const FALLBACK = {
   nomeBanco: 'CAIXA ECONOMICA FEDERAL',
   banco: 'Banco 104',
   agencia: 'Agência 0996',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, SectionList, StyleSheet, Text, View} from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -6,24 +6,54 @@ import {
 } from 'react-native-responsive-screen';
 
 import {AgendaItem} from './agendaItem';
-import {AGENDA} from './data/Agenda';
 import {FONT_AVENIR_BLACK, BLUE} from '../../styles/styles';
+import {FALLBACK} from './data/Agenda';
 import {ContainerPage} from '../../components/ContainerPage';
+import {AgendasCollection} from '../../../imports/api/agendas';
+import {ContainerServer} from '../../components/ContainerServer';
+import {handleIsConnected} from '../../utils/handleIsConnected';
+
+interface data {
+  atividade: string;
+  horario: string;
+}
+interface Agenda {
+  dia: string;
+  data: data[];
+}
 
 export const Agenda = () => {
+  const [isConnected, setIsConnected] = useState(false);
+
+  handleIsConnected().then((value) => {
+    setIsConnected(Boolean(value));
+  });
+
+  const agendaList = (sections: Agenda[]) => {
+    return (
+      <SectionList
+        style={styles.containerList}
+        sections={sections}
+        keyExtractor={(item, index) => `${item}${index}`}
+        renderItem={({item}) => <AgendaItem {...item} />}
+        renderSectionHeader={({section: {dia, data}}) => {
+          return data.length ? <Text style={styles.dia}>{dia}</Text> : <></>;
+        }}
+      />
+    );
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <ContainerPage titulo={'AGENDA'}>
         <View style={styles.container}>
-          <SectionList
-            style={styles.containerList}
-            sections={AGENDA}
-            keyExtractor={(item, index) => `${item}${index}`}
-            renderItem={({item}) => <AgendaItem {...item} />}
-            renderSectionHeader={({section: {dia}}) => {
-              return <Text style={styles.dia}>{dia}</Text>;
-            }}
-          />
+          {isConnected ? (
+            <ContainerServer collection={AgendasCollection}>
+              {(AGENDA: Agenda[]) => agendaList(AGENDA)}
+            </ContainerServer>
+          ) : (
+            agendaList(FALLBACK)
+          )}
         </View>
       </ContainerPage>
     </SafeAreaView>

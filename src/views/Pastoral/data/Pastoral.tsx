@@ -1,4 +1,4 @@
-export const PASTORAL = {
+export const FALLBACK = {
   titulo: 'BEM VINDO!',
   autor: 'Rev. Felipe Lobo Andrade',
   descricao: `

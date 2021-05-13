@@ -1,5 +1,4 @@
-export const CONTATO = {
-  logo: require('../../../assets/images/mosaico.png'),
+export const FALLBACK = {
   endereco: 'Rua T-53, 480 Setor Bueno Goiânia/GO, CEP 74810-210',
   localizacao: 'https://goo.gl/maps/ZNohNYBc6XSaP9nf9',
   telefone: '(62) 99161 6086',
