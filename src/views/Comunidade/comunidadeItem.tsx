@@ -9,6 +9,7 @@ import {
 import {
   COLORCOMUNIDADE,
   FONT_AVENIR_BLACK,
+  ORANGECENTRAL,
   SHADOW_BEIGE,
   TITLE,
 } from '../../styles/styles';
@@ -48,7 +49,7 @@ const getStyles = () => {
     containerItem: {
       width: wp('34.5%'),
       height: hp('18%'),
-      backgroundColor: TITLE,
+      backgroundColor: ORANGECENTRAL,
       borderRadius: 10,
       flex: 1,
       justifyContent: 'center',
@@ -64,12 +65,6 @@ const getStyles = () => {
     },
     imagem: {
       height: 84,
-    },
-    texto: {
-      marginTop: 8,
-      fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('5%'),
-      color: TITLE,
     },
     iconeRede: {
       width: wp('14%'),

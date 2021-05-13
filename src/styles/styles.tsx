@@ -11,6 +11,7 @@ export const GREEN = '#C8D9AB';
 export const SHADOW_BEIGE = '#00000029';
 export const RED = 'red';
 export const ORANGE = '#D25C15';
+export const ORANGECENTRAL = '#D39064';
 export const EXTRAORANGE = '#DF8C5B';
 export const DARKORANGE = '#D66C2C';
 export const ORANGEBUTTON = '#DF9D74';

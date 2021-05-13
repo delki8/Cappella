@@ -34,9 +34,9 @@ import {Agenda} from './src/views/Agenda';
 
 import {
   COR_DE_FUNDO,
-  ACTIVE_GREEN,
   INACTIVE_GRAY,
   TITLE,
+  ORANGECENTRAL,
 } from './src/styles/styles';
 import {Contribua} from './src/views/Contribua';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -151,7 +151,7 @@ export default function App() {
             },
           })}
           tabBarOptions={{
-            activeTintColor: ACTIVE_GREEN,
+            activeTintColor: ORANGECENTRAL,
             inactiveTintColor: INACTIVE_GRAY,
             showLabel: false,
           }}>
