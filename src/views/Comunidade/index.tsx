@@ -66,7 +66,7 @@ export const Comunidade = () => {
         case 'site':
           return {
             url: collection[item],
-            icon: require('../../assets/images/mosaicoLogo.png'),
+            icon: require('../../assets/images/central.png'),
           };
         default:
           break;

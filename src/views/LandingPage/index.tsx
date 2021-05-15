@@ -31,8 +31,8 @@ const DATA = [
   },
   {
     id: 'missao',
-    textoCard: 'missionários',
-    titulo: 'MISSIONÁRIOS',
+    textoCard: 'trabalho central',
+    titulo: 'TRABALHO CENTRAL',
     imagem: IconMissao,
   },
 ];

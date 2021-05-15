@@ -38,7 +38,7 @@ interface Contato {
 
 export const Contato = () => {
   const styles = getStyles();
-  const logo = require('../../assets/images/mosaico.png');
+  const logo = require('../../assets/images/central.png');
   const [isConnected, setIsConnected] = useState(false);
 
   handleIsConnected().then((value) => {
@@ -132,7 +132,7 @@ const getStyles = () => {
       width: wp('75%'),
       height: hp('50%'),
       alignSelf: 'center',
-      marginBottom: -hp('10%'),
+      marginBottom: -hp('8%'),
       marginTop: -hp('20%'),
     },
     containerEndereco: {
@@ -153,7 +153,7 @@ const getStyles = () => {
     containerMissao: {
       marginTop: -50,
       width: wp('100%'),
-      height: hp('17%'),
+      height: hp('15%'),
       backgroundColor: BEIGE,
       justifyContent: 'center',
       alignItems: 'center',

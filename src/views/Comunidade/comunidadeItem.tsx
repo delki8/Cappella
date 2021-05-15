@@ -11,7 +11,6 @@ import {
   FONT_AVENIR_BLACK,
   ORANGECENTRAL,
   SHADOW_BEIGE,
-  TITLE,
 } from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
@@ -30,7 +29,7 @@ export const ComunidadeItem = ({url, icon}: Props) => {
       onPress={() => handlePress(url)}>
       {typeof icon === 'number' ? (
         <Image
-          source={require('../../assets/images/mosaicoLogo.png')}
+          source={require('../../assets/images/central.png')}
           style={styles.iconeRede}
         />
       ) : (

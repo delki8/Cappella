@@ -59,9 +59,6 @@ export const Missao = ({titulo}: Props) => {
   return (
     <ContainerPage titulo={titulo}>
       <View style={styles.containerPagina}>
-        <Text allowFontScaling={false} style={styles.contribua}>
-          Contribua - Ore pelos Missionários
-        </Text>
         {isConnected ? (
           <ContainerServer collection={MissaoCollection}>
             {(MISSAO: Missao[]) => missaoList(MISSAO)}
@@ -69,12 +66,6 @@ export const Missao = ({titulo}: Props) => {
         ) : (
           missaoList(FALLBACK)
         )}
-        <View style={styles.containerConselho}>
-          <Text style={styles.conselho}>
-            Maiores informações: Ligue 62 9977-0598 Presb. Noé Conselho
-            Missionário
-          </Text>
-        </View>
       </View>
     </ContainerPage>
   );

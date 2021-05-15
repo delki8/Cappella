@@ -727,7 +727,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cappella.Mosaico;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cappella.Central;
 				PRODUCT_NAME = Cappella;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -753,7 +753,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cappella.Mosaico;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cappella.Central;
 				PRODUCT_NAME = Cappella;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
