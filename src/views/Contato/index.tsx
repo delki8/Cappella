@@ -26,6 +26,7 @@ import {ContatoCollection} from '../../../imports/api/contato';
 import {handleIsConnected} from '../../utils/handleIsConnected';
 import {FALLBACK} from './data/Contato';
 import {ContainerServer} from '../../components/ContainerServer';
+import {Aguarde} from '../../components/Aguarde';
 
 interface Contato {
   endereco: string;
@@ -104,7 +105,7 @@ export const Contato = () => {
             {(collection) => {
               const CONTATO = collection[0];
 
-              return contatoItems(CONTATO);
+              return CONTATO ? contatoItems(CONTATO) : <Aguarde />;
             }}
           </ContainerServer>
         ) : (

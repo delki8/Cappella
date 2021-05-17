@@ -34,6 +34,7 @@ import {ContribuaCollection} from '../../../imports/api/contribua';
 import {FALLBACK} from './data/Contribua';
 import {ContainerServer} from '../../components/ContainerServer';
 import {handleIsConnected} from '../../utils/handleIsConnected';
+import {Aguarde} from '../../components/Aguarde';
 
 const handlePress = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
@@ -150,7 +151,7 @@ export const Contribua = () => {
             {(collection) => {
               const CONTRIBUA = collection[0];
 
-              return contribuaItems(CONTRIBUA);
+              return CONTRIBUA ? contribuaItems(CONTRIBUA) : <Aguarde />;
             }}
           </ContainerServer>
         ) : (

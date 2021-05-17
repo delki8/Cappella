@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -19,6 +25,7 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {ContainerServer} from '../../components/ContainerServer';
 import {PastoralCollection} from '../../../imports/api/pastoral';
 import {handleIsConnected} from '../../utils/handleIsConnected';
+import {Aguarde} from '../../components/Aguarde';
 
 interface Pastoral {
   titulo: string;
@@ -37,7 +44,9 @@ export const Pastoral = () => {
 
   const pastoralItems = (PASTORAL: Pastoral) => (
     <>
-      <Text style={styles.titulo}>{PASTORAL.titulo.toUpperCase()}</Text>
+      <TextInput editable={false} style={styles.titulo}>
+        {PASTORAL.titulo.toUpperCase()}
+      </TextInput>
       <Text style={styles.autor}>{PASTORAL.autor}</Text>
       <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
     </>
@@ -52,7 +61,7 @@ export const Pastoral = () => {
               {(collection: Pastoral[]) => {
                 const PASTORAL = collection[0];
 
-                return pastoralItems(PASTORAL);
+                return PASTORAL ? pastoralItems(PASTORAL) : <Aguarde />;
               }}
             </ContainerServer>
           ) : (
@@ -108,7 +117,7 @@ const getStyles = (size: string) => {
       fontFamily: FONT_AVENIR_ROMAN,
       color: IRON,
       lineHeight: wp('6.3%'),
-      textAlign: 'justify',
+      textAlign: 'left',
       marginTop: hp('2%'),
     },
   });

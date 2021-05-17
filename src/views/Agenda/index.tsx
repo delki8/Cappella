@@ -12,6 +12,7 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {AgendasCollection} from '../../../imports/api/agendas';
 import {ContainerServer} from '../../components/ContainerServer';
 import {handleIsConnected} from '../../utils/handleIsConnected';
+import {Aguarde} from '../../components/Aguarde';
 
 interface data {
   atividade: string;
@@ -29,19 +30,17 @@ export const Agenda = () => {
     setIsConnected(Boolean(value));
   });
 
-  const agendaList = (sections: Agenda[]) => {
-    return (
-      <SectionList
-        style={styles.containerList}
-        sections={sections}
-        keyExtractor={(item, index) => `${item}${index}`}
-        renderItem={({item}) => <AgendaItem {...item} />}
-        renderSectionHeader={({section: {dia, data}}) => {
-          return data.length ? <Text style={styles.dia}>{dia}</Text> : <></>;
-        }}
-      />
-    );
-  };
+  const agendaList = (sections: Agenda[]) => (
+    <SectionList
+      style={styles.containerList}
+      sections={sections}
+      keyExtractor={(item, index) => `${item}${index}`}
+      renderItem={({item}) => <AgendaItem {...item} />}
+      renderSectionHeader={({section: {dia, data}}) => {
+        return data.length ? <Text style={styles.dia}>{dia}</Text> : <></>;
+      }}
+    />
+  );
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -49,7 +48,9 @@ export const Agenda = () => {
         <View style={styles.container}>
           {isConnected ? (
             <ContainerServer collection={AgendasCollection}>
-              {(AGENDA: Agenda[]) => agendaList(AGENDA)}
+              {(AGENDA: Agenda[]) =>
+                AGENDA ? agendaList(AGENDA) : <Aguarde />
+              }
             </ContainerServer>
           ) : (
             agendaList(FALLBACK)

@@ -19,6 +19,7 @@ import {MissaoCollection} from '../../../imports/api/missao';
 import {handleIsConnected} from '../../utils/handleIsConnected';
 import {ContainerServer} from '../../components/ContainerServer';
 import {FALLBACK} from './data/Missao';
+import {Aguarde} from '../../components/Aguarde';
 
 interface Missao {
   nome: string;
@@ -61,7 +62,7 @@ export const Missao = ({titulo}: Props) => {
       <View style={styles.containerPagina}>
         {isConnected ? (
           <ContainerServer collection={MissaoCollection}>
-            {(MISSAO: Missao[]) => missaoList(MISSAO)}
+            {(MISSAO: Missao[]) => (MISSAO ? missaoList(MISSAO) : <Aguarde />)}
           </ContainerServer>
         ) : (
           missaoList(FALLBACK)

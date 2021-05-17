@@ -12,6 +12,7 @@ import {LinkAovivo} from '../../../imports/api/linkAovivo';
 import {FALLBACK} from './data/AoVivo';
 import {ContainerServer} from '../../components/ContainerServer';
 import {handleIsConnected} from '../../utils/handleIsConnected';
+import {Aguarde} from '../../components/Aguarde';
 
 interface AoVivo {
   url: string;
@@ -48,7 +49,7 @@ export const AoVivo = ({titulo}: Props) => {
             {(collection: AoVivo[]) => {
               const AOVIVO = collection[0];
 
-              return aoVivoItem(AOVIVO);
+              return AOVIVO ? aoVivoItem(AOVIVO) : <Aguarde />;
             }}
           </ContainerServer>
         ) : (
