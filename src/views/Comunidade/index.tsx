@@ -15,6 +15,7 @@ import {
 import {handleIsConnected} from '../../utils/handleIsConnected';
 import {ContainerServer} from '../../components/ContainerServer';
 import {FALLBACK} from './data/Comunidade';
+import {Aguarde} from '../../components/Aguarde';
 
 interface Comunidade {
   facebook: string;
@@ -106,7 +107,7 @@ export const Comunidade = () => {
               };
             })[0];
 
-            return comunidadeList(COMUNIDADE);
+            return collection ? comunidadeList(COMUNIDADE) : <Aguarde />;
           }}
         </ContainerServer>
       ) : (
