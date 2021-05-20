@@ -7,13 +7,7 @@ import {
 
 import {Botao} from '../../components/Botao';
 import {ContainerPage} from '../../components/ContainerPage';
-import {
-  BEIGE,
-  FONT_AVENIR_ROMAN,
-  IRON,
-  ORANGEBUTTON,
-  SUBTEXT,
-} from '../../styles/styles';
+import {BEIGE, REGULAR, IRON, ORANGEBUTTON, SUBTEXT} from '../../styles/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faEnvelope,
@@ -144,7 +138,7 @@ const getStyles = () => {
       color: SUBTEXT,
       marginLeft: wp('5%'),
       textAlign: 'left',
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       fontSize: wp('4.3%'),
       lineHeight: wp('6.3%'),
     },
@@ -169,7 +163,7 @@ const getStyles = () => {
       width: wp('90%'),
       color: IRON,
       fontSize: wp('3.9%'),
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       textAlign: 'center',
       lineHeight: wp('5.3%'),
     },

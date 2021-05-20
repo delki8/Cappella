@@ -8,7 +8,6 @@ import {
 } from 'react-native-responsive-screen';
 import {
   COLORCOMUNIDADE,
-  FONT_AVENIR_BLACK,
   ORANGECENTRAL,
   SHADOW_BEIGE,
 } from '../../styles/styles';

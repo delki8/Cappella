@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* CappellaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CappellaTests.m */; };
 		0460E74A6DA2469C9AE2A329 /* Liturgica-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */; };
-		1007D13387C04232B9D2C5AA /* AvenirLTStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */; };
 		101588E346F54C4F9EA15F77 /* Liturgica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA62A9456DE8480F80FBCED0 /* Liturgica-Light.ttf */; };
-		12B6282835634F4B815D9563 /* AvenirLTStd-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		243A8636FB034328BE964B16 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 274CBF3C930745658AA85A00 /* Montserrat-Bold.ttf */; };
 		252EA01157AC4E42AC9EAD3D /* Liturgica-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */; };
 		255AB943A346440789621EDC /* Liturgica-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2D6983025D74FAEB6B864FB /* Liturgica-Light.otf */; };
 		2741FA4007904E3BA90404F9 /* Liturgica-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03C456E0E76E4956A8F71D8A /* Liturgica-Medium.otf */; };
@@ -24,15 +23,16 @@
 		2DCD954D1E0B4F2C00145EB5 /* CappellaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CappellaTests.m */; };
 		3B8528FBCE51543730650B5E /* libPods-Cappella.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AA68E16C6A0967B1677E4 /* libPods-Cappella.a */; };
 		52358D28E3FC4737A9ED65E8 /* Liturgica-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98EF39D649274B45B3FB9A78 /* Liturgica-Thin.ttf */; };
+		56950A210FBE43A6AB3135C5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35304BA9644A4F8CB5E70E87 /* Montserrat-Regular.ttf */; };
 		59B6774B4B4F6058D4649BAD /* libPods-Cappella-CappellaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DCE74D1A007F0AA3AEC559 /* libPods-Cappella-CappellaTests.a */; };
 		61B43CC5BD60411980FC5CE8 /* Liturgica-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC61CD1BF85A492895166094 /* Liturgica-Thin.otf */; };
 		74FD9AEC266748250A6431FF /* libPods-Cappella-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E70534646B929079FC66D34A /* libPods-Cappella-tvOS.a */; };
 		7C140B827EA941B78C3A1330 /* Liturgica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B4AF6C4C5FF84802A32364A0 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56943C080BB741CFABAA0D37 /* Montserrat-SemiBold.ttf */; };
 		DCA87E2CE515CBFE572491DC /* libPods-Cappella-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F889DAD8380A90A0B820F83A /* libPods-Cappella-tvOSTests.a */; };
 		E29D661D32BC4AA5A7BE2601 /* Liturgica-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */; };
 		F00AF8FA1263491BABE84722 /* Liturgica-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */; };
-		F0BEEC93BD3E4D6CB0EDA85D /* AvenirLTStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,14 +65,15 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cappella/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Cappella/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Cappella/main.m; sourceTree = "<group>"; };
-		2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Black.ttf"; path = "../src/assets/fonts/AvenirLTStd-Black.ttf"; sourceTree = "<group>"; };
+		274CBF3C930745658AA85A00 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		29BC2C5F06B648A5AB1D9D23 /* Liturgica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Bold.ttf"; path = "../src/assets/fonts/Liturgica-Bold.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Cappella-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cappella-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Cappella-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cappella-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35304BA9644A4F8CB5E70E87 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		35D8A1C5A7564FBABBD38464 /* Liturgica-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Medium.ttf"; path = "../src/assets/fonts/Liturgica-Medium.ttf"; sourceTree = "<group>"; };
-		35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Book.ttf"; path = "../src/assets/fonts/AvenirLTStd-Book.ttf"; sourceTree = "<group>"; };
 		4E1A74674A52412A980601B9 /* Liturgica-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Semibold.ttf"; path = "../src/assets/fonts/Liturgica-Semibold.ttf"; sourceTree = "<group>"; };
 		545B1B1331559A80933FCEAB /* Pods-Cappella-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cappella-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Cappella-tvOSTests/Pods-Cappella-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		56943C080BB741CFABAA0D37 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		5AFCC04C4A3E45158F97419C /* Liturgica-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Liturgica-Bold.otf"; path = "../src/assets/fonts/Liturgica-Bold.otf"; sourceTree = "<group>"; };
 		77DCE74D1A007F0AA3AEC559 /* libPods-Cappella-CappellaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-CappellaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Cappella/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		E70534646B929079FC66D34A /* libPods-Cappella-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirLTStd-Roman.ttf"; path = "../src/assets/fonts/AvenirLTStd-Roman.ttf"; sourceTree = "<group>"; };
 		F889DAD8380A90A0B820F83A /* libPods-Cappella-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cappella-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF23F26006EF3004BA38080D /* Pods-Cappella-CappellaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cappella-CappellaTests.debug.xcconfig"; path = "Target Support Files/Pods-Cappella-CappellaTests/Pods-Cappella-CappellaTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,9 +161,9 @@
 				03C456E0E76E4956A8F71D8A /* Liturgica-Medium.otf */,
 				B4C5B8DBD6C64A1990138E5E /* Liturgica-Semibold.otf */,
 				BC61CD1BF85A492895166094 /* Liturgica-Thin.otf */,
-				2629AE06D2C24CB2BBE02B44 /* AvenirLTStd-Black.ttf */,
-				35F24AD64E32432592B09902 /* AvenirLTStd-Book.ttf */,
-				F6CA533E046C47C3BEC8A546 /* AvenirLTStd-Roman.ttf */,
+				274CBF3C930745658AA85A00 /* Montserrat-Bold.ttf */,
+				35304BA9644A4F8CB5E70E87 /* Montserrat-Regular.ttf */,
+				56943C080BB741CFABAA0D37 /* Montserrat-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -399,9 +399,9 @@
 				2741FA4007904E3BA90404F9 /* Liturgica-Medium.otf in Resources */,
 				0460E74A6DA2469C9AE2A329 /* Liturgica-Semibold.otf in Resources */,
 				61B43CC5BD60411980FC5CE8 /* Liturgica-Thin.otf in Resources */,
-				F0BEEC93BD3E4D6CB0EDA85D /* AvenirLTStd-Black.ttf in Resources */,
-				1007D13387C04232B9D2C5AA /* AvenirLTStd-Book.ttf in Resources */,
-				12B6282835634F4B815D9563 /* AvenirLTStd-Roman.ttf in Resources */,
+				243A8636FB034328BE964B16 /* Montserrat-Bold.ttf in Resources */,
+				56950A210FBE43A6AB3135C5 /* Montserrat-Regular.ttf in Resources */,
+				B4AF6C4C5FF84802A32364A0 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

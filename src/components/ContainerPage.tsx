@@ -3,12 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
-import {
-  FONT_AVENIR_BLACK,
-  IRON,
-  SIZE_XX_SMALL,
-  SIZE_X_LARGE,
-} from '../styles/styles';
+import {BOLD, IRON, SIZE_XX_SMALL, SIZE_X_LARGE} from '../styles/styles';
 
 interface Props {
   titulo?: string;
@@ -46,7 +41,7 @@ const styles = StyleSheet.create({
   titulo: {
     color: IRON,
     fontSize: wp('5%'),
-    fontFamily: FONT_AVENIR_BLACK,
+    fontFamily: BOLD,
     alignSelf: 'center',
   },
   imagemSeta: {

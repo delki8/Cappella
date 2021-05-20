@@ -20,13 +20,13 @@ import {
 import {ContainerPage} from '../../components/ContainerPage';
 import {
   TITLE,
-  FONT_AVENIR_BOOK,
+  SEMIBOLD,
   BEIGE,
   EXTRAORANGE,
   WHITE,
   IRON,
-  FONT_AVENIR_ROMAN,
-  FONT_AVENIR_BLACK,
+  REGULAR,
+  BOLD,
   RED,
 } from '../../styles/styles';
 import {getSize} from '../../utils/utils';
@@ -192,7 +192,7 @@ const getStyles = (size: string) => {
     conta: {
       color: EXTRAORANGE,
       fontSize: wp('4.5%'),
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       textAlign: 'center',
       lineHeight: wp('6.3%'),
     },
@@ -240,7 +240,7 @@ const getStyles = (size: string) => {
     },
     cnpj: {
       color: TITLE,
-      fontFamily: FONT_AVENIR_BOOK,
+      fontFamily: SEMIBOLD,
       textAlign: 'center',
     },
     copiedText: {
@@ -254,14 +254,14 @@ const getStyles = (size: string) => {
     detalhesIgreja: {
       color: IRON,
       fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_BOOK,
+      fontFamily: SEMIBOLD,
       textAlign: 'center',
       lineHeight: wp('7.2%'),
     },
     titulo: {
       color: EXTRAORANGE,
       fontSize: wp('5%'),
-      fontFamily: FONT_AVENIR_BLACK,
+      fontFamily: BOLD,
     },
     pixImg: {
       width: wp('8%'),
@@ -270,7 +270,7 @@ const getStyles = (size: string) => {
     pix: {
       color: TITLE,
       fontSize: wp('3.9%'),
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       textAlign: 'center',
     },
   });

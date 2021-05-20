@@ -29,9 +29,9 @@ export const LIGHTTITLE = '#78C1CA';
 export const COLORCOMUNIDADE = '#F3F5EC';
 
 // TIPOGRAFIA
-export const FONT_AVENIR_BLACK = 'AvenirLTStd-Black';
-export const FONT_AVENIR_BOOK = 'AvenirLTStd-Book';
-export const FONT_AVENIR_ROMAN = 'AvenirLTStd-Roman';
+export const BOLD = 'Montserrat-Bold';
+export const SEMIBOLD = 'Montserrat-SemiBold';
+export const REGULAR = 'Montserrat-Regular';
 
 // MEDIDAS
 export const SIZE_XXX_LARGE = 36;

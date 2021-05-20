@@ -7,7 +7,6 @@ import {
   IconAoVivo,
   IconContribua,
   IconComunidade,
-  IconMissao,
 } from '../../assets/images/Icons';
 
 const DATA = [
@@ -28,12 +27,6 @@ const DATA = [
     textoCard: 'comunidade',
     titulo: 'COMUNIDADE',
     imagem: IconComunidade,
-  },
-  {
-    id: 'missao',
-    textoCard: 'trabalho central',
-    titulo: 'TRABALHO CENTRAL',
-    imagem: IconMissao,
   },
 ];
 

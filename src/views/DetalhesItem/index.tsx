@@ -3,7 +3,6 @@ import React from 'react';
 import {AoVivo} from '../AoVivo';
 import {Contribua} from '../Contribua';
 import {Comunidade} from '../Comunidade';
-import {Missao} from '../Missao';
 import {RouteProp} from '@react-navigation/core';
 import {RootStackParamList} from '../../../App';
 
@@ -23,8 +22,6 @@ export const DetalhesItem = ({route}: Props) => {
       return <Contribua />;
     case 'comunidade':
       return <Comunidade />;
-    case 'missao':
-      return <Missao titulo={titulo} />;
     default:
       break;
   }

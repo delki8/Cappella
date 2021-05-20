@@ -4,13 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {
-  FONT_AVENIR_BLACK,
-  FONT_AVENIR_ROMAN,
-  DARKBEIGE,
-  BLUE,
-  BEIGE,
-} from '../../styles/styles';
+import {BOLD, REGULAR, DARKBEIGE, BLUE, BEIGE} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
 interface Props {
@@ -89,13 +83,13 @@ const getStyles = (size: string) => {
     horario: {
       color: BLUE,
       fontSize: wp('6.3%'),
-      fontFamily: FONT_AVENIR_BLACK,
+      fontFamily: BOLD,
     },
     atividade: {
       color: BLUE,
       fontSize: wp('4.7%'),
       textAlign: 'center',
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
     },
   });
 };

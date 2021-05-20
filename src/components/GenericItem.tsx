@@ -6,12 +6,7 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {
-  SHADOW_BEIGE,
-  SUBTEXT,
-  FONT_AVENIR_BLACK,
-  WHITE,
-} from '../styles/styles';
+import {SHADOW_BEIGE, SUBTEXT, BOLD, WHITE} from '../styles/styles';
 
 interface Props {
   textoCard: string;
@@ -64,8 +59,8 @@ const getStyles = (width: number, height: number) => {
     },
     texto: {
       marginTop: 8,
-      fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('5%'),
+      fontFamily: BOLD,
+      fontSize: wp('3.9%'),
       color: SUBTEXT,
     },
   });

@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import {ContainerPage} from '../../components/ContainerPage';
-import {TITLE, FONT_AVENIR_ROMAN, WHITE, IRON} from '../../styles/styles';
+import {TITLE, REGULAR, WHITE, IRON} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {LinkAovivo} from '../../../imports/api/linkAovivo';
 import {FALLBACK} from './data/AoVivo';
@@ -74,7 +74,7 @@ const getStyles = () => {
       width: wp('73%'),
       color: IRON,
       fontSize: wp('4.6%'),
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       textAlign: 'center',
       lineHeight: wp('6.8%'),
     },

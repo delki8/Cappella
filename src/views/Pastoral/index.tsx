@@ -12,13 +12,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import {
-  FONT_AVENIR_ROMAN,
-  FONT_AVENIR_BOOK,
-  FONT_AVENIR_BLACK,
-  IRON,
-  SUBTEXT,
-} from '../../styles/styles';
+import {REGULAR, SEMIBOLD, BOLD, IRON, SUBTEXT} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 import {FALLBACK} from './data/Pastoral';
 import {ContainerPage} from '../../components/ContainerPage';
@@ -100,21 +94,21 @@ const getStyles = (size: string) => {
     },
     titulo: {
       fontSize: wp('6%'),
-      fontFamily: FONT_AVENIR_BLACK,
+      fontFamily: BOLD,
       alignSelf: 'center',
       textAlign: 'center',
       color: IRON,
     },
     autor: {
       fontSize: wp('3%'),
-      fontFamily: FONT_AVENIR_BOOK,
+      fontFamily: SEMIBOLD,
       alignSelf: 'flex-end',
       color: SUBTEXT,
       lineHeight: wp('6.3%'),
     },
     descricao: {
       fontSize: wp('4.4%'),
-      fontFamily: FONT_AVENIR_ROMAN,
+      fontFamily: REGULAR,
       color: IRON,
       lineHeight: wp('6.3%'),
       textAlign: 'left',
