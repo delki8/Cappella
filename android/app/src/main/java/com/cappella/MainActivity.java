@@ -1,4 +1,4 @@
-package com.cappella;
+package com.cappella.central;
 
 import android.os.Bundle;
 

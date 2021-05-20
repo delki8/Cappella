@@ -4,14 +4,14 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.cappella",
+  "applicationId": "com.cappella.central",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 9,
-      "versionName": "1.7",
+      "versionCode": 2,
+      "versionName": "1.0",
       "outputFile": "app-release.apk"
     }
   ]
