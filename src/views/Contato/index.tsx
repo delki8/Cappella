@@ -7,7 +7,7 @@ import {
 
 import {Botao} from '../../components/Botao';
 import {ContainerPage} from '../../components/ContainerPage';
-import {BEIGE, REGULAR, IRON, ORANGEBUTTON, SUBTEXT} from '../../styles/styles';
+import {REGULAR, IRON, ORANGEBUTTON, SUBTEXT, GRAY} from '../../styles/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faEnvelope,
@@ -149,7 +149,7 @@ const getStyles = () => {
       marginTop: -50,
       width: wp('100%'),
       height: hp('15%'),
-      backgroundColor: BEIGE,
+      backgroundColor: GRAY,
       justifyContent: 'center',
       alignItems: 'center',
       shadowOffset: {

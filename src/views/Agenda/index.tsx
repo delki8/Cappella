@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-screen';
 
 import {AgendaItem} from './agendaItem';
-import {BOLD, BLUE} from '../../styles/styles';
+import {BOLD, ORANGECENTRAL} from '../../styles/styles';
 import {FALLBACK} from './data/Agenda';
 import {ContainerPage} from '../../components/ContainerPage';
 import {AgendasCollection} from '../../../imports/api/agendas';
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     marginTop: hp('5%'),
   },
   dia: {
-    color: BLUE,
+    color: ORANGECENTRAL,
     fontSize: wp('4.8%'),
     fontFamily: BOLD,
     marginTop: hp('1%'),

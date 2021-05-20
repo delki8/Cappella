@@ -21,8 +21,7 @@ import {ContainerPage} from '../../components/ContainerPage';
 import {
   TITLE,
   SEMIBOLD,
-  BEIGE,
-  EXTRAORANGE,
+  ORANGECENTRAL,
   WHITE,
   IRON,
   REGULAR,
@@ -86,7 +85,9 @@ export const Contribua = () => {
             </Text>
           </View>
           <View style={styles.containerBanco}>
-            <Text allowFontScaling={false} style={styles.conta}>
+            <Text
+              allowFontScaling={false}
+              style={[styles.conta, styles.numeroBanco]}>
               {banco}
             </Text>
             <Text allowFontScaling={false} style={styles.conta}>
@@ -95,9 +96,13 @@ export const Contribua = () => {
             <Text allowFontScaling={false} style={styles.conta}>
               {cc}
             </Text>
-            <Text allowFontScaling={false} style={styles.conta}>
-              {operacao}
-            </Text>
+            {operacao && operacao.length ? (
+              <Text allowFontScaling={false} style={styles.conta}>
+                {operacao}
+              </Text>
+            ) : (
+              <></>
+            )}
           </View>
         </View>
 
@@ -183,18 +188,21 @@ const getStyles = (size: string) => {
       width: wp('73%'),
       height: wp('9%'),
       backgroundColor: WHITE,
-      borderColor: EXTRAORANGE,
+      borderColor: ORANGECENTRAL,
       borderWidth: 0.5,
       justifyContent: 'center',
       shadowOpacity: 0.1,
       elevation: 1,
     },
     conta: {
-      color: EXTRAORANGE,
+      color: IRON,
       fontSize: wp('4.5%'),
       fontFamily: REGULAR,
       textAlign: 'center',
       lineHeight: wp('6.3%'),
+    },
+    numeroBanco: {
+      marginTop: hp('2.5%'),
     },
     container: {
       width: wp('100%'),
@@ -205,7 +213,8 @@ const getStyles = (size: string) => {
     containerBanco: {
       width: wp('73%'),
       height: hp('14%'),
-      backgroundColor: BEIGE,
+      borderColor: ORANGECENTRAL,
+      borderWidth: 0.5,
       justifyContent: 'center',
       shadowOffset: {
         width: 0.2,
@@ -223,7 +232,9 @@ const getStyles = (size: string) => {
     containerPix: {
       width: wp('73%'),
       height: hp('6%'),
-      backgroundColor: BEIGE,
+      // backgroundColor: BEIGE,
+      borderColor: ORANGECENTRAL,
+      borderWidth: 0.5,
       justifyContent: 'center',
       shadowOffset: {
         width: 0.2,
@@ -259,7 +270,7 @@ const getStyles = (size: string) => {
       lineHeight: wp('7.2%'),
     },
     titulo: {
-      color: EXTRAORANGE,
+      color: IRON,
       fontSize: wp('5%'),
       fontFamily: BOLD,
     },

@@ -4,7 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {BOLD, REGULAR, DARKBEIGE, BLUE, BEIGE} from '../../styles/styles';
+import {BOLD, REGULAR, IRON, GRAYCENTRAL, GRAY} from '../../styles/styles';
 import {getSize} from '../../utils/utils';
 
 interface Props {
@@ -59,7 +59,7 @@ const getStyles = (size: string) => {
       width: wp('53%'),
       height: getHeight(size),
       marginBottom: hp('1.2%'),
-      backgroundColor: DARKBEIGE,
+      backgroundColor: GRAYCENTRAL,
       shadowOffset: {
         width: 0.2,
         height: 0.2,
@@ -72,7 +72,7 @@ const getStyles = (size: string) => {
       justifyContent: 'center',
       width: wp('19%'),
       marginBottom: hp('1.2%'),
-      backgroundColor: BEIGE,
+      backgroundColor: GRAY,
       shadowOffset: {
         width: 0.2,
         height: 0.2,
@@ -81,12 +81,12 @@ const getStyles = (size: string) => {
       elevation: 1,
     },
     horario: {
-      color: BLUE,
+      color: IRON,
       fontSize: wp('6.3%'),
       fontFamily: BOLD,
     },
     atividade: {
-      color: BLUE,
+      color: IRON,
       fontSize: wp('4.7%'),
       textAlign: 'center',
       fontFamily: REGULAR,

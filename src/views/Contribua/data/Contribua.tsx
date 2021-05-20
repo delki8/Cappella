@@ -1,9 +1,9 @@
 export const FALLBACK = {
-  nomeBanco: 'CAIXA ECONOMICA FEDERAL',
-  banco: 'Banco 104',
-  agencia: 'Agência 0996',
-  cc: 'C/C 3211-6',
-  operacao: 'Operação 003',
-  igreja: 'igreja presbiteriana mosaico',
-  cnpj: '22.289.452/0001-78',
+  nomeBanco: 'BCO DO BRASIL S.A.',
+  banco: 'Banco 001',
+  agencia: 'Agência 199',
+  cc: 'C/C 20520-6',
+  operacao: '',
+  igreja: 'igreja presbiteriana de itapetininga',
+  cnpj: '49.709.140/0001-22',
 };

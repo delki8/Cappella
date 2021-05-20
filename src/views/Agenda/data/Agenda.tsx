@@ -1,61 +1,45 @@
-import {
-  BEIGE,
-  DARKBEIGE,
-  BLUE,
-  GREEN,
-  LIGHTTITLE,
-  LIGHTBLUE,
-  DARKGREEN,
-} from '../../../styles/styles';
+import {DARKBEIGE, LIGHTTITLE} from '../../../styles/styles';
 
 export const FALLBACK = [
   {
     dia: 'domingo',
     data: [
       {
-        backgroundColor: BEIGE,
-        color: LIGHTTITLE,
         atividade: 'escola dominical',
-        horario: '10:00',
+        horario: '09:30',
       },
       {
         backgroundColor: DARKBEIGE,
         color: LIGHTTITLE,
         atividade: 'culto noturno',
-        horario: '19:00',
+        horario: '19:30',
       },
     ],
   },
   {
-    dia: 'segunda',
+    dia: 'quinta',
     data: [
       {
-        backgroundColor: BLUE,
-        color: LIGHTBLUE,
-        atividade: 'ensaio do coral',
-        horario: '20:00',
+        atividade: 'estudo biblico',
+        horario: '19:30',
       },
     ],
   },
   {
-    dia: 'terça',
+    dia: 'sexta',
     data: [
       {
-        backgroundColor: GREEN,
-        color: BLUE,
-        atividade: 'reunião dos jovens',
-        horario: '20:00',
+        atividade: 'pequeno grupo - adolescentes',
+        horario: '19:30',
       },
     ],
   },
   {
-    dia: 'quarta',
+    dia: 'sabado',
     data: [
       {
-        backgroundColor: DARKGREEN,
-        color: BLUE,
-        atividade: 'estudo bíblico reunião de oração',
-        horario: '20:00',
+        atividade: 'culto noturno',
+        horario: '19:30',
       },
     ],
   },

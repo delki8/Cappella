@@ -1,11 +1,11 @@
 export const FALLBACK = {
-  facebook: 'https://www.facebook.com/igrejapresbiterianamosaico',
-  instagram: 'https://www.instagram.com/igrejapresbiterianamosaico/',
-  whatsapp: 'https://chat.whatsapp.com/0Yrrxb86FMk1bmN5YttA1N',
+  facebook: 'https://www.facebook.com/IgrejaPresbiterianadeItapetininga/',
+  instagram: 'https://www.instagram.com/itapecentral/',
+  whatsapp: 'https://wa.me/551532712907',
   youtube:
-    'https://www.youtube.com/channel/UCsYR03W9u4pIOcR4xpXfHqg?sub_confirmation=1',
+    'https://www.youtube.com/channel/UCXLB2oYg5tAK-5rHd_d_rGw?sub_confirmation=1',
   spotify:
-    'https://open.spotify.com/show/25Ew0LHUkCnAu3nbcXawdw?si=0pxQ6kg9S0K-aYAUmff4yQ',
+    'https://open.spotify.com/show/45yAQIF2deN87GfnYIyJbl?si=f2m3XJlUT-6Sc4grvqQjog',
 
-  site: 'https://igreja-presbiteriana-mosaico.negocio.site/',
+  site: 'https://itapecentral.com/',
 };

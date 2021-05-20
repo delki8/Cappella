@@ -20,6 +20,7 @@ export const DARKGREEN = '#ADC681';
 export const INACTIVE_GRAY = '#B1AEAE';
 export const IRON = '#707071';
 export const SUBTEXT = '#7D7D7E';
+export const GRAYCENTRAL = '#D1D1D1';
 export const GRAY = '#D9D9D9';
 export const OTHERGRAY = '#C4C3C3';
 export const LIGHTGRAY = '#CACACA';
