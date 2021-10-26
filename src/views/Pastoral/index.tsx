@@ -1,11 +1,5 @@
 import React, {useState} from 'react';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -44,9 +38,7 @@ export const Pastoral = () => {
 
   const pastoralItems = (PASTORAL: Pastoral) => (
     <>
-      <TextInput editable={false} style={styles.titulo}>
-        {PASTORAL.titulo.toUpperCase()}
-      </TextInput>
+      <Text style={styles.titulo}>{PASTORAL.titulo?.toUpperCase()}</Text>
       <Text style={styles.autor}>{PASTORAL.autor}</Text>
       <Text style={styles.descricao}>{PASTORAL.descricao}</Text>
     </>
