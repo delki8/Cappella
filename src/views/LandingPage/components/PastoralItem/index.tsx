@@ -21,8 +21,8 @@ export const PastoralItem = () => {
           resizeMode="contain"
         />
       }
-      width={wp('100%')}
-      height={hp('40%')}
+      width={wp('84%')}
+      height={hp('30%')}
       onNavigate={() =>
         navigation.push('Pastoral', {
           textoCard,
@@ -35,6 +35,6 @@ export const PastoralItem = () => {
 const styles = StyleSheet.create({
   imagem: {
     width: wp('80%'),
-    height: hp('30%'),
+    height: hp('15%'),
   },
 });

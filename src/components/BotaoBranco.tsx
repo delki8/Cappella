@@ -6,7 +6,7 @@ import {
   StyleSheet,
   GestureResponderEvent,
 } from 'react-native';
-import {WHITE, ORANGE, FONT_AVENIR_BLACK} from '../styles/styles';
+import {WHITE, JUMBO, FONT_AVENIR_BLACK} from '../styles/styles';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -17,7 +17,7 @@ interface Props {
   onPress: (event: GestureResponderEvent) => void;
 }
 
-export const Botao = ({titulo, onPress}: Props) => {
+export const BotaoBranco = ({titulo, onPress}: Props) => {
   const styles = getStyles();
 
   return (
@@ -34,18 +34,22 @@ export const Botao = ({titulo, onPress}: Props) => {
 const getStyles = () => {
   return StyleSheet.create({
     botaoContainer: {
-      backgroundColor: ORANGE,
-      padding: wp('4%'),
-      width: wp('73%'),
-      height: hp('7%'),
-      borderRadius: 50,
-      opacity: 0.56,
+      backgroundColor: WHITE,
+      width: wp('20%'),
+      height: hp('3.5%'),
+      borderRadius: 10,
       justifyContent: 'center',
+      shadowOffset: {
+        width: 0.2,
+        height: 0.2,
+      },
+      shadowOpacity: 0.2,
+      elevation: 2,
     },
     botaoTexto: {
       fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('5%'),
-      color: WHITE,
+      fontSize: wp('2.3%'),
+      color: JUMBO,
       textAlign: 'center',
     },
   });

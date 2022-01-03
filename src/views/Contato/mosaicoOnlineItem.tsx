@@ -6,12 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {
-  COLORCOMUNIDADE,
-  FONT_AVENIR_BLACK,
-  SHADOW_BEIGE,
-  TITLE,
-} from '../../styles/styles';
+import {COLORCOMUNIDADE, SHADOW_BEIGE, TITLE} from '../../styles/styles';
 import {handlePress} from '../../utils/handlePress';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
 
@@ -20,7 +15,7 @@ interface Props {
   icon: IconProp;
 }
 
-export const ComunidadeItem = ({url, icon}: Props) => {
+export const MosaicoOnlineItem = ({url, icon}: Props) => {
   const styles = getStyles();
 
   return (
@@ -33,11 +28,7 @@ export const ComunidadeItem = ({url, icon}: Props) => {
           style={styles.iconeRede}
         />
       ) : (
-        <FontAwesomeIcon
-          icon={icon}
-          color={COLORCOMUNIDADE}
-          size={wp('14.5%')}
-        />
+        <FontAwesomeIcon icon={icon} color={COLORCOMUNIDADE} size={35} />
       )}
     </TouchableOpacity>
   );
@@ -46,8 +37,8 @@ export const ComunidadeItem = ({url, icon}: Props) => {
 const getStyles = () => {
   return StyleSheet.create({
     containerItem: {
-      width: wp('34.5%'),
-      height: hp('18%'),
+      width: wp('20%'),
+      height: hp('9%'),
       backgroundColor: TITLE,
       borderRadius: 10,
       flex: 1,
@@ -62,18 +53,9 @@ const getStyles = () => {
       elevation: 5,
       shadowColor: SHADOW_BEIGE,
     },
-    imagem: {
-      height: 84,
-    },
-    texto: {
-      marginTop: 8,
-      fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('5%'),
-      color: TITLE,
-    },
     iconeRede: {
-      width: wp('14%'),
-      height: hp('6.5%'),
+      width: wp('10%'),
+      height: hp('4%'),
     },
   });
 };

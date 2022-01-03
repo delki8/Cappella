@@ -15,7 +15,7 @@ type ProfileScreenNavigationProp = StackNavigationProp<
 >;
 
 interface Props {
-  imagem: string;
+  imagem: string | JSX.Element;
   titulo: string;
   textoCard: string;
   id: string;
@@ -27,7 +27,13 @@ export const Item = ({imagem, titulo, textoCard, id}: Props) => {
   return (
     <GenericItem
       textoCard={textoCard}
-      icon={<SvgXml xml={imagem} height={hp('7%')} />}
+      icon={
+        typeof imagem === 'string' ? (
+          <SvgXml xml={imagem} height={hp('7%')} />
+        ) : (
+          imagem
+        )
+      }
       width={wp('100%')}
       height={hp('16.6%')}
       onNavigate={() =>

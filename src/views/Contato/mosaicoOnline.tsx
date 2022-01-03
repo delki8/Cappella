@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FlatList, StyleSheet} from 'react-native';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-import {ContainerPage} from '../../components/ContainerPage';
-import {ComunidadeItem} from './comunidadeItem';
+import {MosaicoOnlineItem} from './mosaicoOnlineItem';
 import {ComunidadesCollection} from '../../../imports/api/comunidades';
 import {
   faFacebook,
@@ -12,7 +10,6 @@ import {
   faWhatsapp,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import {handleIsConnected} from '../../utils/handleIsConnected';
 import {ContainerServer} from '../../components/ContainerServer';
 import {FALLBACK} from './data/Comunidade';
 import {Aguarde} from '../../components/Aguarde';
@@ -26,13 +23,12 @@ interface Comunidade {
   site: string;
 }
 
-export const Comunidade = () => {
-  const styles = getStyles();
-  const [isConnected, setIsConnected] = useState(false);
+interface Props {
+  isConnected: boolean;
+}
 
-  handleIsConnected().then((value) => {
-    setIsConnected(Boolean(value));
-  });
+export const MosaicoOnline = ({isConnected}: Props) => {
+  const styles = getStyles();
 
   const getMappedRedes = (collection: Comunidade) => {
     const redes = Object.keys(collection);
@@ -81,10 +77,10 @@ export const Comunidade = () => {
     return (
       <FlatList
         style={styles.flatList}
-        numColumns={2}
+        numColumns={Math.ceil(mappedRedes.length / 2)}
         data={mappedRedes}
         renderItem={({item}) =>
-          item ? <ComunidadeItem url={item.url} icon={item.icon} /> : <></>
+          item ? <MosaicoOnlineItem url={item.url} icon={item.icon} /> : <></>
         }
         keyExtractor={(item) => (item && item.url ? item.url : 'item')}
       />
@@ -92,7 +88,7 @@ export const Comunidade = () => {
   };
 
   return (
-    <ContainerPage titulo={'COMUNIDADE'}>
+    <>
       {isConnected ? (
         <ContainerServer collection={ComunidadesCollection}>
           {(collection: Comunidade[]) => {
@@ -113,14 +109,13 @@ export const Comunidade = () => {
       ) : (
         comunidadeList(FALLBACK)
       )}
-    </ContainerPage>
+    </>
   );
 };
 
 const getStyles = () => {
   return StyleSheet.create({
     flatList: {
-      paddingVertical: hp('7%'),
       alignContent: 'center',
       alignSelf: 'center',
     },

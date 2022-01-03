@@ -24,6 +24,7 @@
     "@socialize/react-native-meteor": "^3.0.2",
     "react": "16.13.1",
     "react-native": "^0.64.2",
+    "react-native-collapsible": "^1.6.0",
     "react-native-gesture-handler": "^1.10.2",
     "react-native-onesignal": "^4.2.0",
     "react-native-reanimated": "^2.2.0",

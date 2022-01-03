@@ -25,19 +25,24 @@ export const MissaoItem = ({nome, missao, contato}: Props) => {
 
   return (
     <View style={styles.container}>
-      {hasNome && (
-        <Text allowFontScaling={false} style={styles.nome}>
-          {nome}
-        </Text>
-      )}
-      {hasMissao && (
-        <Text allowFontScaling={false} style={styles.missao}>
-          {missao}
-        </Text>
-      )}
+      <View style={styles.containerNome}>
+        {hasNome && (
+          <>
+            <Text allowFontScaling={false} style={styles.nome}>
+              {nome}
+            </Text>
+            <Text> </Text>
+          </>
+        )}
+        {hasMissao && (
+          <Text allowFontScaling={false} style={[styles.nome, styles.missao]}>
+            {missao}
+          </Text>
+        )}
+      </View>
       {hasContato && (
-        <Text allowFontScaling={false} style={styles.missao}>
-          {contato}
+        <Text allowFontScaling={false} style={[styles.nome, styles.missao]}>
+          ({contato})
         </Text>
       )}
     </View>
@@ -48,23 +53,18 @@ const getStyles = () => {
   return StyleSheet.create({
     nome: {
       color: SUBTEXT,
-      fontSize: wp('3.4%'),
+      fontSize: wp('3%'),
       fontFamily: FONT_AVENIR_BLACK,
       textAlign: 'center',
-      width: wp('73%'),
-      lineHeight: hp('2%'),
     },
     missao: {
-      color: SUBTEXT,
-      fontSize: wp('3.4%'),
       fontFamily: FONT_AVENIR_ROMAN,
-      textAlign: 'center',
-      width: wp('73%'),
-      lineHeight: hp('2%'),
     },
     container: {
-      width: wp('83%'),
-      height: hp('7.3%'),
+      display: 'flex',
+      flexDirection: 'column',
+      width: wp('90%'),
+      height: hp('4.3%'),
       marginBottom: hp('1%'),
       justifyContent: 'center',
       alignItems: 'center',
@@ -75,6 +75,11 @@ const getStyles = () => {
       shadowOpacity: 0.2,
       elevation: 2,
       borderWidth: 1,
+    },
+    containerNome: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
     },
   });
 };

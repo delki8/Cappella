@@ -6,7 +6,12 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {BEIGE, SHADOW_BEIGE, TITLE, FONT_AVENIR_BLACK} from '../styles/styles';
+import {
+  WHITE,
+  SHADOW_BEIGE,
+  SUBTEXT,
+  FONT_AVENIR_BLACK,
+} from '../styles/styles';
 
 interface Props {
   textoCard: string;
@@ -40,7 +45,7 @@ const getStyles = (width: number, height: number) => {
     containerItem: {
       width,
       height,
-      backgroundColor: BEIGE,
+      backgroundColor: WHITE,
       borderRadius: 10,
       flex: 1,
       justifyContent: 'center',
@@ -60,8 +65,8 @@ const getStyles = (width: number, height: number) => {
     texto: {
       marginTop: 8,
       fontFamily: FONT_AVENIR_BLACK,
-      fontSize: wp('5%'),
-      color: TITLE,
+      fontSize: wp('3.5%'),
+      color: SUBTEXT,
     },
   });
 };
