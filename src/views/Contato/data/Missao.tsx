@@ -2,6 +2,7 @@ export const FALLBACK = [
   {
     nome: 'Pastor Roberto',
     missao: 'Missão Cidade de Deus / Carvalhos de Justiça',
+    contato: undefined,
   },
   {
     nome: 'Sherydan',
@@ -11,10 +12,12 @@ export const FALLBACK = [
   {
     nome: 'I. S.',
     missao: 'Missão Pluripovos',
+    contato: undefined,
   },
   {
     nome: 'M. S.',
     missao: 'Missão Amigos dos Ciganos',
+    contato: undefined,
   },
   {
     nome: 'Mateus e Aline',
@@ -24,6 +27,7 @@ export const FALLBACK = [
   {
     nome: 'E. S.',
     missao: 'Interserve Norte da África',
+    contato: undefined,
   },
   {
     nome: 'Pastor Luciano Pires',
@@ -32,6 +36,7 @@ export const FALLBACK = [
   },
   {
     nome: 'Paulo Ricardo',
+    missao: undefined,
     contato: '+1 (314) 793 7770',
   },
 ];

@@ -7,7 +7,8 @@ import {
   IconAoVivo,
   IconContribua,
   IconComunidade,
-  IconMissao,
+  IconAgenda,
+  IconIgreja,
 } from '../../assets/images/Icons';
 
 const DATA = [
@@ -24,16 +25,22 @@ const DATA = [
     imagem: IconContribua,
   },
   {
-    id: 'comunidade',
-    textoCard: 'comunidade',
-    titulo: 'COMUNIDADE',
+    id: 'agenda',
+    textoCard: 'agenda',
+    titulo: 'AGENDA',
+    imagem: IconAgenda,
+  },
+  {
+    id: 'eventos',
+    textoCard: 'eventos',
+    titulo: 'EVENTOS',
     imagem: IconComunidade,
   },
   {
-    id: 'missao',
-    textoCard: 'missionários',
-    titulo: 'MISSIONÁRIOS',
-    imagem: IconMissao,
+    id: 'contato',
+    textoCard: 'conheça a mosaico',
+    titulo: 'MOSAICO',
+    imagem: IconIgreja,
   },
 ];
 
@@ -42,13 +49,8 @@ export const LandingPage = () => {
     <View style={styles.container}>
       <FlatList
         numColumns={2}
-        data={[{}]}
-        renderItem={() => <PastoralItem />}
-        keyExtractor={() => 'pastoral'}
-      />
-      <FlatList
-        numColumns={2}
         data={DATA}
+        ListHeaderComponent={<PastoralItem />}
         renderItem={({item}) => (
           <Item
             id={item.id}

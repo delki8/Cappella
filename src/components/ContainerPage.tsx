@@ -1,13 +1,18 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 import {
   FONT_AVENIR_BLACK,
   IRON,
+  ORANGEBUTTON,
   SIZE_XX_SMALL,
   SIZE_X_LARGE,
+  SIZE_XXX_LARGE,
 } from '../styles/styles';
 
 interface Props {
@@ -22,8 +27,10 @@ export const ContainerPage = ({titulo, children}: Props) => {
     <>
       <View style={styles.headerContainer}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image
-            source={require('../assets/images/flecha-esquerda.png')}
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            color={ORANGEBUTTON}
+            size={20}
             style={styles.imagemSeta}
           />
         </TouchableOpacity>
@@ -48,10 +55,9 @@ const styles = StyleSheet.create({
     fontSize: wp('5%'),
     fontFamily: FONT_AVENIR_BLACK,
     alignSelf: 'center',
+    marginTop: SIZE_XXX_LARGE,
   },
   imagemSeta: {
-    width: SIZE_X_LARGE,
-    height: SIZE_X_LARGE,
     marginLeft: SIZE_X_LARGE,
     marginTop: SIZE_XX_SMALL,
   },

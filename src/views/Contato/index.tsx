@@ -1,15 +1,27 @@
 import React, {useState} from 'react';
-import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import Collapsible from 'react-native-collapsible';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-import {Botao} from '../../components/Botao';
+import {BotaoBranco} from '../../components/BotaoBranco';
 import {ContainerPage} from '../../components/ContainerPage';
 import {
-  BEIGE,
+  ALTO,
+  JUMBO,
+  FONT_AVENIR_BLACK,
   FONT_AVENIR_ROMAN,
+  FONT_AVENIR_BOOK,
   IRON,
   ORANGEBUTTON,
   SUBTEXT,
@@ -20,6 +32,8 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
   faUserTie,
+  faChevronUp,
+  faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import {handlePress} from '../../utils/handlePress';
 import {ContatoCollection} from '../../../imports/api/contato';
@@ -27,6 +41,8 @@ import {handleIsConnected} from '../../utils/handleIsConnected';
 import {FALLBACK} from './data/Contato';
 import {ContainerServer} from '../../components/ContainerServer';
 import {Aguarde} from '../../components/Aguarde';
+import {MosaicoOnline} from './mosaicoOnline';
+import {Missao} from './missao';
 
 interface Contato {
   endereco: string;
@@ -41,59 +57,126 @@ export const Contato = () => {
   const styles = getStyles();
   const logo = require('../../assets/images/mosaico.png');
   const [isConnected, setIsConnected] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   handleIsConnected().then((value) => {
     setIsConnected(Boolean(value));
   });
 
+  const containerMissao = (missao: string) => {
+    return (
+      <View style={styles.containerMissao}>
+        <Image source={logo} style={styles.imagem} resizeMode="contain" />
+        <Text allowFontScaling={false} style={styles.missao}>
+          {missao}
+        </Text>
+      </View>
+    );
+  };
+
+  const containerInfo = (
+    pastor: string,
+    email: string,
+    telefone: string,
+    endereco: string,
+    localizacao: string,
+  ) => {
+    return (
+      <View style={styles.containerTexto}>
+        <Text allowFontScaling={false} style={styles.title}>
+          Informação de contato
+        </Text>
+        <View style={styles.containerInfo}>
+          <FontAwesomeIcon icon={faUserTie} color={ORANGEBUTTON} size={10} />
+          <Text allowFontScaling={false} style={styles.text}>
+            {pastor}
+          </Text>
+        </View>
+        <View style={styles.containerInfo}>
+          <FontAwesomeIcon icon={faEnvelope} color={ORANGEBUTTON} size={10} />
+          <Text allowFontScaling={false} style={styles.text}>
+            {email}
+          </Text>
+        </View>
+        <View style={styles.containerInfo}>
+          <FontAwesomeIcon icon={faPhoneAlt} color={ORANGEBUTTON} size={10} />
+          <Text allowFontScaling={false} style={styles.text}>
+            {telefone}
+          </Text>
+        </View>
+        <View style={styles.containerEndereco}>
+          <FontAwesomeIcon
+            icon={faMapMarkerAlt}
+            color={ORANGEBUTTON}
+            size={11}
+          />
+          <Text
+            allowFontScaling={false}
+            style={[styles.text, styles.textEndereco]}>
+            {endereco}
+          </Text>
+          <BotaoBranco
+            titulo={'Ver no mapa'}
+            onPress={() => handlePress(localizacao)}
+          />
+        </View>
+      </View>
+    );
+  };
+
+  const containerMosaicoOnline = () => {
+    return (
+      <View style={styles.containerTexto}>
+        <Text allowFontScaling={false} style={styles.title}>
+          Mosaico online
+        </Text>
+        <MosaicoOnline isConnected={isConnected} />
+      </View>
+    );
+  };
+
+  const containerMissionarios = () => {
+    return (
+      <>
+        <TouchableOpacity onPress={() => setCollapsed(!collapsed)}>
+          <View style={styles.header}>
+            <Text style={styles.title}>Missionários</Text>
+            <FontAwesomeIcon
+              icon={collapsed ? faChevronDown : faChevronUp}
+              color={JUMBO}
+              size={13}
+              style={styles.chevron}
+            />
+          </View>
+        </TouchableOpacity>
+        <Collapsible collapsed={collapsed} align="center">
+          <Missao isConnected={isConnected} />
+        </Collapsible>
+        <Text style={styles.conselho}>
+          Para acessar mais informações, favor contatar o conselho missionário
+          da Igreja Presbiteriana Mosaico
+        </Text>
+      </>
+    );
+  };
+
   const contatoItems = (CONTATO: Contato) => {
     const {endereco, telefone, email, localizacao, missao, pastor} = CONTATO;
 
     return (
-      <View style={styles.container}>
-        <Image source={logo} style={styles.imagem} resizeMode="contain" />
-        <View style={styles.containerMissao}>
-          <Text allowFontScaling={false} style={styles.missao}>
-            {missao}
-          </Text>
-        </View>
-        <View style={styles.containerTexto}>
-          <View style={styles.containerEndereco}>
-            <FontAwesomeIcon icon={faUserTie} color={ORANGEBUTTON} size={25} />
-            <Text allowFontScaling={false} style={styles.text}>
-              {pastor}
-            </Text>
-          </View>
-          <View style={styles.containerEndereco}>
-            <FontAwesomeIcon icon={faEnvelope} color={ORANGEBUTTON} size={25} />
-            <Text allowFontScaling={false} style={styles.text}>
-              {email}
-            </Text>
-          </View>
-          <View style={styles.containerEndereco}>
-            <FontAwesomeIcon icon={faPhoneAlt} color={ORANGEBUTTON} size={25} />
-            <Text allowFontScaling={false} style={styles.text}>
-              {telefone}
-            </Text>
-          </View>
-          <View style={styles.containerEndereco}>
-            <FontAwesomeIcon
-              icon={faMapMarkerAlt}
-              color={ORANGEBUTTON}
-              size={25}
-            />
-            <Text allowFontScaling={false} style={styles.text}>
-              {endereco}
-            </Text>
-          </View>
-          <View style={styles.botao}>
-            <Botao
-              titulo={'Ver no mapa'}
-              onPress={() => handlePress(localizacao)}
-            />
-          </View>
-        </View>
-      </View>
+      <FlatList
+        style={styles.container}
+        ListHeaderComponent={
+          <>
+            {containerMissao(missao)}
+            {containerInfo(pastor, email, telefone, endereco, localizacao)}
+            {containerMosaicoOnline()}
+          </>
+        }
+        ListFooterComponent={containerMissionarios()}
+        data={[]}
+        renderItem={({item}) => item}
+      />
     );
   };
 
@@ -122,40 +205,51 @@ const getStyles = () => {
       flex: 1,
     },
     container: {
-      paddingVertical: hp('7%'),
+      marginTop: hp('4%'),
     },
     containerTexto: {
       width: wp('73%'),
       alignSelf: 'center',
-      marginTop: hp('5.3%'),
+      marginTop: hp('3.5%'),
     },
     imagem: {
-      width: wp('75%'),
-      height: hp('50%'),
+      width: wp('43%'),
       alignSelf: 'center',
-      marginBottom: -hp('10%'),
-      marginTop: -hp('20%'),
+    },
+    containerInfo: {
+      flexDirection: 'row',
+      marginBottom: 6,
     },
     containerEndereco: {
       flexDirection: 'row',
-      marginBottom: hp('1.8%'),
     },
     text: {
       color: SUBTEXT,
-      marginLeft: wp('5%'),
+      marginLeft: wp('3%'),
       textAlign: 'left',
       fontFamily: FONT_AVENIR_ROMAN,
-      fontSize: wp('4.3%'),
-      lineHeight: wp('6.3%'),
+      fontSize: wp('3.1%'),
+      lineHeight: hp('1.7%'),
     },
-    botao: {
-      marginTop: hp('3%'),
+    textEndereco: {
+      width: wp('48%'),
+    },
+    title: {
+      color: JUMBO,
+      marginLeft: wp('5%'),
+      textAlign: 'left',
+      fontFamily: FONT_AVENIR_BLACK,
+      fontSize: wp('4%'),
+      marginBottom: hp('3.5%'),
+    },
+    chevron: {
+      marginLeft: wp('2%'),
     },
     containerMissao: {
-      marginTop: -50,
-      width: wp('100%'),
-      height: hp('17%'),
-      backgroundColor: BEIGE,
+      display: 'flex',
+      flexDirection: 'row',
+      height: hp('19%'),
+      backgroundColor: ALTO,
       justifyContent: 'center',
       alignItems: 'center',
       shadowOffset: {
@@ -166,12 +260,28 @@ const getStyles = () => {
       elevation: 2,
     },
     missao: {
-      width: wp('90%'),
+      width: wp('48%'),
       color: IRON,
-      fontSize: wp('3.9%'),
+      fontSize: wp('3.3%'),
       fontFamily: FONT_AVENIR_ROMAN,
       textAlign: 'center',
-      lineHeight: wp('5.3%'),
+      lineHeight: hp('1.7%'),
+    },
+    conselho: {
+      width: wp('56%'),
+      color: IRON,
+      fontSize: wp('3.1%'),
+      fontFamily: FONT_AVENIR_BOOK,
+      textAlign: 'center',
+      justifyContent: 'center',
+      marginLeft: wp('20%'),
+    },
+    header: {
+      display: 'flex',
+      flexDirection: 'row',
+      marginTop: hp('3.5%'),
+      marginLeft: wp('14%'),
+      justifyContent: 'flex-start',
     },
   });
 };
