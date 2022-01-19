@@ -6,6 +6,7 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {handlePress} from '../utils/handlePress';
 import {
   WHITE,
   SHADOW_BEIGE,
@@ -14,10 +15,11 @@ import {
 } from '../styles/styles';
 
 interface Props {
-  textoCard: string;
+  textoCard?: string;
   icon: JSX.Element;
   width: number;
   height: number;
+  url?: string;
   onNavigate: (event: GestureResponderEvent) => void;
 }
 
@@ -26,16 +28,21 @@ export const GenericItem = ({
   icon,
   width,
   height,
+  url,
   onNavigate,
 }: Props) => {
   const styles = getStyles(width, height);
 
   return (
-    <TouchableOpacity style={styles.containerItem} onPress={onNavigate}>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={url ? () => handlePress(url) : onNavigate}>
       {icon}
-      <Text allowFontScaling={false} style={styles.texto}>
-        {textoCard}
-      </Text>
+      {textoCard!! && (
+        <Text allowFontScaling={false} style={styles.texto}>
+          {textoCard}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 };
