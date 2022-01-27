@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {faBell} from '@fortawesome/free-solid-svg-icons';
 import {faBellSlash} from '@fortawesome/free-solid-svg-icons';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import {
   FONT_AVENIR_BLACK,
@@ -25,18 +26,48 @@ interface Props {
 export const ContainerPage = ({titulo, children}: Props) => {
   const navigation = useNavigation();
   const [optIn, setOptIn] = useState(false);
+  const notifyMeKey = 'notifyMe';
+
+  const storeData = async (value: string) => {
+    try {
+      await AsyncStorage.setItem(notifyMeKey, value);
+      console.log(`valor "${value}" armazenado com sucesso`);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem(notifyMeKey);
+      if (value !== null) {
+        return value;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  useEffect(() => {
+    getData().then((value) => setOptIn(value === 'true'));
+  }, []);
 
   return (
     <>
       <View style={styles.headerContainer}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             color={ORANGEBUTTON}
             size={SIZE_LARGE}
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setOptIn(!optIn)}>
+        <TouchableOpacity
+          onPress={() => {
+            storeData((!optIn).toString()).then(() => setOptIn(!optIn));
+          }}>
           <FontAwesomeIcon
             icon={optIn ? faBell : faBellSlash}
             color={optIn ? ORANGEBUTTON : IRON}
