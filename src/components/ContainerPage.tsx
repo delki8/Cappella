@@ -15,6 +15,7 @@ import {
   SIZE_XXX_LARGE,
 } from '../styles/styles';
 import {NotificationBell} from './NotificationBell';
+import {NotificationContext} from '../utils/NotificationContext';
 
 interface Props {
   titulo?: string;
@@ -23,6 +24,7 @@ interface Props {
 
 export const ContainerPage = ({titulo, children}: Props) => {
   const navigation = useNavigation();
+  const {hide} = React.useContext(NotificationContext);
 
   return (
     <>
@@ -30,6 +32,7 @@ export const ContainerPage = ({titulo, children}: Props) => {
         <TouchableOpacity
           onPress={() => {
             navigation.goBack();
+            hide();
           }}>
           <FontAwesomeIcon
             icon={faArrowLeft}

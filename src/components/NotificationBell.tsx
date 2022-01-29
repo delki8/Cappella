@@ -5,9 +5,11 @@ import {IRON, ORANGEBUTTON, SIZE_LARGE} from '../styles/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faBell, faBellSlash} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-community/async-storage';
+import {NotificationContext} from '../utils/NotificationContext';
 
 export const NotificationBell = () => {
   const [optIn, setOptIn] = useState(false);
+  const {showNotificationBell} = React.useContext(NotificationContext);
   const notifyMeKey = 'notifyMe';
 
   const storeData = async (value: string) => {
@@ -32,6 +34,10 @@ export const NotificationBell = () => {
   useEffect(() => {
     getData().then((value) => setOptIn(value === 'true'));
   }, []);
+
+  if (!showNotificationBell) {
+    return null;
+  }
 
   return (
     <TouchableOpacity

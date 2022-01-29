@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {
@@ -20,6 +20,7 @@ import {ContainerServer} from '../../components/ContainerServer';
 import {PastoralCollection} from '../../../imports/api/pastoral';
 import {handleIsConnected} from '../../utils/handleIsConnected';
 import {Aguarde} from '../../components/Aguarde';
+import {NotificationContext} from '../../utils/NotificationContext';
 
 interface Pastoral {
   titulo: string;
@@ -32,9 +33,15 @@ export const Pastoral = () => {
   const styles = getStyles(getSize(height));
   const [isConnected, setIsConnected] = useState(false);
 
+  const {show} = React.useContext(NotificationContext);
+
   handleIsConnected().then((value) => {
     setIsConnected(Boolean(value));
   });
+
+  useEffect(() => {
+    show();
+  }, []);
 
   const pastoralItems = (PASTORAL: Pastoral) => (
     <>
