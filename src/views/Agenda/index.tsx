@@ -13,7 +13,6 @@ import {AgendasCollection} from '../../../imports/api/agendas';
 import {ContainerServer} from '../../components/ContainerServer';
 import {handleIsConnected} from '../../utils/handleIsConnected';
 import {Aguarde} from '../../components/Aguarde';
-import {NotificationContextProvider} from '../../utils/NotificationContext';
 
 interface data {
   atividade: string;
