@@ -6005,10 +6005,10 @@ react-native-tab-view@^2.15.2:
   resolved "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-2.15.2.tgz"
   integrity sha512-2hxLkBnZtEKFDyfvNO5EUywhy3f/EiLOBO8SWqKj4BMBTO0QwnybaPE5MVF00Fhz+VA4+h/iI40Dkrrtq70dGg==
 
-react-native@^0.64.2:
-  version "0.64.2"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.64.2.tgz"
-  integrity sha512-Ty/fFHld9DcYsFZujXYdeVjEhvSeQcwuTGXezyoOkxfiGEGrpL/uwUZvMzwShnU4zbbTKDu2PAm/uwuOittRGA==
+"react-native@*", "react-native@^0.64.4", "react-native@> 0.57", "react-native@>=0.35", "react-native@>=0.42.0", "react-native@>=0.45.0", "react-native@>=0.50.0", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.59", "react-native@>=0.64.0-rc.0 || 0.0.0-*":
+  "integrity" "sha512-nxYt/NrTmGyW6+tOd+Hqp4O8uJ2LLZkN7ispMPDprAq7bwvLkF/GXmDQCZHAEyqXuhIztTtMX41KqFQ6UMCUJQ=="
+  "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.64.4.tgz"
+  "version" "0.64.4"
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
     "@react-native-community/cli" "^5.0.1-alpha.1"
